@@ -1,0 +1,110 @@
+[
+    {
+        "url": "https://www.danantaraindonesia.co.id/",
+        "status": 200,
+        "can_fetch": true,
+        "reason": "Aman (Bisa di-scrape)"
+    },
+    {
+        "url": "https://jdih.setneg.go.id/",
+        "status": 200,
+        "can_fetch": false,
+        "reason": "Terblokir Cloudflare / Bot Protection"
+    },
+    {
+        "url": "https://peraturan.bpk.go.id/",
+        "status": 200,
+        "can_fetch": false,
+        "reason": "Terblokir Cloudflare / Bot Protection"
+    },
+    {
+        "url": "https://www.setneg.go.id/",
+        "status": 200,
+        "can_fetch": true,
+        "reason": "Aman (Bisa di-scrape)"
+    },
+    {
+        "url": "https://presidenri.go.id/",
+        "status": 403,
+        "can_fetch": false,
+        "reason": "403 Forbidden (Terblokir Anti-Bot/Cloudflare)"
+    },
+    {
+        "url": "https://setkab.go.id/",
+        "status": "Failed",
+        "can_fetch": false,
+        "reason": "Connection Error / Timeout"
+    },
+    {
+        "url": "https://www.kompas.id/",
+        "status": 200,
+        "can_fetch": true,
+        "reason": "Aman (Bisa di-scrape)"
+    },
+    {
+        "url": "https://www.kontan.co.id/",
+        "status": 200,
+        "can_fetch": true,
+        "reason": "Aman (Bisa di-scrape)"
+    },
+    {
+        "url": "https://www.bisnis.com/",
+        "status": 200,
+        "can_fetch": true,
+        "reason": "Aman (Bisa di-scrape)"
+    },
+    {
+        "url": "https://www.thejakartapost.com/",
+        "status": 200,
+        "can_fetch": true,
+        "reason": "Aman (Bisa di-scrape)"
+    },
+    {
+        "url": "https://www.kompas.com/",
+        "status": 200,
+        "can_fetch": true,
+        "reason": "Aman (Bisa di-scrape)"
+    },
+    {
+        "url": "https://www.cnbcindonesia.com/",
+        "status": 200,
+        "can_fetch": true,
+        "reason": "Aman (Bisa di-scrape)"
+    },
+    {
+        "url": "https://www.detik.com/",
+        "status": 200,
+        "can_fetch": true,
+        "reason": "Aman (Bisa di-scrape)"
+    },
+    {
+        "url": "https://www.reuters.com/",
+        "status": 401,
+        "can_fetch": false,
+        "reason": "Error 401"
+    },
+    {
+        "url": "https://www.bloombergtechnoz.com/",
+        "status": 200,
+        "can_fetch": true,
+        "reason": "Aman (Bisa di-scrape)"
+    },
+    {
+        "url": "https://www.bloomberg.com/",
+        "status": 403,
+        "can_fetch": false,
+        "reason": "403 Forbidden (Terblokir Anti-Bot/Cloudflare)"
+    },
+    {
+        "url": "https://www.spglobal.com/ratings/en",
+        "status": 403,
+        "can_fetch": false,
+        "reason": "403 Forbidden (Terblokir Anti-Bot/Cloudflare)"
+    },
+    {
+        "url": "https://www.moodys.com/researchandratings/region/asia-pacific/indonesia/0420AE",
+        "status": 200,
+        "can_fetch": true,
+        "reason": "Aman (Bisa di-scrape)"
+    }
+]

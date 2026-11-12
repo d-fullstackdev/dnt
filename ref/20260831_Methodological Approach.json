@@ -1,0 +1,2022 @@
+{
+  "file name" : "20260831_Methodological Approach.pdf",
+  "number of pages" : 5,
+  "author" : null,
+  "title" : "20260831_Methodological Approach",
+  "creation date" : null,
+  "modification date" : null,
+  "kids" : [ {
+    "type" : "heading",
+    "pdfua_tag" : "H1",
+    "id" : 13,
+    "level" : "Doctitle",
+    "page number" : 1,
+    "bounding box" : [ 72.0, 757.351, 187.453, 769.64 ],
+    "heading level" : 1,
+    "font" : "Arial-BoldMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Green Investment List"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 14,
+    "page number" : 1,
+    "bounding box" : [ 72.0, 703.712, 520.512, 745.094 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "The ultimate goal is to create an independent, evidence-based green investment list to show how Danantara Indonesia could use its role to mobilize co-investment, de-risk early-stage infrastructure, improve SOE governance, and avoid locking in emissions-intensive assets."
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 15,
+    "page number" : 1,
+    "bounding box" : [ 72.0, 650.073, 510.72, 691.455 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "The value, however, is not only the project list but also the reasoning behind why each opportunity qualifies, what risks must be managed, and which projects should be excluded even if they are politically attractive."
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 16,
+    "page number" : 1,
+    "bounding box" : [ 72.0, 567.342, 521.104, 637.816 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "This study begins with sectors such as energy, agriculture, downstream industries, housing, infrastructure, and manufacturing because these sectors mirror how a national development agenda typically organizes priorities and project pipelines. There is also strong evidence that these sectors are central to Indonesian growth, jobs, food security, urbanization, exports, and industrial policy."
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 17,
+    "page number" : 1,
+    "bounding box" : [ 72.0, 499.157, 519.27, 555.085 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Agriculture, combined with forestry and fisheries, contributed about 13.1% of Indonesian GDP. Its significance is deeply rooted in rural livelihoods, food supply, and employment. A strong agricultural sector not only supports food security but also provides a foundation for a strong manufacturing sector."
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 18,
+    "page number" : 1,
+    "bounding box" : [ 72.0, 460.065, 513.767, 486.9 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Manufacturing is pivotal for technology advancement, value addition, employment, exports, import substitution, and the government’s downstreaming agenda."
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 19,
+    "page number" : 1,
+    "bounding box" : [ 72.0, 406.426, 501.542, 447.807 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Construction and infrastructure enable everything from housing provision and logistics to public services, urban growth, and private investment. Meanwhile, all of these activities depend on energy."
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 20,
+    "page number" : 1,
+    "bounding box" : [ 72.0, 352.787, 507.659, 394.169 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Danantara itself publicly articulated that its focus spans renewables and energy transition, food security, infrastructure, minerals and downstreaming, industrial estates, and manufacturing-related value chains (Li et al. 2026)."
+  }, {
+    "type" : "caption",
+    "id" : 21,
+    "page number" : 1,
+    "bounding box" : [ 72.0, 330.541, 180.571, 340.595 ],
+    "linked content id" : 22,
+    "font" : "ArialMT",
+    "font size" : 9.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Table 1. Sector explanation"
+  }, {
+    "type" : "table",
+    "pdfua_tag" : "Table",
+    "id" : 22,
+    "level" : "1",
+    "page number" : 1,
+    "bounding box" : [ 72.0, 84.0, 522.875, 319.0 ],
+    "number of rows" : 4,
+    "number of columns" : 3,
+    "next table id" : 26,
+    "rows" : [ {
+      "type" : "table row",
+      "row number" : 1,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 72.438, 282.5, 222.5, 318.563 ],
+        "row number" : 1,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 1,
+          "page number" : 1,
+          "bounding box" : [ 77.25, 300.339, 111.464, 312.628 ],
+          "font" : "Arial-BoldMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Sector"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 222.5, 282.5, 372.5, 318.563 ],
+        "row number" : 1,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 2,
+          "page number" : 1,
+          "bounding box" : [ 227.25, 287.69, 349.408, 312.628 ],
+          "font" : "Arial-BoldMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Link to national climate challenge"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 372.5, 282.5, 522.063, 318.563 ],
+        "row number" : 1,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 3,
+          "page number" : 1,
+          "bounding box" : [ 377.25, 287.69, 495.129, 312.628 ],
+          "font" : "Arial-BoldMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Relation to investment decisions"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 2,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 72.438, 207.5, 222.5, 282.5 ],
+        "row number" : 2,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 4,
+          "page number" : 1,
+          "bounding box" : [ 77.25, 263.791, 112.082, 276.08 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Energy"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 222.5, 207.5, 372.5, 282.5 ],
+        "row number" : 2,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 5,
+          "page number" : 1,
+          "bounding box" : [ 227.25, 225.845, 366.581, 276.08 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Directly linked to power, coal dependence, transport fuels, and future electricity demand"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 372.5, 207.5, 522.063, 282.5 ],
+        "row number" : 2,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 6,
+          "page number" : 1,
+          "bounding box" : [ 377.25, 213.196, 516.555, 276.08 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Power plants, grids, storage, fuel → capital choices made today determine future emissions and electricity costs"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 3,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 72.438, 120.5, 222.5, 207.5 ],
+        "row number" : 3,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 7,
+          "page number" : 1,
+          "bounding box" : [ 77.25, 189.297, 129.795, 201.586 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Agriculture"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 222.5, 120.5, 372.5, 207.5 ],
+        "row number" : 3,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 8,
+          "page number" : 1,
+          "bounding box" : [ 227.25, 151.35, 366.567, 201.586 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Linked to food systems, land conversion, fertilizer use, livestock methane, peat, water, and rural livelihoods"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 372.5, 120.5, 522.063, 207.5 ],
+        "row number" : 3,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 9,
+          "page number" : 1,
+          "bounding box" : [ 377.25, 126.052, 508.015, 201.586 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Finance can either support productivity or accelerate deforestation, land conflict, peat loss, and environmentally harmful expansion"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 4,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 72.438, 84.438, 222.5, 120.5 ],
+        "row number" : 4,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 10,
+          "page number" : 1,
+          "bounding box" : [ 77.25, 102.153, 189.049, 114.442 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Downstream industries"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 222.5, 84.438, 372.5, 120.5 ],
+        "row number" : 4,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 11,
+          "page number" : 1,
+          "bounding box" : [ 227.25, 89.504, 339.071, 114.442 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "This industry is closely related to minerals and"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 1,
+        "bounding box" : [ 372.5, 84.438, 522.063, 120.5 ],
+        "row number" : 4,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 12,
+          "page number" : 1,
+          "bounding box" : [ 377.25, 89.504, 506.799, 114.442 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Financing poorly managed tailings and smelters can"
+        } ]
+      } ]
+    } ]
+  }, {
+    "type" : "table",
+    "pdfua_tag" : "Table",
+    "id" : 26,
+    "level" : "1",
+    "page number" : 2,
+    "bounding box" : [ 72.0, 497.0, 522.875, 770.0 ],
+    "number of rows" : 4,
+    "number of columns" : 3,
+    "previous table id" : 22,
+    "rows" : [ {
+      "type" : "table row",
+      "row number" : 1,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 72.438, 720.5, 222.5, 769.562 ],
+        "row number" : 1,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 222.5, 720.5, 372.5, 769.562 ],
+        "row number" : 1,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 1,
+          "page number" : 2,
+          "bounding box" : [ 227.25, 751.351, 328.057, 763.64 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "materials processing"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 372.5, 720.5, 522.063, 769.562 ],
+        "row number" : 1,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 2,
+          "page number" : 2,
+          "bounding box" : [ 377.25, 726.053, 516.567, 763.64 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "increase emissions, environmental liabilities, and even human rights violations"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 2,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 72.438, 621.5, 222.5, 720.5 ],
+        "row number" : 2,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 3,
+          "page number" : 2,
+          "bounding box" : [ 77.25, 702.154, 117.584, 714.443 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Housing"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 222.5, 621.5, 372.5, 720.5 ],
+        "row number" : 2,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 4,
+          "page number" : 2,
+          "bounding box" : [ 227.25, 651.559, 342.139, 714.443 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Connected to buildings, construction materials, urban form, electricity demand, water, and household mobility"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 372.5, 621.5, 522.063, 720.5 ],
+        "row number" : 2,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 5,
+          "page number" : 2,
+          "bounding box" : [ 377.25, 626.261, 515.349, 714.443 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Financing or investing in housing supplies without a proper design could result in increased heat, a higher demand for electricity, or even disasters such as floods or landslides"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 3,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 72.438, 559.5, 222.5, 621.5 ],
+        "row number" : 3,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 6,
+          "page number" : 2,
+          "bounding box" : [ 77.25, 602.362, 142.011, 614.651 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Infrastructure"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 222.5, 559.5, 372.5, 621.5 ],
+        "row number" : 3,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 7,
+          "page number" : 2,
+          "bounding box" : [ 227.25, 577.064, 364.724, 614.651 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Connects energy system, transportation, water, waste, and urban development"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 372.5, 559.5, 522.063, 621.5 ],
+        "row number" : 3,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 8,
+          "page number" : 2,
+          "bounding box" : [ 377.25, 564.415, 514.109, 614.651 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Capital can be put in public infrastructure such as public transit, water systems, and modern grids"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 4,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 72.438, 497.437, 222.5, 559.5 ],
+        "row number" : 4,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 9,
+          "page number" : 2,
+          "bounding box" : [ 77.25, 540.516, 146.911, 552.805 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Manufacturing"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 222.5, 497.437, 372.5, 559.5 ],
+        "row number" : 4,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 10,
+          "page number" : 2,
+          "bounding box" : [ 227.25, 502.569, 351.904, 552.805 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Includes energy-intensive production and clean-technology supply chains"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 2,
+        "bounding box" : [ 372.5, 497.437, 522.063, 559.5 ],
+        "row number" : 4,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 11,
+          "page number" : 2,
+          "bounding box" : [ 377.25, 515.218, 500.077, 552.805 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Investment can reduce energy use, set up clean, and green process"
+        } ]
+      } ]
+    } ]
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 27,
+    "page number" : 2,
+    "bounding box" : [ 72.0, 430.282, 509.904, 471.663 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "In an effort to create a list of green investments for Danantara Indonesia, this study uses a decision system that tests whether an investment is genuinely low-carbon, financially resilient, socially fair, and independently verifiable."
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 28,
+    "page number" : 2,
+    "bounding box" : [ 72.0, 376.643, 496.049, 418.024 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "This study starts by creating an inventory of green projects already announced by the Indonesian government and/or state-owned enterprises from 2020 onwards. A practical workflow for building such a list appears below."
+  }, {
+    "type" : "list",
+    "pdfua_tag" : "L",
+    "id" : 29,
+    "level" : "2",
+    "page number" : 2,
+    "bounding box" : [ 90.0, 162.995, 523.225, 364.386 ],
+    "numbering style" : "arabic numbers",
+    "number of list items" : 5,
+    "list items" : [ {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 2,
+      "bounding box" : [ 90.0, 323.004, 521.677, 364.386 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "1. Map Indonesia’s investable green and transition opportunities by creating an inventory of green projects announced by state-owned enterprises from 2020 onward and all projects confirmed by Danantara Indonesia since its launch in 2025.",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 2,
+      "bounding box" : [ 90.0, 279.365, 523.225, 320.747 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "2. Sort each activity into six sectors, namely energy, agriculture, downstream industries, housing, infrastructure, and manufacturing. This study will also sort to exclude activities involving fossil lock-in, deforestation, and social harm.",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 2,
+      "bounding box" : [ 90.0, 206.634, 518.578, 277.108 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "3. Screen projects against agreed principles and measures, such as the Indonesia Taxonomy for Sustainable Finance (Version 3) and ASEAN Taxonomy for Sustainable Finance (Version 4), while considering Indonesia’s commitments, such as the 2030 NDC emissions target, net zero, national emissions peak, the FOLU Net Sink 2030, its own National Energy Policy, and JETP.",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 2,
+      "bounding box" : [ 90.0, 177.541, 504.955, 204.377 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "4. Compare the projects with Danantara’s existing portfolio and merge the ones that meet the green criteria.",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 2,
+      "bounding box" : [ 90.0, 162.995, 260.728, 175.284 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "5. Build the green investment list.",
+      "kids" : [ ]
+    } ]
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 30,
+    "page number" : 2,
+    "bounding box" : [ 72.0, 138.449, 288.91, 150.738 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "An illustration of this process appears below."
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 35,
+    "page number" : 3,
+    "bounding box" : [ 72.0, 739.072, 276.926, 749.126 ],
+    "font" : "ArialMT",
+    "font size" : 9.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Graphic 1. Workflow to build a green investment list"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 45,
+    "page number" : 3,
+    "bounding box" : [ 73.5, 592.519, 510.0, 726.019 ],
+    "source" : "20260831_Methodological Approach_images/imageFile1.png"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 36,
+    "page number" : 3,
+    "bounding box" : [ 72.0, 497.457, 497.887, 553.385 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "This study does not consider or recommend projects such as geothermal power plants, nuclear power plants, and coal repurposing as “green”; unless the projects are meant to retire existing plants. Otherwise, projects that fall under categories such as “coal repurposing” or the oxymoron “green coal” will be immediately excluded from the list."
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 37,
+    "page number" : 3,
+    "bounding box" : [ 72.0, 443.818, 497.085, 485.2 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "This study also argues that renewable status alone does not make a project fair or sustainable. We focus on pathways to net-zero that do not harm Indigenous livelihoods, biodiversity, or affected communities."
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 38,
+    "page number" : 3,
+    "bounding box" : [ 72.0, 390.179, 514.406, 431.561 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "A delicate approach is required when pursuing solutions such as “biofuel” to ensure production without clearing natural forest, converting peatlands, displacing food production, violating land rights or labor standards, or having weak traceability."
+  }, {
+    "type" : "heading",
+    "pdfua_tag" : "H1",
+    "id" : 39,
+    "level" : "Doctitle",
+    "page number" : 3,
+    "bounding box" : [ 72.0, 341.087, 234.465, 353.376 ],
+    "heading level" : 1,
+    "font" : "Arial-BoldMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Building Green Investment List"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 40,
+    "page number" : 3,
+    "bounding box" : [ 72.0, 287.448, 510.135, 329.021 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "The main principle used in this report is additionality, as Norfund1 also upholds. The Norwegian fund ensures its capital contributes to outcomes that would not have happened otherwise."
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 41,
+    "page number" : 3,
+    "bounding box" : [ 72.0, 219.263, 514.421, 275.191 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Danantara should adopt an additionality principle because it would ensure that state capital produces public and economic outcomes that ordinary markets would not deliver on their own. Without this principle, Danantara risks becoming merely a large allocator of public assets into already-bankable projects instead of a catalyst for structural transformation."
+  }, {
+    "type" : "heading",
+    "pdfua_tag" : "H1",
+    "id" : 42,
+    "level" : "Subtitle",
+    "page number" : 3,
+    "bounding box" : [ 72.0, 170.17, 216.164, 182.459 ],
+    "heading level" : 1,
+    "font" : "Arial-BoldMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Inventory of Green Projects"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 43,
+    "page number" : 3,
+    "bounding box" : [ 72.0, 131.078, 475.688, 157.913 ],
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Writers scrape publicly available data on green projects by Indonesian state-owned enterprises (SOEs) to extract information, including:"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 44,
+    "page number" : 3,
+    "bounding box" : [ 72.0, 72.11, 507.436, 106.454 ],
+    "font" : "ArialMT",
+    "font size" : 10.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "1 The Norwegian Investment Fund for developing countries. It acts as the Norwegian government’s development finance institution to create jobsm reduce poverty, and accelerate the transition to net-zero emissions."
+  }, {
+    "type" : "list",
+    "pdfua_tag" : "L",
+    "id" : 48,
+    "level" : "2",
+    "page number" : 4,
+    "bounding box" : [ 90.0, 568.25, 519.801, 769.64 ],
+    "numbering style" : "arabic numbers",
+    "number of list items" : 13,
+    "list items" : [ {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 757.351, 172.766, 769.64 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "1. Project name",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 742.805, 214.32, 755.094 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "2. The name of the SOE",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 728.259, 397.005, 740.548 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "3. The name of the SOE subsidiary or special purpose vehicle",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 713.712, 139.772, 726.001 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "4. Sector",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 684.62, 519.801, 711.455 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "5. Project status (e.g. planning, studies, MoU, LoI, tender, construction, commissioning, commercial operations schedule, operations)",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 670.073, 149.563, 682.363 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "6. Location",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 655.527, 396.203, 667.816 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "7. Capacity, including its denomination (e.g. 88 tonnes/month)",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 640.981, 400.654, 653.27 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "8. Investment amount, including its currency (e.g. US$8 billion)",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 626.435, 183.774, 638.724 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "9. Funding source",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 611.888, 149.547, 624.177 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "10. Partners",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 597.342, 232.029, 609.631 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "11. Emission reduction target",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 582.796, 247.907, 595.085 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "12. Environment and social risks",
+      "kids" : [ ]
+    }, {
+      "type" : "list item",
+      "pdfua_tag" : "LI",
+      "page number" : 4,
+      "bounding box" : [ 90.0, 568.25, 296.847, 580.539 ],
+      "font" : "ArialMT",
+      "font size" : 11.0,
+      "text color" : "[0.0, 0.0, 0.0]",
+      "content" : "13. Announcement date/latest update date",
+      "kids" : [ ]
+    } ]
+  }, {
+    "type" : "caption",
+    "id" : 49,
+    "page number" : 4,
+    "bounding box" : [ 72.0, 529.157, 514.37, 555.992 ],
+    "linked content id" : 50,
+    "font" : "ArialMT",
+    "font size" : 11.0,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "This information may be extracted from keywords in both Bahasa Indonesia and English as shown below."
+  }, {
+    "type" : "table",
+    "pdfua_tag" : "Table",
+    "id" : 50,
+    "level" : "3",
+    "page number" : 4,
+    "bounding box" : [ 72.0, 87.0, 522.875, 518.0 ],
+    "number of rows" : 9,
+    "number of columns" : 3,
+    "next table id" : 53,
+    "rows" : [ {
+      "type" : "table row",
+      "row number" : 1,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 72.438, 480.5, 222.5, 517.563 ],
+        "row number" : 1,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 1,
+          "page number" : 4,
+          "bounding box" : [ 77.25, 498.611, 155.444, 510.9 ],
+          "font" : "Arial-BoldMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Project Cluster"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 222.5, 480.5, 372.5, 517.563 ],
+        "row number" : 1,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 2,
+          "page number" : 4,
+          "bounding box" : [ 227.25, 485.962, 334.772, 510.9 ],
+          "font" : "Arial-BoldMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Keywords in Bahasa Indonesia"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 372.5, 480.5, 522.063, 517.563 ],
+        "row number" : 1,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 3,
+          "page number" : 4,
+          "bounding box" : [ 377.25, 498.611, 485.363, 510.9 ],
+          "font" : "Arial-BoldMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Keywords in English"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 2,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 72.438, 431.5, 222.5, 480.5 ],
+        "row number" : 2,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 4,
+          "page number" : 4,
+          "bounding box" : [ 77.25, 462.063, 215.959, 474.352 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Renewable energy (general)"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 222.5, 431.5, 372.5, 480.5 ],
+        "row number" : 2,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 5,
+          "page number" : 4,
+          "bounding box" : [ 227.25, 436.765, 350.077, 474.352 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "energi terbarukan, energi bersih, energi hijau, pembangkit hijau"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 372.5, 431.5, 522.063, 480.5 ],
+        "row number" : 2,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 6,
+          "page number" : 4,
+          "bounding box" : [ 377.25, 436.765, 496.209, 474.352 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "renewable energy, clean energy, green energy, renewable power"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 3,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 72.438, 369.5, 222.5, 431.5 ],
+        "row number" : 3,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 7,
+          "page number" : 4,
+          "bounding box" : [ 77.25, 412.866, 102.914, 425.155 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Solar"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 222.5, 369.5, 372.5, 431.5 ],
+        "row number" : 3,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 8,
+          "page number" : 4,
+          "bounding box" : [ 227.25, 374.919, 365.944, 425.155 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "PLTS, PLTS terapung, PLTS atap, solar panel, solar rooftop, tenaga surya, surya skala utilitas"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 372.5, 369.5, 522.063, 431.5 ],
+        "row number" : 3,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 9,
+          "page number" : 4,
+          "bounding box" : [ 377.25, 374.919, 500.285, 425.155 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "solar PV, photovoltaic, floating solar, floating PV, utility-scale solar, rooftop solar"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 4,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 72.438, 333.5, 222.5, 369.5 ],
+        "row number" : 4,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 10,
+          "page number" : 4,
+          "bounding box" : [ 77.25, 351.021, 106.16, 363.31 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Water"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 222.5, 333.5, 372.5, 369.5 ],
+        "row number" : 4,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 11,
+          "page number" : 4,
+          "bounding box" : [ 227.25, 338.372, 329.261, 363.31 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "PLTA, PLTMH, hidro, bendungan"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 372.5, 333.5, 522.063, 369.5 ],
+        "row number" : 4,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 12,
+          "page number" : 4,
+          "bounding box" : [ 377.25, 338.372, 514.115, 363.31 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "hydropower, hydroelectric, pumped storage, mini-hydro"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 5,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 72.438, 296.5, 222.5, 333.5 ],
+        "row number" : 5,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 13,
+          "page number" : 4,
+          "bounding box" : [ 77.25, 314.473, 102.298, 326.762 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Wind"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 222.5, 296.5, 372.5, 333.5 ],
+        "row number" : 5,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 14,
+          "page number" : 4,
+          "bounding box" : [ 227.25, 301.824, 354.152, 326.762 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "PLTB, tenaga bayu, turbin angin"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 372.5, 296.5, 522.063, 333.5 ],
+        "row number" : 5,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 15,
+          "page number" : 4,
+          "bounding box" : [ 377.25, 301.824, 514.715, 326.762 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "wind power, wind farm, wind energy"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 6,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 72.438, 247.5, 222.5, 296.5 ],
+        "row number" : 6,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 16,
+          "page number" : 4,
+          "bounding box" : [ 77.25, 277.925, 126.751, 290.214 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Bioenergy"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 222.5, 247.5, 372.5, 296.5 ],
+        "row number" : 6,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 17,
+          "page number" : 4,
+          "bounding box" : [ 227.25, 252.627, 354.349, 290.214 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "biomassa, biogas, biofuel, biodiesel, bioetanol, SAF, bahan bakar nabati"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 372.5, 247.5, 522.063, 296.5 ],
+        "row number" : 6,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 18,
+          "page number" : 4,
+          "bounding box" : [ 377.25, 252.627, 513.307, 290.214 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "biomass, biogas, bioenergy, biodiesel, bioethanol, sustainable aviation fuel"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 7,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 72.438, 185.5, 222.5, 247.5 ],
+        "row number" : 7,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 19,
+          "page number" : 4,
+          "bounding box" : [ 77.25, 228.728, 167.868, 241.017 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Waste and circular"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 222.5, 185.5, 372.5, 247.5 ],
+        "row number" : 7,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 20,
+          "page number" : 4,
+          "bounding box" : [ 227.25, 190.781, 354.356, 241.017 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "waste-to-energy, PSEL, RDF, pengolahan sampah menjadi energi, ekonomi sirkular"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 372.5, 185.5, 522.063, 247.5 ],
+        "row number" : 7,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 21,
+          "page number" : 4,
+          "bounding box" : [ 377.25, 203.43, 509.824, 241.017 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "waste-to-energy, WtE, refuse-derived fuel, circular economy"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 8,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 72.438, 136.5, 222.5, 185.5 ],
+        "row number" : 8,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 22,
+          "page number" : 4,
+          "bounding box" : [ 77.25, 166.882, 124.916, 179.171 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Hydrogen"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 222.5, 136.5, 372.5, 185.5 ],
+        "row number" : 8,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 23,
+          "page number" : 4,
+          "bounding box" : [ 227.25, 141.584, 338.475, 179.171 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "hidrogen hijau, amonia hijau, hidrogen rendah karbon"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 372.5, 136.5, 522.063, 185.5 ],
+        "row number" : 8,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 24,
+          "page number" : 4,
+          "bounding box" : [ 377.25, 154.233, 505.575, 179.171 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "green hydrogen, clean hydrogen, green ammonia"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 9,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 72.438, 87.438, 222.5, 136.5 ],
+        "row number" : 9,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 25,
+          "page number" : 4,
+          "bounding box" : [ 77.25, 117.686, 150.561, 129.975 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Electric vehicle"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 222.5, 87.438, 372.5, 136.5 ],
+        "row number" : 9,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 26,
+          "page number" : 4,
+          "bounding box" : [ 227.25, 92.388, 362.882, 129.975 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "kendaraan listrik, ekosistem EV, SPKLU, SPBKLU, bus listrik"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 4,
+        "bounding box" : [ 372.5, 87.438, 522.063, 136.5 ],
+        "row number" : 9,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 27,
+          "page number" : 4,
+          "bounding box" : [ 377.25, 92.388, 516.555, 129.975 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "electric vehicle, EV ecosystem, charging station, battery swapping"
+        } ]
+      } ]
+    } ]
+  }, {
+    "type" : "table",
+    "pdfua_tag" : "Table",
+    "id" : 53,
+    "level" : "3",
+    "page number" : 5,
+    "bounding box" : [ 72.0, 349.0, 522.875, 770.0 ],
+    "number of rows" : 7,
+    "number of columns" : 3,
+    "previous table id" : 50,
+    "rows" : [ {
+      "type" : "table row",
+      "row number" : 1,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 72.438, 720.5, 222.5, 769.562 ],
+        "row number" : 1,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 1,
+          "page number" : 5,
+          "bounding box" : [ 77.25, 751.351, 112.077, 763.64 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Battery"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 222.5, 720.5, 372.5, 769.562 ],
+        "row number" : 1,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 2,
+          "page number" : 5,
+          "bounding box" : [ 227.25, 726.053, 351.908, 763.64 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "baterai kendaraan listrik, rantai pasok baterai, daur ulang baterai"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 372.5, 720.5, 522.063, 769.562 ],
+        "row number" : 1,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 3,
+          "page number" : 5,
+          "bounding box" : [ 377.25, 738.702, 496.805, 763.64 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "EV battery, battery value chain, battery recycling"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 2,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 72.438, 646.5, 222.5, 720.5 ],
+        "row number" : 2,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 4,
+          "page number" : 5,
+          "bounding box" : [ 77.25, 702.154, 149.954, 714.443 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Power network"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 222.5, 646.5, 372.5, 720.5 ],
+        "row number" : 2,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 5,
+          "page number" : 5,
+          "bounding box" : [ 227.25, 676.856, 365.32, 714.443 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "transmisi hijau, interkoneksi, smart grid, digitalisasi jaringan, grid fleksibel"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 372.5, 646.5, 522.063, 720.5 ],
+        "row number" : 2,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 6,
+          "page number" : 5,
+          "bounding box" : [ 377.25, 651.559, 476.243, 714.443 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "smart grid, grid modernization, transmission, interconnection, grid flexibility"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 3,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 72.438, 584.5, 222.5, 646.5 ],
+        "row number" : 3,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 7,
+          "page number" : 5,
+          "bounding box" : [ 77.25, 627.66, 197.02, 639.949 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Industry decarbonization"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 222.5, 584.5, 372.5, 646.5 ],
+        "row number" : 3,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 8,
+          "page number" : 5,
+          "bounding box" : [ 227.25, 589.713, 364.102, 639.949 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "efisiensi energi, elektrifikasi, semen rendah karbon, panas proses, baja ramah lingkungan"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 372.5, 584.5, 522.063, 646.5 ],
+        "row number" : 3,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 9,
+          "page number" : 5,
+          "bounding box" : [ 377.25, 589.713, 504.961, 639.949 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "industrial decarbonization, energy efficiency, electrification, low-carbon cement, green steel"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 4,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 72.438, 509.5, 222.5, 584.5 ],
+        "row number" : 4,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 10,
+          "page number" : 5,
+          "bounding box" : [ 77.25, 565.814, 147.517, 578.103 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Coal transition"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 222.5, 509.5, 372.5, 584.5 ],
+        "row number" : 4,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 11,
+          "page number" : 5,
+          "bounding box" : [ 227.25, 515.218, 342.525, 578.103 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "pensiun dini PLTU, penghentian PLTU, phase-down batu bara, repurposing PLTU, aset terlantar"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 372.5, 509.5, 522.063, 584.5 ],
+        "row number" : 4,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 12,
+          "page number" : 5,
+          "bounding box" : [ 377.25, 515.218, 484.192, 578.103 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "coal retirement, early retirement, coal phase-down, coal repurposing, stranded assets"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 5,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 72.438, 460.5, 222.5, 509.5 ],
+        "row number" : 5,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 13,
+          "page number" : 5,
+          "bounding box" : [ 77.25, 491.319, 113.306, 503.608 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Carbon"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 222.5, 460.5, 372.5, 509.5 ],
+        "row number" : 5,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 14,
+          "page number" : 5,
+          "bounding box" : [ 227.25, 466.021, 363.522, 503.608 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "perdagangan karbon, kredit karbon, pengurangan emisi, dekarbonisasi, net zero"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 372.5, 460.5, 522.063, 509.5 ],
+        "row number" : 5,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 15,
+          "page number" : 5,
+          "bounding box" : [ 377.25, 466.021, 510.436, 503.608 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "carbon market, carbon credit, emissions reduction, decarbonization, net zero"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 6,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 72.438, 398.5, 222.5, 460.5 ],
+        "row number" : 6,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 16,
+          "page number" : 5,
+          "bounding box" : [ 77.25, 442.123, 174.418, 454.412 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Mangrove, peatland"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 222.5, 398.5, 372.5, 460.5 ],
+        "row number" : 6,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 17,
+          "page number" : 5,
+          "bounding box" : [ 227.25, 404.176, 340.271, 454.412 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "rehabilitasi mangrove, restorasi gambut, reforestasi, konservasi, solusi berbasis alam"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 372.5, 398.5, 522.063, 460.5 ],
+        "row number" : 6,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 18,
+          "page number" : 5,
+          "bounding box" : [ 377.25, 404.176, 509.241, 454.412 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "mangrove restoration, peatland restoration, reforestation, nature-based solutions"
+        } ]
+      } ]
+    }, {
+      "type" : "table row",
+      "row number" : 7,
+      "cells" : [ {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 72.438, 349.438, 222.5, 398.5 ],
+        "row number" : 7,
+        "column number" : 1,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 19,
+          "page number" : 5,
+          "bounding box" : [ 77.25, 380.277, 134.875, 392.566 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "Wastewater"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 222.5, 349.438, 372.5, 398.5 ],
+        "row number" : 7,
+        "column number" : 2,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 20,
+          "page number" : 5,
+          "bounding box" : [ 227.25, 354.979, 361.703, 392.566 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "pengolahan air limbah, air bersih berkelanjutan, pengurangan kebocoran air"
+        } ]
+      }, {
+        "type" : "table cell",
+        "pdfua_tag" : "TD",
+        "page number" : 5,
+        "bounding box" : [ 372.5, 349.438, 522.063, 398.5 ],
+        "row number" : 7,
+        "column number" : 3,
+        "row span" : 1,
+        "column span" : 1,
+        "kids" : [ {
+          "type" : "paragraph",
+          "pdfua_tag" : "P",
+          "id" : 21,
+          "page number" : 5,
+          "bounding box" : [ 377.25, 354.979, 515.32, 392.566 ],
+          "font" : "ArialMT",
+          "font size" : 11.0,
+          "text color" : "[0.0, 0.0, 0.0]",
+          "content" : "wastewater treatment, water management, water efficiency"
+        } ]
+      } ]
+    } ]
+  } ]
+}
