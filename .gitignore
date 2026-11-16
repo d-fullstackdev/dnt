@@ -6,3 +6,5 @@ env/
 *_images/
 .DS_Store
 Thumbs.db
+node_modules/
+cache/

@@ -1,0 +1,14 @@
+{
+  "name": "danantara-puppeteer-engine",
+  "version": "1.0.0",
+  "description": "Puppeteer Stealth WAF & Cloudflare Bypass Engine for Celios 9 Danantara Monitor",
+  "main": "stealth_fetcher.js",
+  "scripts": {
+    "test": "node stealth_fetcher.js https://news.google.com"
+  },
+  "dependencies": {
+    "puppeteer": "^22.6.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
