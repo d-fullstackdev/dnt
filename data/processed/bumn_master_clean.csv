@@ -1,0 +1,197 @@
+entity_id,entity_name,alias_or_brand,entity_tier,parent_holding,sector,ceo,website,is_priority_for_green_screening
+BUMN-DNT-001,PT Perkebunan Nusantara III (Persero),Perkebunan Nusantara,HOLDING_PARENT,DANANTARA_BPI,"plantation, special economic zone",Denaldy Mulino Mauna,https://ptpn.id/,True
+BUMN-DNT-002,Perum Perhutani,Perhutani,HOLDING_PARENT,DANANTARA_BPI,sustainable forest management,Natalas Anis Harjanto,https://www.perhutani.co.id/,True
+BUMN-DNT-003,PT Mineral Industri Indonesia (Persero),MIND ID,HOLDING_PARENT,DANANTARA_BPI,mining,Maroef Sjamsoeddin,https://mind.id/,True
+BUMN-DNT-004,PT Semen Indonesia (Persero) Tbk,Semen Indonesia Group (SIG),HOLDING_PARENT,DANANTARA_BPI,cement maker,Indrieffouny Indra,https://www.sig.id/,True
+BUMN-DNT-005,PT Pertamina (Persero),Pertamina,HOLDING_PARENT,DANANTARA_BPI,energy,Simon Aloysius Mantiri,https://www.pertamina.com/en/,True
+BUMN-DNT-006,PT Pupuk Indonesia (Persero),Pupuk Indonesia,HOLDING_PARENT,DANANTARA_BPI,fertilizer producer,Rahmad Pribadi,https://www.pupuk-indonesia.com/,True
+BUMN-DNT-007,PT Aviasi Pariwisata Indonesia (Persero),Injourney,HOLDING_PARENT,DANANTARA_BPI,"aviation, tourism",Maya Watono,https://injourney.id/,True
+BUMN-DNT-008,PT Bio Farma (Persero),Bio Farma Group,HOLDING_PARENT,DANANTARA_BPI,vaccine manufacturer,Shadia Akasya,https://www.biofarma.co.id/id/holding-bumn-farmasi,True
+BUMN-DNT-009,PT Bahana Pembinaan Usaha Indonesia (Persero),Indonesia Financial Group (IFG),HOLDING_PARENT,DANANTARA_BPI,insurance,Hexana Tri Sasongko,https://www.ifg.id/,True
+BUMN-DNT-010,PT Bank Rakyat Indonesia (Persero) Tbk,BRI Ultra Micro Holding,HOLDING_PARENT,DANANTARA_BPI,micro banking,Hery Gunardi,https://bri.co.id/holding-ultra-mikro-bri,True
+BUMN-DNT-011,PT Len Industri (Persero),Defend ID,HOLDING_PARENT,DANANTARA_BPI,defence,Joga Dharma Setiawan,https://www.len.co.id/,True
+BUMN-DNT-012,Danareksa,Danareksa,HOLDING_PARENT,DANANTARA_BPI,,,,True
+BUMN-DNT-013,ID Food,ID Food,HOLDING_PARENT,DANANTARA_BPI,,,,True
+BUMN-DNT-014,ID Survey,ID Survey,HOLDING_PARENT,DANANTARA_BPI,,,,True
+BUMN-DNT-015,PT Industri Kereta Api (Persero),PT Industri Kereta Api (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,True
+BUMN-DNT-016,PT Perusahaan Listrik Negara (Persero),PT Perusahaan Listrik Negara (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,True
+BUMN-DNT-017,PT TASPEN (Persero),PT TASPEN (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-018,PT Perkebunan Nusantara I (Persero),PT Perkebunan Nusantara I (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,True
+BUMN-DNT-019,PT Perkebunan Nusantara IV (Persero),PT Perkebunan Nusantara IV (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,True
+BUMN-DNT-020,PT Hutama Karya (Persero),PT Hutama Karya (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,True
+BUMN-DNT-021,PT Pelabuhan Indonesia (Persero),PT Pelabuhan Indonesia (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-022,PT Kereta Api Indonesia (Persero),PT Kereta Api Indonesia (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,True
+BUMN-DNT-023,PT ASABRI (Persero),PT ASABRI (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-024,PT Rajawali Nusantara Indonesia (Persero),PT Rajawali Nusantara Indonesia (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-025,PT Reasuransi Indonesia Utama (Persero),PT Reasuransi Indonesia Utama (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-026,PT Pos Indonesia (Persero),PT Pos Indonesia (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-027,PT ASDP Indonesia Ferry (Persero),PT ASDP Indonesia Ferry (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-028,PT Pelayaran Nasional Indonesia (Persero),PT Pelayaran Nasional Indonesia (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-029,PT Brantas Abipraya (Persero),PT Brantas Abipraya (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-030,PT BPUI (Persero),PT BPUI (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-031,PT Danareksa (Persero),PT Danareksa (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-032,PT Biro Klasifikasi Indonesia (Persero),PT Biro Klasifikasi Indonesia (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-033,PT Agrinas Pangan Nusantara (Persero),PT Agrinas Pangan Nusantara (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-034,PT Agrinas Jaladri Nusantara (Persero),PT Agrinas Jaladri Nusantara (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-035,PT Agrinas Palma Nusantara (Persero),PT Agrinas Palma Nusantara (Persero),PERSERO_STANDALONE (PT (Persero)),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-036,PT Barata Indonesia (Persero),PT Barata Indonesia (Persero),PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-037,PT Dok dan Perkapalan Kodja Bahari (Persero),PT Dok dan Perkapalan Kodja Bahari (Persero),PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-038,PT Industri Telekomunikasi Indonesia (Persero),PT Industri Telekomunikasi Indonesia (Persero),PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-039,PT Djakarta Lloyd (Persero)*,PT Djakarta Lloyd (Persero)*,PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-040,PT Amarta Karya (Persero),PT Amarta Karya (Persero),PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,True
+BUMN-DNT-041,PT Industri Kapal Indonesia (Persero),PT Industri Kapal Indonesia (Persero),PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-042,PT Dok dan Perkapalan Surabaya (Persero),PT Dok dan Perkapalan Surabaya (Persero),PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-043,PT Primissima (Persero),PT Primissima (Persero),PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-044,PT PDI Pulau Batam (Persero),PT PDI Pulau Batam (Persero),PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-045,PT Semen Kupang (Persero),PT Semen Kupang (Persero),PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,True
+BUMN-DNT-046,PT Boma Bisma Indra (Persero),PT Boma Bisma Indra (Persero),PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-047,PT Produksi Film Negara (Persero),PT Produksi Film Negara (Persero),PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-048,PT Rekayasa Industri,PT Rekayasa Industri,PERSERO_STANDALONE (SKK and others),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-049,PT Bank Mandiri (Persero) Tbk,PT Bank Mandiri (Persero) Tbk,PERSERO_STANDALONE (PT (Persero) Tbk),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-050,PT Bank Negara Indonesia (Persero) Tbk,PT Bank Negara Indonesia (Persero) Tbk,PERSERO_STANDALONE (PT (Persero) Tbk),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-051,PT Bank Tabungan Negara (Persero) Tbk,PT Bank Tabungan Negara (Persero) Tbk,PERSERO_STANDALONE (PT (Persero) Tbk),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-052,PT Telekomunikasi Indonesia (Persero) Tbk,PT Telekomunikasi Indonesia (Persero) Tbk,PERSERO_STANDALONE (PT (Persero) Tbk),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-053,PT Jasa Marga (Persero) Tbk,PT Jasa Marga (Persero) Tbk,PERSERO_STANDALONE (PT (Persero) Tbk),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-054,PT Pembangunan Perumahan (Persero) Tbk,PT Pembangunan Perumahan (Persero) Tbk,PERSERO_STANDALONE (PT (Persero) Tbk),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-055,PT Krakatau Steel (Persero) Tbk,PT Krakatau Steel (Persero) Tbk,PERSERO_STANDALONE (PT (Persero) Tbk),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-056,PT Wijaya Karya (Persero) Tbk,PT Wijaya Karya (Persero) Tbk,PERSERO_STANDALONE (PT (Persero) Tbk),DANANTARA_BPI,State Utility / SOE Standalone,,,True
+BUMN-DNT-057,PT Adhi Karya (Persero) Tbk,PT Adhi Karya (Persero) Tbk,PERSERO_STANDALONE (PT (Persero) Tbk),DANANTARA_BPI,State Utility / SOE Standalone,,,True
+BUMN-DNT-058,PT Garuda Indonesia (Persero) Tbk,PT Garuda Indonesia (Persero) Tbk,PERSERO_STANDALONE (PT (Persero) Tbk),DANANTARA_BPI,State Utility / SOE Standalone,,,False
+BUMN-DNT-059,PT Waskita Karya (Persero) Tbk,PT Waskita Karya (Persero) Tbk,PERSERO_STANDALONE (PT (Persero) Tbk),DANANTARA_BPI,State Utility / SOE Standalone,,,True
+BUMN-DNT-060,PT Kawasan Industri Nusantara (KINRA),,SUBSIDIARY,Perkebunan Nusantara,"Special Economic Zone in Sei Mangkei, North Sumatra",Arif Budiman,https://seimangkeisez.com/id/tentang-kami/,False
+BUMN-DNT-061,Inacom,,SUBSIDIARY,Perkebunan Nusantara,,,,False
+BUMN-DNT-062,Riset Perkebunan Nusantara,,SUBSIDIARY,Perkebunan Nusantara,,,,False
+BUMN-DNT-063,Industri Nabati Lestari,,SUBSIDIARY,Perkebunan Nusantara,,,,False
+BUMN-DNT-064,PTPN 1,,SUBSIDIARY,Perkebunan Nusantara,,,,False
+BUMN-DNT-065,PTPN 4,,SUBSIDIARY,Perkebunan Nusantara,,,,False
+BUMN-DNT-066,LPP Agro Nusantara,,SUBSIDIARY,Perkebunan Nusantara,,,,False
+BUMN-DNT-067,PT Sri Pamela Medika Nusantara,,SUBSIDIARY,Perkebunan Nusantara,Hospitals in South Sumatra and across PTPN III-owned plantations,Syahriadi Siregar,https://www.spmedika.co.id/,False
+BUMN-DNT-068,Rubin,,SUBSIDIARY,Perkebunan Nusantara,,,,False
+BUMN-DNT-069,Bionusa,,SUBSIDIARY,Perkebunan Nusantara,,,,False
+BUMN-DNT-070,Sinergi Gula Nusantara,,SUBSIDIARY,Perkebunan Nusantara,,,,False
+BUMN-DNT-071,Inhutani 1,,SUBSIDIARY,Perhutani,,,,False
+BUMN-DNT-072,Inhutani V,,SUBSIDIARY,Perhutani,,,,False
+BUMN-DNT-073,Econique,,SUBSIDIARY,Perhutani,,,,False
+BUMN-DNT-074,PT ANTAM (Persero) Tbk,,SUBSIDIARY,MIND ID,,,,False
+BUMN-DNT-075,PT Bukit Asam (Persero) Tbk,,SUBSIDIARY,MIND ID,,,,False
+BUMN-DNT-076,PT Freeport Indonesia,,SUBSIDIARY,MIND ID,,,,False
+BUMN-DNT-077,PT Indonesia Asahan Aluminium,,SUBSIDIARY,MIND ID,,,,False
+BUMN-DNT-078,PT Timah (Persero) Tbk,,SUBSIDIARY,MIND ID,,,,False
+BUMN-DNT-079,PT Vale Indonesia Tbk,,SUBSIDIARY,MIND ID,,,,False
+BUMN-DNT-080,Semen Padang,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-081,Semen Gresik,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-082,Semen Tonasa,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-083,Thang Long Cement Joint Stock Company,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-084,Sinergi Mitra Investama,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-085,Semen Indonesia Beton,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-086,United Tractors Semen Gresik,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-087,Industri Kemasan Semen Gresik,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-088,Kawasan Industroi Gresik,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-089,Semen Kupang Indonesia,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-090,Semen Indonesia Industri Bangunan,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-091,Solusi Bangun Indonesia,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-092,Semen Indonesia Aceh,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-093,Semen Informatika Semen Indonesia,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-094,Semen Indonesia International,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-095,Semen Indonesia Logistik,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-096,Semen Baturaja,,SUBSIDIARY,Semen Indonesia Group (SIG),,,,False
+BUMN-DNT-097,PT Pertamina Hulu Energi (PHE),,SUBSIDIARY,Pertamina,Exploration and production of oil and natural gas,Awang Lazuardi,http://phe.pertamina.com,False
+BUMN-DNT-098,PT Pertamina Patra Niaga,,SUBSIDIARY,Pertamina,Distribution and marketing of energy products,Mars Ega Legowo Putra,http://www.pertaminapatraniaga.com/,False
+BUMN-DNT-099,PT Pertamina Power Indonesia,,SUBSIDIARY,Pertamina,Exploration and production of new and renewable energy sources,John Anis,www.pertaminanre.com,False
+BUMN-DNT-100,PT PGN Tbk,,SUBSIDIARY,Pertamina,"Natural gas transmission, trading, procurement, and marketing",,www.pgn.co.id,False
+BUMN-DNT-101,PT Kilang Pertamina Internasional,,SUBSIDIARY,Pertamina,Processing of petroleum into petroleum products and petrochemicals,,,False
+BUMN-DNT-102,PT Pertamina International Shipping,,SUBSIDIARY,Pertamina,Marine transportation services,,https://pertamina-pis.com/,False
+BUMN-DNT-103,"PT Pupuk Kalimantan Timur (Pupuk Kaltim, PKT)",,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-104,PT Petrokimia Gresik,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-105,PT Pupuk Sriwidjaja Palembang,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-106,PT Pupuk Kujang,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-107,PT Pupuk Iskandar Muda,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-108,PT Rekayasa Industri Rekind,,SUBSIDIARY,Pupuk Indonesia,EPC service provider owns PLTU in Mamuju,,,False
+BUMN-DNT-109,PT Pupuk Indonesia Niaga,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-110,PT Pupuk Indonesia Logistik,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-111,PT Pupuk Indonesia Pangan,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-112,Petrosida Gresik,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-113,Petrokimia Kayaku,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-114,Petro Jordan Abadi,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-115,Pupuk Indonesia Utilitas,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-116,KDM,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-117,Kalianusa,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-118,Tracon Industri,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-119,Rekayasa Engineering,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-120,Sigmautama Paint,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-121,PNK Energi,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-122,Multi Nitrotama Kimia,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-123,Kaltim Amonium Nitrat,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-124,Sintas 90,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-125,Clariant,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-126,Rekind Daya Mamuju,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-127,Katalis Sinergi Indonesia,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-128,Kopindo Cipta Sejahtera,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-129,Kawasan Industri Gresik,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-130,Kawasan Industri Kujang Cikampek,,SUBSIDIARY,Pupuk Indonesia,,,,False
+BUMN-DNT-131,Injourney Airports,,SUBSIDIARY,Injourney,,,,False
+BUMN-DNT-132,Injourney Aviation Services,,SUBSIDIARY,Injourney,,,,False
+BUMN-DNT-133,Injourney Hospotality,,SUBSIDIARY,Injourney,,,,False
+BUMN-DNT-134,Injourney Retail,,SUBSIDIARY,Injourney,,,,False
+BUMN-DNT-135,Injourney Destination Management,,SUBSIDIARY,Injourney,,,,False
+BUMN-DNT-136,Injourney Tourism Development,,SUBSIDIARY,Injourney,,,,False
+BUMN-DNT-137,Bio Farma,,SUBSIDIARY,Bio Farma Group,,,,False
+BUMN-DNT-138,Kimia Farma,,SUBSIDIARY,Bio Farma Group,,,,False
+BUMN-DNT-139,Indofarma,,SUBSIDIARY,Bio Farma Group,,,,False
+BUMN-DNT-140,Inuki,,SUBSIDIARY,Bio Farma Group,,,,False
+BUMN-DNT-141,PT Asuransi Kerugian Jasa Raharja (Jasa Raharja),,SUBSIDIARY,Indonesia Financial Group (IFG),,,,False
+BUMN-DNT-142,PT Asuransi Jasa Indonesia (Jasindo),,SUBSIDIARY,Indonesia Financial Group (IFG),,,,False
+BUMN-DNT-143,PT Jaminan Kredit Indonesia (Jamkrindo),,SUBSIDIARY,Indonesia Financial Group (IFG),,,,False
+BUMN-DNT-144,Jamkrindo Syariah,,SUBSIDIARY,Indonesia Financial Group (IFG),,,,False
+BUMN-DNT-145,Askrindo Insurance,,SUBSIDIARY,Indonesia Financial Group (IFG),,,,False
+BUMN-DNT-146,PT Asuransi Jiwa IFG (IFG Life),,SUBSIDIARY,Indonesia Financial Group (IFG),,,,False
+BUMN-DNT-147,PT Bahana TCW Investment Management,,SUBSIDIARY,Indonesia Financial Group (IFG),,,,False
+BUMN-DNT-148,PT Bahana Sekuritas,,SUBSIDIARY,Indonesia Financial Group (IFG),,,,False
+BUMN-DNT-149,PT Bahana Artha Ventura,,SUBSIDIARY,Indonesia Financial Group (IFG),,,,False
+BUMN-DNT-150,PT Bahana Kapital Investa,,SUBSIDIARY,Indonesia Financial Group (IFG),,,,False
+BUMN-DNT-151,PT Grahaniaga Tatautama,,SUBSIDIARY,Indonesia Financial Group (IFG),,,,False
+BUMN-DNT-152,Pegadaian,,SUBSIDIARY,BRI Ultra Micro Holding,,,,False
+BUMN-DNT-153,Permodalan Nasional Madani (PNM),,SUBSIDIARY,BRI Ultra Micro Holding,,,,False
+BUMN-DNT-154,LEN Industri,,SUBSIDIARY,Defend ID,,,,False
+BUMN-DNT-155,Dahana,,SUBSIDIARY,Defend ID,,,,False
+BUMN-DNT-156,Pindad,,SUBSIDIARY,Defend ID,,,,False
+BUMN-DNT-157,Dirgantara Indonesia,,SUBSIDIARY,Defend ID,,,,False
+BUMN-DNT-158,PAL Indonesia,,SUBSIDIARY,Defend ID,,,,False
+BUMN-DNT-159,Kawasan Berikat Nusantara,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-160,Kawasan Industrial Medan,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-161,Kawasan Industrial Makassar,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-162,Surabaya Industrial Estate Rungkut,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-163,Kawasan Industri Wijayakusuma,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-164,Nindya Karya,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-165,Perusahaan Pengelola Aset,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-166,Danareksa Finance,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-167,Danareksa Capital,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-168,Balai Pustaka,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-169,Kliring Berjangka Indonesia,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-170,Jalin Pembayaran Nusantara,,SUBSIDIARY,Danareksa,,,,False
+BUMN-DNT-171,Pabrik Gula Rajawali I,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-172,Pabrik Gula Rajawali II,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-173,Pabrik Gula Candi Baru,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-174,Sang Hyang Seri,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-175,Perikanan Indonesia,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-176,Berdikari,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-177,Perusahaan Perdagangan Indonesia,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-178,GIEB Indonesia,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-179,Rajawali Nusindo,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-180,Mitra Ogan,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-181,Mitra Kerincia,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-182,Laras Astrika Kartika,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-183,Rajawali Citramas,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-184,Rajawali Tanjungsari Enjiniring,,SUBSIDIARY,ID Food,,,,False
+BUMN-DNT-185,Biro Klasifikasi Indonesia,,SUBSIDIARY,ID Survey,,,,False
+BUMN-DNT-186,Sucofindo,,SUBSIDIARY,ID Survey,,,,False
+BUMN-DNT-187,Surveyor Indonesia,,SUBSIDIARY,ID Survey,,,,False
+BUMN-DNT-188,PT Danantara Investment Management,,DANANTARA_SPV,DANANTARA_BPI,Investment Management & Energy Transition Vehicle,,,True
+BUMN-DNT-189,PT Danantara Mitra Sinergi,,DANANTARA_SPV,DANANTARA_BPI,Investment Management & Energy Transition Vehicle,,,True
+BUMN-DNT-190,PT Danantara Mitra Finansia,,DANANTARA_SPV,DANANTARA_BPI,Investment Management & Energy Transition Vehicle,,,True
+BUMN-DNT-191,PT Danantara Development Management Fund,,DANANTARA_SPV,DANANTARA_BPI,Investment Management & Energy Transition Vehicle,,,True
+BUMN-DNT-192,PT Danantara Asset Management,,DANANTARA_SPV,DANANTARA_BPI,Investment Management & Energy Transition Vehicle,,,True
+BUMN-DNT-193,PT Danantara Transisi Energi,,DANANTARA_SPV,DANANTARA_BPI,Investment Management & Energy Transition Vehicle,,,True
+BUMN-DNT-194,PT Danantara Mitra Kapital,,DANANTARA_SPV,DANANTARA_BPI,Investment Management & Energy Transition Vehicle,,,True
+BUMN-DNT-195,PT Danantara Kelolaan Investasi,,DANANTARA_SPV,DANANTARA_BPI,Investment Management & Energy Transition Vehicle,,,True
+BUMN-DNT-196,PT Daya Energi Bersih Nusantara (PT Denera),,DANANTARA_SPV,DANANTARA_BPI,Investment Management & Energy Transition Vehicle,,,True
