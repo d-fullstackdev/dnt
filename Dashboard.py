@@ -73,7 +73,7 @@ decoded_urls_count = len(url_map)
 df_manifest["year"] = pd.to_datetime(df_manifest["published_at"], errors="coerce").dt.year.fillna(2025).astype(int)
 
 # ─── HEADER ───────────────────────────────────────────────────────────────────
-st.markdown('<div class="org-badge">CELIOS — Center of Economic and Law Studies</div>', unsafe_allow_html=True)
+st.markdown('<div class="org-badge">CELIOS — CENTER OF ECONOMIC AND LAW STUDIES</div>', unsafe_allow_html=True)
 st.markdown('<div class="main-title">Daya Anagata Nusantara (Danantara)</div>', unsafe_allow_html=True)
 st.markdown(f'<div class="sub-title">Sovereign Wealth Fund Monitor & Green Investment List — {total_manifest:,} Dokumen Bukti Terverifikasi</div>', unsafe_allow_html=True)
 

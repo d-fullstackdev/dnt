@@ -43,7 +43,7 @@ success_downloads = len(df_log[df_log["status"] == "SUCCESS"]) if not df_log.emp
 failed_downloads = len(df_log[df_log["status"] == "FAILED"]) if not df_log.empty else 0
 total_excluded = len(df_excluded)
 
-st.markdown('<div class="org-badge">CELIOS — Center of Economic and Law Studies</div>', unsafe_allow_html=True)
+st.markdown('<div class="org-badge">CELIOS — CENTER OF ECONOMIC AND LAW STUDIES</div>', unsafe_allow_html=True)
 st.markdown('<div class="main-title">Bukti Forensik & HTML Fisik</div>', unsafe_allow_html=True)
 st.markdown(f'<div class="sub-title">Penyimpanan File Mentah HTML di Disk Lokal dan Verifikasi Batasan Waktu — {total_manifest:,} Target Bukti</div>', unsafe_allow_html=True)
 

@@ -24,7 +24,7 @@ st.set_page_config(
 render_sidebar()
 st.markdown(get_danantara_css(), unsafe_allow_html=True)
 
-st.markdown('<div class="org-badge">CELIOS — Center of Economic and Law Studies</div>', unsafe_allow_html=True)
+st.markdown('<div class="org-badge">CELIOS — CENTER OF ECONOMIC AND LAW STUDIES</div>', unsafe_allow_html=True)
 st.markdown('<div class="main-title">Dokumentasi Metodologi & Riset CELIOS</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-title">Rujukan Resmi Metodologi Penelitian, Standar 3-Gate Taxonomy, dan Batasan Rentang Waktu</div>', unsafe_allow_html=True)
 

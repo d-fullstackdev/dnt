@@ -87,7 +87,9 @@ with st.expander("Metodologi Ekstraksi: Standar 13 Atribut Proyek Sesuai Brief R
 st.markdown(f"""
 <div class="note-box">
 <strong>Status Pengerjaan: Menunggu Eksekusi ETL (Phase 2)</strong><br>
-Sebanyak <strong>{total_html_files:,} berkas HTML mentah</strong> di <code>data/raw/evidence_dorking/html/</code> telah siap di disk lokal. Script ETL (ekstraksi Markdown bersih + Information Extraction) akan memproses seluruh berkas teks untuk mengekstrak dan mempopulasikan 13 atribut di bawah ini ke dalam database inventaris.
+Sebanyak <strong>{total_html_files:,} berkas HTML mentah</strong> di <code>data/raw/evidence_dorking/html/</code> telah siap di disk lokal. Script ETL (ekstraksi Markdown bersih + Information Extraction) akan memproses seluruh berkas teks untuk mengekstrak dan mempopulasikan 13 atribut di bawah ini ke dalam database inventaris.<br><br>
+<strong>Paradigma Multi-Sumber Riset CELIOS (Adopsi Celios 2 D3TLH):</strong><br>
+Untuk memenuhi standar 13 atribut secara ilmiah, ekstrasi proyek mengkombinasikan data media dengan laporan tahunan, laporan keberlanjutan, dan secara khusus <strong>laporan investigasi masyarakat sipil (WALHI, JATAM, KPA, Trend Asia, AMAN)</strong> guna mengisi <strong>Atribut 12 (Environment and Social Risks)</strong> yang tidak diungkapkan oleh rilis korporasi.
 </div>
 """, unsafe_allow_html=True)
 
