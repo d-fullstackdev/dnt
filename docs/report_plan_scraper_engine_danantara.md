@@ -160,11 +160,112 @@ C:\Users\yooma\OneDrive\Desktop\duniahub\client\28. Celios9-danantara\
 
 ---
 
-## 6. Kepatuhan Mutlak terhadap `.agents/rules`
+## 7. Paradigma Baru Riset Investigatif Multi-Sumber (Adopsi Metodologi Celios 2 D3TLH)
 
-1. **Zero Hardcoded Data (`no_hardcoded_data.md`):** Tidak ada angka kapasitas atau status proyek yang dimasukkan langsung ke kode Python. Semua mengalir dari berkas terstruktur fisik di `data/`.
-2. **Strict Data Boundary (`strict_data_folder_boundary.md`):** Seluruh data hasil temuan dorking wajib disimpan bukti unduhannya di `data/raw/` sebelum dapat diolah.
-3. **Anti-Yes-Man & No Reinventing The Wheel (`anti_yesman_spatial_methodology_integrity.md`):** Menggunakan library standar industri (`datasketch`, `trafilatura`, `crawl4ai`, `pydantic`) dan menolak manipulasi rumus manual ad-hoc.
+Berdasarkan evaluasi komparatif mendalam terhadap proyek riset **Celios 2 D3TLH (Daya Dukung Daya Tampung Lingkungan Hidup)** di `C:\Users\yooma\OneDrive\Desktop\duniahub\client\4. Celios2`, dibangun kesadaran metodologis kritis bahwa **data publikasi berita media saja TIDAK AKAN PERNAH CUKUP** untuk menghasilkan **13 data bersih (*clean project attributes*)** yang diminta secara kredibel dalam brief riset CELIOS.
+
+### A. Keterbatasan Fatal Paradigma Berita Tunggal
+1. **Ketidaklengkapan Metrik Finansial & Teknis (Atribut 7 & 8):** Berita media online harian umumnya hanya mengutip estimasi awal humas ("berpotensi Rp 10 triliun" atau "tahap studi"). Angka pasti kapasitas teknis terpasang (*Capacity*) dan realisasi belanja modal (*Capex*) jarang terverifikasi di berita.
+2. **Kekaburan Sumber Pendanaan (Atribut 9):** Berita seringkali hanya menyebutkan klaim umum "gandeng mitra asing/swasta" tanpa merinci skema pinjaman (*concessional loan*, sindikasi bank, ekuitas BUMN, atau hibah iklim).
+3. **Blindspot Fatal pada Risiko Lingkungan & Sosial (Atribut 12):**  
+   Siaran pers korporasi BUMN **hampir pasti tidak pernah mempublikasikan risiko lingkungan, tumpang tindih kawasan adat, atau pencemaran mereka sendiri**. BUMN hanya akan merilis narasi PR bernada positif (*greenwashing*).  
+   Padahal, bagi CELIOS sebagai institusi riset kritis, **Atribut No. 12 (`Environment and social risks`) adalah instrumen penguji paling vital** untuk menentukan apakah suatu proyek lolos atau gugur pada tahap *Gate 1 (Negative Filter)* dan komitmen hak asasi/masyarakat adat.
+
+---
+
+### B. Arsitektur 4 Lapisan Data (Triangulasi Multi-Sumber ala D3TLH)
+
+Untuk memastikan ke-13 atribut proyek terisi dengan standar ilmiah yang kokoh, arsitektur data Celios 9 memperluas jangkauan penambangan data ke dalam **4 Lapisan Data Terpadu**:
+
+```
+[LAPISAN 1: MEDIA & ANNOUNCEMENTS] ──> 1.754 Artikel Berita Terkurasi (BUMN 2020+ & Danantara 2025+)
+                  │
+[LAPISAN 2: CORPORATE DISCLOSURES] ──> Annual Reports, Sustainability Reports (196 BUMN), BEI/IDX, Green Bonds
+                  │
+[LAPISAN 3: TRANSITION & POLICY]   ──> RUPTL PLN 2021-2030, CIPP JETP, Ditjen EBTKE ESDM, TKBI v3
+                  │
+[LAPISAN 4: CIVIL SOCIETY / WATCHDOG] ──> Laporan Investigasi WALHI, JATAM, KPA, Trend Asia, Auriga, AMAN
+                  │
+                  ▼
+   [PROSES RESOLUSI ENTITAS & DEDUPLIKASI]
+   Memetakan ribuan dokumen ke dalam 250 - 500 Proyek Hijau Unik Konkret (13 Atribut Bersih)
+                  │
+                  ▼
+   [SCREENING 3-GATE SESUAI GRAPHIC 1]
+   1. Negative Filter | 2. TKBI v3 & ASEAN v4 | 3. Norfund Additionality
+                  │
+                  ▼
+   [FINAL DELIVERABLE: GREEN INVESTMENT LIST CELIOS]
+```
+
+#### 1. Lapisan 1: Pemantauan Berita & Regulasi Resmi (*Media & Regulatory Watch*)
+* **Cakupan:** 1.754 artikel berita yang telah dihimpun pada Langkah 1 s.d. 3 (Danantara $\ge 2025$ dan Proyek Hijau BUMN $\ge 2020$).
+* **Peran:** Sebagai sinyal penemuan awal (*initial discovery*), pencatat kronologi pengumuman publik (*timeline tracker*), dan dokumen legalitas formal (Keppres, PP, Perpres melalui JDIH Setneg & BPK).
+
+#### 2. Lapisan 2: Keterbukaan Resmi Korporasi BUMN (*Corporate Disclosures*)
+* **Subjek:** Mengacu pada **196 Entitas BUMN** di [**`ref/brief - MASTER LIST BUMN UNDER DANANTARA.xlsx`**](file:///C:/Users/yooma/OneDrive/Desktop/duniahub/client/28. Celios9-danantara/ref/brief%20-%20MASTER%20LIST%20BUMN%20UNDER%20DANANTARA.xlsx) (14 Holding, 128 Anak Usaha, 54 BUMN Persero, 16 Entitas SPV).
+* **Sumber Data:**
+  * Laporan Tahunan (*Annual Report*) & Laporan Keberlanjutan (*Sustainability Report*) periode 2020–2024 dari BUMN champion (PLN, Pertamina, MIND ID/Antam/Inalum/PTBA, Semen Indonesia, Pupuk Indonesia, PTPN III, Hutama Karya, Perhutani). Estimasi: **~110 berkas laporan resmi PDF**.
+  * Laporan Keuangan Audit & Keterbukaan Informasi Bursa Efek Indonesia (IDX) untuk BUMN Tbk.
+  * Dokumen *Green Bond Framework* dan Prospektus Surat Utang Berkelanjutan BUMN.
+* **Peran Khusus:** Mengunci kepastian **Kapasitas Riil (MW/ton)**, **Realisasi Capex (USD/IDR)**, **Status Keputusan Investasi Akhir (FID/COD)**, dan **Nama Anak Perusahaan/SPV Pelaksana**.
+
+#### 3. Lapisan 3: Perencanaan Kebijakan & Transisi Energi Sektoral (*Policy & Transition Pipeline*)
+* **Sumber Data:**
+  * **RUPTL PLN 2021–2030 / 2024–2033:** Memuat daftar ribuan MW proyek pembangkit EBT spesifik per lokasi, jenis teknologi, dan jadwal COD.
+  * **Comprehensive Investment and Policy Plan (CIPP JETP):** Rencana alokasi pendanaan iklim USD 20 miliar untuk pensiun dini PLTU dan akselerasi EBT.
+  * Basis data Ditjen EBTKE dan Minerba One Data Indonesia (MODI) Kementerian ESDM.
+  * Dokumen Taksonomi Keuangan Berkelanjutan Indonesia (TKBI Versi 3) dan ASEAN Taxonomy for Sustainable Finance (Versi 4).
+* **Peran Khusus:** Mengisi kolom **Sumber Pendanaan (*Funding Source*)** secara akurat (konsorsium JETP, ADB, KfW, Bank Himbara, dll.) serta menjadi dasar teknis pengujian Taksonomi Hijau.
+
+#### 4. Lapisan 4: Pemantauan Independen Masyarakat Sipil (*Civil Society & Watchdog Reports*)
+* **Sumber Data:**
+  * Basis data konflik agraria Konsorsium Pembaruan Agraria (**KPA**).
+  * Laporan investigasi lingkungan hidup dan AMDAL **WALHI** nasional dan daerah.
+  * Laporan pemantauan tambang dan hilirisasi nikel/mineral **JATAM**.
+  * Riset transisi energi, biomassa co-firing, dan rantai pasok batubara **Trend Asia**.
+  * Peta tutupan hutan dan deforestasi **Auriga Nusantara**.
+  * Peta wilayah adat dan konflik hak ulayat **AMAN (Aliansi Masyarakat Adat Nusantara)**.
+  * Analisis hukum lingkungan **ICEL (Indonesian Center for Environmental Law)**.
+* **Peran Khusus (Atribut 12):** Mengisi secara objektif, independen, dan kritis **Atribut No. 12 (`Environment and social risks`)**:
+  * Mengidentifikasi proyek yang memicu deforestasi hutan alam (contoh: perkebunan energi untuk biomassa).
+  * Mendokumentasikan resistensi masyarakat adat / lokal (contoh: PLTP Ulumbu/Patuha, PLTA Batang Toru).
+  * Mencatat pelanggaran pembuangan limbah tailing smelter dan polusi udara PLTU penunjang (*captive power plant*).
+
+---
+
+### C. Estimasi Skala Data: Dari Ribuan Dokumen ke Ratusan Proyek Bersih
+
+Dengan menerapkan metodologi resolusi entitas (*Entity Resolution & Deduplication*):
+1. **Total Korpus Dokumen Mentah:**
+   * ~1.754 Berita & Regulasi Resmi (sudah tersimpan di disk lokal).
+   * ~110 Dokumen Laporan Tahunan & Keberlanjutan BUMN (PDF).
+   * ~80–120 Laporan Advokasi & Riset Independen CSO/LSM.
+   * **Total Korpus Bukti:** **~2.000 berkas fisik tersimpan**.
+2. **Hasil Rekonsiliasi Proyek Unik (Unit Analisis):**
+   * Karena satu proyek konkret (misal: *PLTS Terapung Cirata 145 MWac*) diberitakan oleh puluhan media dan dicatat di laporan tahunan PLN serta JETP, data dikonsolidasikan menjadi satu entitas proyek tunggal.
+   * Diproyeksikan menghasilkan inventaris terpadu **250 hingga 500 Proyek Hijau Konkret Unik** lintas 196 entitas BUMN di bawah Danantara.
+3. **Titik Data Bersih (Data Points):**
+   * 350 proyek unik $\times$ 13 atribut kolom = **~4.550 titik data bersih terverifikasi**, masing-masing memiliki sitasi bukti fisik (*zero hardcoded data*).
+
+---
+
+### D. Keselarasan Penuh dengan Graphic 1 Workflow
+
+Paradigma baru ini menjadi mesin penggerak utama bagi **Graphic 1 Workflow** di brief riset:
+* **Langkah 1 (Create Inventory):** Menggabungkan 4 lapisan data menjadi basis data `green_projects_inventory.csv` (13 kolom).
+* **Langkah 2 (Sort into Six Sectors):** Memetakan proyek ke 6 sektor (Energy, Agriculture, Downstream industries, Housing, Infrastructure, Manufacturing).
+* **Langkah 3 (Screening 3-Gate):** Memanfaatkan catatan Atribut 12 (Laporan LSM) untuk mengeksekusi *Gate 1 Negative Filter* (eksklusi batu bara/green coal/nuklir/deforestasi), *Gate 2 TKBI v3 / ASEAN v4*, dan *Gate 3 Norfund Additionality*.
+* **Langkah 4 (Compare Danantara Portfolio):** Menguji keselarasan dengan mandat investasi Danantara $\ge 2025$.
+* **Langkah 5 (Build Green Investment List):** Menyajikan daftar final proyek hijau kredibel yang direkomendasikan untuk portofolio Danantara.
+
+---
+
+## 8. Kepatuhan Mutlak terhadap `.agents/rules`
+
+1. **Zero Hardcoded Data (`no_hardcoded_data.md`):** Tidak ada angka kapasitas, nilai capex, atau status risiko yang dimasukkan langsung ke kode Python. Semua mengalir dari berkas terstruktur fisik di `data/`.
+2. **Strict Data Boundary (`strict_data_folder_boundary.md`):** Seluruh data hasil temuan dorking, laporan BUMN, dan laporan LSM wajib disimpan bukti unduhannya di `data/raw/` sebelum dapat diolah.
+3. **Anti-Yes-Man & No Reinventing The Wheel (`anti_yesman_spatial_methodology_integrity.md`):** Menggunakan library standar industri (`datasketch`, `trafilatura`, `crawl4ai`, `pydantic`) dan metodologi triangulasi bukti independen.
 4. **Keselamatan File & Auto-Commit (`never_use_destructive_commands.md`):** Setiap penambahan dan pembaruan kode langsung di-commit ke repositori Git lokal proyek sebagai titik *checkpoint*.
 
 ---
