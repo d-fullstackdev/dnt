@@ -44,14 +44,14 @@ def render_sidebar():
         st.markdown('<div class="sidebar-label">Ringkasan Utama</div>', unsafe_allow_html=True)
         st.page_link("Dashboard.py", label="Overview & Eksekutif")
 
-        st.markdown('<div class="sidebar-label">Pipeline Riset (Graphic 1)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sidebar-label">Database Pipeline</div>', unsafe_allow_html=True)
         st.page_link("pages/1_Scraped_Metadata.py", label="Hasil Scrape & Metadata Bukti")
         st.page_link("pages/2_Project_Inventory_ETL.py", label="ETL & Ekstraksi 13 Atribut")
         st.page_link("pages/3_Green_Investment_Screening.py", label="Skrining & Green List")
 
         st.markdown('<div class="sidebar-label">Entitas & Dokumentasi</div>', unsafe_allow_html=True)
         st.page_link("pages/4_BUMN_Universe.py", label="Silsilah 196 Entitas BUMN")
-        st.page_link("pages/5_Forensic_Evidence.py", label="Bukti Fisik & Unduhan HTML")
+        # st.page_link("pages/5_Forensic_Evidence.py", label="Bukti Fisik & Unduhan HTML")  # Hidden per request
         st.page_link("pages/6_Metodologi_Brief.py", label="Dokumentasi Metodologi")
 
         st.markdown("---")
