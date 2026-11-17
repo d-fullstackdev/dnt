@@ -12,7 +12,9 @@ import os
 import openpyxl
 import pandas as pd
 
-RAW_EXCEL_PATH = os.path.join("ref", "MASTER LIST BUMN UNDER DANANTARA.xlsx")
+RAW_EXCEL_PATH = os.path.join("ref", "brief - MASTER LIST BUMN UNDER DANANTARA.xlsx")
+if not os.path.exists(RAW_EXCEL_PATH):
+    RAW_EXCEL_PATH = os.path.join("ref", "MASTER LIST BUMN UNDER DANANTARA.xlsx")
 PROCESSED_DIR = os.path.join("data", "processed")
 
 def clean_and_consolidate():
@@ -137,8 +139,8 @@ def clean_and_consolidate():
                 'company_name': c_name_str,
                 'address': addr_str,
                 'phone': phone_str,
-                'category': 'DANANTARA_INTERNAL_SPV',
-                'verification_status': 'VERIFIED_OFFICIAL_ADDRESS'
+                'category': 'DANANTARA_INDICATED_SPV',
+                'verification_status': 'TERINDIKASI_ALAMAT_WISMA_DANANTARA (Menunggu Validasi AHU Kemenkumham)'
             })
         else:
             unrelated_private.append({
@@ -155,13 +157,13 @@ def clean_and_consolidate():
             'company_name': d['entity_name'],
             'address': 'Wisma Danantara Indonesia, Jalan Jendral Gatot Subroto Kav. 36-38 Jakarta Selatan',
             'phone': '',
-            'category': 'DANANTARA_INTERNAL_SPV',
-            'verification_status': f"DIM_SUBSIDIARY ({d['notes']})"
+            'category': 'DANANTARA_INDICATED_SPV',
+            'verification_status': f"DIM_HOLDING_SUBSIDIARY ({d['notes']} - Menunggu Validasi AHU)"
         })
 
     df_spv = pd.DataFrame(danantara_spvs)
     df_spv.to_csv(os.path.join(PROCESSED_DIR, "danantara_spv_clean.csv"), index=False, encoding='utf-8')
-    print(f"✓ Saved {len(df_spv)} Danantara Internal SPVs to data/processed/danantara_spv_clean.csv")
+    print(f"✓ Saved {len(df_spv)} Danantara Indicated SPVs to data/processed/danantara_spv_clean.csv")
 
     df_unrelated = pd.DataFrame(unrelated_private)
     df_unrelated.to_csv(os.path.join(PROCESSED_DIR, "danantara_unrelated_companies_excluded.csv"), index=False, encoding='utf-8')
@@ -172,17 +174,52 @@ def clean_and_consolidate():
     # -------------------------------------------------------------
     master_records = []
     
+    # Official 7 Piloting BUMN Champions under Danantara Stage 1 (plus INA)
+    PILOT_CHAMPIONS_KEYWORDS = [
+        'mandiri', 'rakyat indonesia', 'bri', 'negara indonesia', 'bni',
+        'perusahaan listrik negara', 'pln', 'pertamina', 'telkom', 'telekomunikasi indonesia',
+        'mineral industri indonesia', 'mind id'
+    ]
+    
+    # 6 Core Sectors from Celios Green Investment Methodology
+    # (Energy, Agriculture/Forestry, Downstream/Mining, Infrastructure/Transport, Manufacturing, Housing)
+    GREEN_SECTOR_KEYWORDS = [
+        # Energy
+        'listrik', 'pln', 'pertamina', 'energi', 'geothermal', 'gas', 'power',
+        # Agriculture, Forestry & Food
+        'perkebunan', 'ptpn', 'perhutani', 'pupuk', 'sang hyang seri', 'pangan', 'nabati',
+        # Downstream & Mining
+        'mineral', 'mind id', 'antam', 'timah', 'bukit asam', 'inalum', 'krakatau steel', 'semen',
+        # Infrastructure, Transport & Logistics
+        'pelindo', 'pelabuhan', 'jasa marga', 'angkasa pura', 'kereta', 'kai', 'karya', 'adhi',
+        'waskita', 'wijaya karya', 'pp (persero)', 'hutama', 'asdp', 'damri', 'brantas',
+        # Manufacturing & Heavy Industry
+        'barata', 'boma bisma indra', 'inka', 'len', 'pindad', 'pal', 'dahana', 'rekayasa industri',
+        # Housing & Urban
+        'perumnas'
+    ]
+
+    def check_is_pilot(name: str) -> bool:
+        n_low = name.lower()
+        return any(k in n_low for k in PILOT_CHAMPIONS_KEYWORDS)
+
+    def check_is_green_priority(name: str, sector: str = '') -> bool:
+        combined = f"{name} {sector}".lower()
+        return any(k in combined for k in GREEN_SECTOR_KEYWORDS)
+    
     # Add Holdings
     for _, row in df_holdings.iterrows():
+        entity_name = row['official_leading_entity'] if row['official_leading_entity'] else row['holding_name']
         master_records.append({
-            'entity_name': row['official_leading_entity'] if row['official_leading_entity'] else row['holding_name'],
+            'entity_name': entity_name,
             'alias_or_brand': row['holding_name'],
             'entity_tier': 'HOLDING_PARENT',
             'parent_holding': 'DANANTARA_BPI',
             'sector': row['sector'],
             'ceo': row['ceo'],
             'website': row['website'],
-            'is_priority_for_green_screening': True
+            'is_priority_for_green_screening': check_is_green_priority(entity_name, str(row['sector'])),
+            'is_danantara_stage1_pilot': check_is_pilot(entity_name)
         })
         
     # Add Persero entities from Legal Form (prevent duplicate if already in holdings)
@@ -190,8 +227,8 @@ def clean_and_consolidate():
     for _, row in df_legal.iterrows():
         name = row['entity_name']
         if name.lower() not in existing_names:
-            # Check if name is high-priority green/infrastructure
-            is_priority = any(k in name.lower() for k in ['listrik', 'pertamina', 'pupuk', 'semen', 'mineral', 'karya', 'perkebunan', 'kereta'])
+            is_priority = check_is_green_priority(name)
+            is_pilot = check_is_pilot(name)
             master_records.append({
                 'entity_name': name,
                 'alias_or_brand': name,
@@ -200,7 +237,8 @@ def clean_and_consolidate():
                 'sector': 'State Utility / SOE Standalone',
                 'ceo': '',
                 'website': '',
-                'is_priority_for_green_screening': is_priority
+                'is_priority_for_green_screening': is_priority,
+                'is_danantara_stage1_pilot': is_pilot
             })
             existing_names.add(name.lower())
 
@@ -208,6 +246,7 @@ def clean_and_consolidate():
     for _, row in df_subs.iterrows():
         name = row['subsidiary_name']
         if name.lower() not in existing_names:
+            is_sub_priority = check_is_green_priority(name, f"{row['business_description']} {row['parent_holding']}")
             master_records.append({
                 'entity_name': name,
                 'alias_or_brand': '',
@@ -216,7 +255,8 @@ def clean_and_consolidate():
                 'sector': row['business_description'],
                 'ceo': row['ceo'],
                 'website': row['website'],
-                'is_priority_for_green_screening': False
+                'is_priority_for_green_screening': is_sub_priority,
+                'is_danantara_stage1_pilot': False
             })
             existing_names.add(name.lower())
 
@@ -227,12 +267,13 @@ def clean_and_consolidate():
             master_records.append({
                 'entity_name': name,
                 'alias_or_brand': '',
-                'entity_tier': 'DANANTARA_SPV',
+                'entity_tier': 'DANANTARA_INDICATED_SPV',
                 'parent_holding': 'DANANTARA_BPI',
                 'sector': 'Investment Management & Energy Transition Vehicle',
                 'ceo': '',
                 'website': '',
-                'is_priority_for_green_screening': True
+                'is_priority_for_green_screening': True,
+                'is_danantara_stage1_pilot': True
             })
             existing_names.add(name.lower())
 
@@ -246,6 +287,8 @@ def clean_and_consolidate():
     print(f"🎉 MASTER UNIFIED BUMN DATASET CREATED: {master_path}")
     print(f"Total Clean Entities Tracked: {len(df_master)}")
     print(f"Breakdown by Entity Tier:\n{df_master['entity_tier'].value_counts()}")
+    print(f"Priority for Green Screening: {df_master['is_priority_for_green_screening'].sum()}")
+    print(f"Danantara Stage 1 Pilot Cohort: {df_master['is_danantara_stage1_pilot'].sum()}")
     print(f"=======================================================\n")
 
 if __name__ == "__main__":

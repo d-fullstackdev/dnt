@@ -58,8 +58,9 @@ green_bumn_count = len(df_manifest[df_manifest["track"] == "TRACK_B_GREEN_INVENT
 
 total_bumn = len(df_bumn) if not df_bumn.empty else 196
 bumn_holdings = len(df_bumn[df_bumn["entity_tier"].str.contains("HOLDING", na=False)]) if not df_bumn.empty else 14
-bumn_persero = len(df_bumn[df_bumn["entity_tier"].str.contains("PERSERO", na=False)]) if not df_bumn.empty else 54
+bumn_persero = len(df_bumn[df_bumn["entity_tier"].str.contains("PERSERO", na=False)]) if not df_bumn.empty else 45
 bumn_subsidiaries = len(df_bumn[df_bumn["entity_tier"].str.contains("SUBSIDIARY", na=False)]) if not df_bumn.empty else 128
+bumn_spv = len(df_bumn[df_bumn["entity_tier"].str.contains("SPV", na=False)]) if not df_bumn.empty else 9
 
 total_publishers = df_manifest["publisher"].nunique()
 total_excluded = len(df_excluded)
@@ -103,9 +104,9 @@ with col1:
 with col2:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Universe Entitas BUMN</div>
+        <div class="metric-label">Universe BUMN & Afiliasi</div>
         <div class="metric-value">{total_bumn}</div>
-        <div class="metric-desc">{bumn_holdings} Holding · {bumn_persero} Persero Langsung · {bumn_subsidiaries} Anak Perusahaan</div>
+        <div class="metric-desc">{bumn_holdings} Holding · {bumn_persero} Persero · {bumn_subsidiaries} Anak Usaha · {bumn_spv} SPV</div>
     </div>
     """, unsafe_allow_html=True)
 

@@ -44,7 +44,7 @@ def render_sidebar():
         st.markdown('<div class="sidebar-label">Pilar Riset & Pelacak</div>', unsafe_allow_html=True)
         st.page_link("pages/1_Danantara_Monitor.py", label="Danantara Monitor (>= 2025)")
         st.page_link("pages/2_Green_Investment_List.py", label="Proyek Hijau BUMN (>= 2020)")
-        st.page_link("pages/3_BUMN_Universe.py", label="Silsilah 196 Entitas BUMN")
+        st.page_link("pages/3_BUMN_Universe.py", label="Universe BUMN & Afiliasi (196)")
 
         st.markdown('<div class="sidebar-label">Dokumentasi</div>', unsafe_allow_html=True)
         st.page_link("pages/4_Forensic_Evidence.py", label="Bukti Fisik & Unduhan HTML")
