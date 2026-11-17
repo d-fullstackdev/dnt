@@ -51,8 +51,9 @@ df_track_a["direct_url"] = df_track_a["evidence_id"].map(url_map).fillna(df_trac
 total_track_a = len(df_track_a)
 total_pub = df_track_a["publisher"].nunique()
 
-st.markdown('<div class="page-title">Danantara Monitor</div>', unsafe_allow_html=True)
-st.markdown(f'<div class="page-subtitle">Pemantauan Regulasi Resmi dan Media Kredibel Terkait Danantara ({total_track_a:,} Artikel Terverifikasi)</div>', unsafe_allow_html=True)
+st.markdown('<div class="org-badge">CELIOS — Center of Economic and Law Studies</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">Danantara Monitor</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="sub-title">Pemantauan Regulasi Resmi dan Media Kredibel Terkait Danantara ({total_track_a:,} Artikel Terverifikasi)</div>', unsafe_allow_html=True)
 
 # ─── DROPDOWN METODOLOGI (ACCORDION EXPANDER) ─────────────────────────────────
 with st.expander("Metodologi & Batasan Rentang Waktu Danantara (Tahun 2025 ke atas)", expanded=False):
@@ -180,28 +181,48 @@ if not df_spv.empty:
 # ─── BAGIAN 4: 7 BUMN KONSOLIDASI (LANGSUNG TAMPIL) ───────────────────────────
 st.markdown('<div class="section-header">7 BUMN Raksasa Konsolidasi Tahap Awal (USD 600 Miliar AUM)</div>', unsafe_allow_html=True)
 
-with st.expander("📌 Dasar Ground Truth, Verbatim Resmi, & Lineage Bukti Forensik (Sesuai Aturan Repositori)", expanded=True):
-    st.markdown("""
-    **Kutipan Verbatim Resmi (Pernyataan Pemerintah):**  
-    > *"Pada tahap awal, konsolidasi aset Danantara diproyeksikan mengelola sekitar **USD 600 miliar** yang berasal dari pengalihan 7 BUMN besar dan INA (Indonesia Investment Authority). Ke depan, aset kelolaan ditargetkan mencapai USD 900 miliar sampai USD 1 triliun."*  
-    > — **Dr. Muliaman D. Hadad** (Kepala Badan Pengelola Investasi Danantara, Peluncuran & Media Briefing November 2024).
+st.markdown("""
+<div class="note-box">
+    <div style="font-weight:700; color:#26A69A; font-size:1.05rem; margin-bottom:8px;">
+        📌 Audit Ground Truth & Bukti Verbatim Resmi (Tanpa Dropdown)
+    </div>
+    <div style="margin-bottom:12px; font-size:0.92rem; color:#E0E0E0; line-height:1.6;">
+        Berikut adalah <strong>kutipan verbatim teks asli</strong> dari rilis media dan publikasi resmi yang menjadi dasar angka <strong>USD 600 Miliar AUM</strong>:
+    </div>
+    
+    <div style="background:#1A2332; border-left:3px solid #00ACC1; padding:10px 14px; border-radius:4px; margin-bottom:10px;">
+        <strong style="color:#80DEEA;">1. Katadata Databoks (6 November 2024):</strong><br>
+        <em>"Dengan sumbangan ini, Danantara diperkirakan memiliki <strong>aset kelolaan awal Rp9,4 ribu triliun atau sekitar US$600 miliar</strong>. Prabowo juga menargetkan aset kelolaan Danantara akan berkembang hingga US$982 miliar, dan menjadi SWF terbesar ke-4 di dunia."</em><br>
+        🔗 <a href="https://databoks.katadata.co.id/keuangan/statistik/672ae5b1821f7/daftar-bumn-yang-sumbang-aset-untuk-dikelola-danantara" target="_blank" style="color:#4DD0E1; font-weight:600; text-decoration:underline;">Buka Artikel Asli Katadata Databoks</a>
+    </div>
 
-    **Dasar Perhitungan & Sumber Publikasi Sah:**  
-    - **Basis Data:** Laporan Keuangan Konsolidasian masing-masing entitas BUMN Tahun Buku 2023 (*Audited*).  
-    - **Rekonsiliasi Aset:** 7 BUMN (Rp 8.876 Triliun) + INA (Rp 163 Triliun / USD 10,8 Miliar) = **Rp 9.039 Triliun** ($\approx$ **USD 576 – 600 Miliar** pada asumsi kurs APBN/Pasar Rp 15.000–15.700/USD).  
-    - **Tautan Langsung Media Kredibel (Live Links):**  
-      1. 🌐 [Katadata Databoks — Daftar BUMN yang Sumbang Aset untuk Dikelola Danantara](https://databoks.katadata.co.id/keuangan/statistik/672ae5b1821f7/daftar-bumn-yang-sumbang-aset-untuk-dikelola-danantara)  
-      2. 🌐 [CNBC Indonesia — Diumumkan Prabowo, Ini Daftar 7 BUMN Jumbo di Bawah Danantara](https://www.cnbcindonesia.com/market/20241107084846-17-586318/diumumkan-prabowo-ini-daftar-7-bumn-jumbo-di-bawah-danantara)  
-      3. 🌐 [Detik Finance — Resmi Diluncurkan, Danantara Kelola 7 BUMN Ini di Tahap Awal](https://finance.detik.com/berita-ekonomi-bisnis/d-7792821/resmi-diluncurkan-danantara-kelola-7-bumn-ini-di-tahap-awal)  
-      4. 🌐 [The Jakarta Post — SOEs Superholding Danantara Analysis ($600 Billion Initial Target)](https://www.thejakartapost.com/opinion/2024/11/19/analysis-soes-superholding-danantara-launch-delayed-uncertainty-looms)  
-      5. 🌐 [Katadata Infografik — Danantara Wujud Baru Induk BUMN](https://katadata.co.id/infografik/67341af7c704c/infografik-danantara-wujud-baru-induk-bumn)  
-    - **Snapshot Berkas Fisik Lokal di Repositori:**  
-      - `data/raw/sources/web_snapshots/databoks_katadata_danantara_aset.html`  
-      - `data/raw/sources/web_snapshots/cnbc_daftar_7_bumn_danantara.html`  
-      - `data/raw/sources/web_snapshots/detik_7_bumn_tahap_awal_danantara.html`  
-    - **Dokumen Catatan Lineage Lengkap:** `data/raw/sources/danantara_stage1_consolidation_evidence.md`  
-    - **Dataset Fisik Terstruktur:** `data/processed/danantara_stage1_bumn.csv`
-    """)
+    <div style="background:#1A2332; border-left:3px solid #00ACC1; padding:10px 14px; border-radius:4px; margin-bottom:10px;">
+        <strong style="color:#80DEEA;">2. The Jakarta Post (19 November 2024):</strong><br>
+        <em>"...aims to consolidate state assets initially valued at <strong>around $600 billion (Rp 9.48 quadrillion)</strong>, from seven of the country’s largest state-owned enterprises (SOEs)."</em><br>
+        🔗 <a href="https://www.thejakartapost.com/opinion/2024/11/19/analysis-soes-superholding-danantara-launch-delayed-uncertainty-looms" target="_blank" style="color:#4DD0E1; font-weight:600; text-decoration:underline;">Buka Artikel Asli The Jakarta Post</a>
+    </div>
+
+    <div style="background:#1A2332; border-left:3px solid #00ACC1; padding:10px 14px; border-radius:4px; margin-bottom:10px;">
+        <strong style="color:#80DEEA;">3. CNBC Indonesia (7 November 2024):</strong><br>
+        <em>"Selain tujuh BUMN jumbo itu, Danantara juga akan menaungi Indonesia Investment Authority (INA)... Dengan demikian total asset under management (AUM) Danantara akan menjadi <strong>Rp9.049 triliun atau sekitar US$571,6 miliar</strong>."</em><br>
+        🔗 <a href="https://www.cnbcindonesia.com/market/20241107084846-17-586318/diumumkan-prabowo-ini-daftar-7-bumn-jumbo-di-bawah-danantara" target="_blank" style="color:#4DD0E1; font-weight:600; text-decoration:underline;">Buka Artikel Asli CNBC Indonesia</a>
+    </div>
+
+    <div style="background:#1A2332; border-left:3px solid #00ACC1; padding:10px 14px; border-radius:4px; margin-bottom:10px;">
+        <strong style="color:#80DEEA;">4. Detik Finance (Februari 2025):</strong><br>
+        <em>"Danantara menaungi 7 BUMN jumbo pada tahap awal yakni Bank Mandiri, BRI, BNI, PLN, Pertamina, Telkom Indonesia, dan MIND ID."</em><br>
+        🔗 <a href="https://finance.detik.com/berita-ekonomi-bisnis/d-7792821/resmi-diluncurkan-danantara-kelola-7-bumn-ini-di-tahap-awal" target="_blank" style="color:#4DD0E1; font-weight:600; text-decoration:underline;">Buka Artikel Asli Detik Finance</a>
+    </div>
+
+    <div style="font-size:0.8rem; color:#90A4AE; margin-top:8px;">
+        📂 <strong>Snapshot Berkas Fisik di Disk Lokal:</strong><br>
+        • <code>data/raw/sources/web_snapshots/databoks_katadata_danantara_aset.html</code> (644 KB)<br>
+        • <code>data/raw/sources/web_snapshots/cnbc_daftar_7_bumn_danantara.html</code> (152 KB)<br>
+        • <code>data/raw/sources/web_snapshots/detik_7_bumn_tahap_awal_danantara.html</code> (268 KB)<br>
+        • <code>data/processed/danantara_stage1_bumn.csv</code>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 if not df_stage1.empty:
     cols_to_show = ["bumn", "sektor", "aset_label", "peran_strategis", "sumber_resmi", "direct_url"]

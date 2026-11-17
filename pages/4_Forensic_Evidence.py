@@ -27,11 +27,13 @@ st.markdown(get_danantara_css(), unsafe_allow_html=True)
 
 # ─── DATA LOADING ─────────────────────────────────────────────────────────────
 MANIFEST_PATH = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "master_urls_manifest.csv"
+STAGE1_PATH = PROJECT_ROOT / "data" / "processed" / "danantara_stage1_bumn.csv"
 LOG_PATH = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "html_download_log.csv"
 EXCLUDED_PATH = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "urls_excluded_time_series.csv"
 HTML_DIR = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "html"
 
 df_manifest = pd.read_csv(MANIFEST_PATH) if MANIFEST_PATH.exists() else pd.DataFrame()
+df_stage1 = pd.read_csv(STAGE1_PATH) if STAGE1_PATH.exists() else pd.DataFrame()
 df_log = pd.read_csv(LOG_PATH) if LOG_PATH.exists() else pd.DataFrame()
 df_excluded = pd.read_csv(EXCLUDED_PATH) if EXCLUDED_PATH.exists() else pd.DataFrame()
 
@@ -92,7 +94,69 @@ with m4:
     </div>
     """, unsafe_allow_html=True)
 
-# ─── BAGIAN 1: LOG AUDIT UNDUHAN HTML (LANGSUNG TAMPIL) ───────────────────────
+# ─── BAGIAN 1: AUDIT GROUND TRUTH & VERBATIM ASET DANANTARA (USD 600 MILIAR) ───
+st.markdown('<div class="section-header">Ground Truth & Verbatim Konsolidasi 7 BUMN Danantara (USD 600 Miliar AUM)</div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="note-box">
+    <div style="font-weight:700; color:#26A69A; font-size:1.05rem; margin-bottom:8px;">
+        📌 Audit Bukti Forensik & Verbatim Resmi (Tanpa Dropdown)
+    </div>
+    <div style="margin-bottom:12px; font-size:0.92rem; color:#E0E0E0; line-height:1.6;">
+        Berikut adalah <strong>kutipan verbatim teks asli</strong> dari rilis media dan dokumen publikasi resmi yang menjadi rujukan angka <strong>USD 600 Miliar AUM</strong> dan <strong>7 BUMN Tahap Awal</strong>:
+    </div>
+    
+    <div style="background:#1A2332; border-left:3px solid #00ACC1; padding:10px 14px; border-radius:4px; margin-bottom:10px;">
+        <strong style="color:#80DEEA;">1. Katadata Databoks (6 November 2024):</strong><br>
+        <em>"Dengan sumbangan ini, Danantara diperkirakan memiliki <strong>aset kelolaan awal Rp9,4 ribu triliun atau sekitar US$600 miliar</strong>. Prabowo juga menargetkan aset kelolaan Danantara akan berkembang hingga US$982 miliar, dan menjadi SWF terbesar ke-4 di dunia."</em><br>
+        🔗 <a href="https://databoks.katadata.co.id/keuangan/statistik/672ae5b1821f7/daftar-bumn-yang-sumbang-aset-untuk-dikelola-danantara" target="_blank" style="color:#4DD0E1; font-weight:600; text-decoration:underline;">Buka Artikel Asli Katadata Databoks</a>
+    </div>
+
+    <div style="background:#1A2332; border-left:3px solid #00ACC1; padding:10px 14px; border-radius:4px; margin-bottom:10px;">
+        <strong style="color:#80DEEA;">2. The Jakarta Post (19 November 2024):</strong><br>
+        <em>"...aims to consolidate state assets initially valued at <strong>around $600 billion (Rp 9.48 quadrillion)</strong>, from seven of the country’s largest state-owned enterprises (SOEs)."</em><br>
+        🔗 <a href="https://www.thejakartapost.com/opinion/2024/11/19/analysis-soes-superholding-danantara-launch-delayed-uncertainty-looms" target="_blank" style="color:#4DD0E1; font-weight:600; text-decoration:underline;">Buka Artikel Asli The Jakarta Post</a>
+    </div>
+
+    <div style="background:#1A2332; border-left:3px solid #00ACC1; padding:10px 14px; border-radius:4px; margin-bottom:10px;">
+        <strong style="color:#80DEEA;">3. CNBC Indonesia (7 November 2024):</strong><br>
+        <em>"Selain tujuh BUMN jumbo itu, Danantara juga akan menaungi Indonesia Investment Authority (INA)... Dengan demikian total asset under management (AUM) Danantara akan menjadi <strong>Rp9.049 triliun atau sekitar US$571,6 miliar</strong>."</em><br>
+        🔗 <a href="https://www.cnbcindonesia.com/market/20241107084846-17-586318/diumumkan-prabowo-ini-daftar-7-bumn-jumbo-di-bawah-danantara" target="_blank" style="color:#4DD0E1; font-weight:600; text-decoration:underline;">Buka Artikel Asli CNBC Indonesia</a>
+    </div>
+
+    <div style="background:#1A2332; border-left:3px solid #00ACC1; padding:10px 14px; border-radius:4px; margin-bottom:10px;">
+        <strong style="color:#80DEEA;">4. Detik Finance (Februari 2025):</strong><br>
+        <em>"Danantara menaungi 7 BUMN jumbo pada tahap awal yakni Bank Mandiri, BRI, BNI, PLN, Pertamina, Telkom Indonesia, dan MIND ID."</em><br>
+        🔗 <a href="https://finance.detik.com/berita-ekonomi-bisnis/d-7792821/resmi-diluncurkan-danantara-kelola-7-bumn-ini-di-tahap-awal" target="_blank" style="color:#4DD0E1; font-weight:600; text-decoration:underline;">Buka Artikel Asli Detik Finance</a>
+    </div>
+
+    <div style="font-size:0.8rem; color:#90A4AE; margin-top:8px;">
+        📂 <strong>Snapshot Berkas Fisik Terarsip di Disk Lokal:</strong><br>
+        • <code>data/raw/sources/web_snapshots/databoks_katadata_danantara_aset.html</code> (644 KB)<br>
+        • <code>data/raw/sources/web_snapshots/cnbc_daftar_7_bumn_danantara.html</code> (152 KB)<br>
+        • <code>data/raw/sources/web_snapshots/detik_7_bumn_tahap_awal_danantara.html</code> (268 KB)<br>
+        • <code>data/processed/danantara_stage1_bumn.csv</code>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+if not df_stage1.empty:
+    cols_to_show = ["bumn", "sektor", "aset_label", "peran_strategis", "sumber_resmi", "direct_url"]
+    st.dataframe(
+        df_stage1[cols_to_show],
+        use_container_width=True,
+        column_config={
+            "bumn": st.column_config.TextColumn("BUMN", width="medium"),
+            "sektor": st.column_config.TextColumn("Sektor", width="medium"),
+            "aset_label": st.column_config.TextColumn("Aset Konsolidasi", width="small"),
+            "peran_strategis": st.column_config.TextColumn("Peran Strategis", width="large"),
+            "sumber_resmi": st.column_config.TextColumn("Dasar Verifikasi", width="medium"),
+            "direct_url": st.column_config.LinkColumn("Tautan Sumber Asli", display_text="Buka Sumber Berita", width="medium"),
+        },
+        hide_index=True
+    )
+
+# ─── BAGIAN 2: LOG AUDIT UNDUHAN HTML (LANGSUNG TAMPIL) ───────────────────────
 st.markdown('<div class="section-header">Log Status Unduhan File Mentah HTML</div>', unsafe_allow_html=True)
 if not df_log.empty:
     c_status, c_search = st.columns([1.5, 2])
