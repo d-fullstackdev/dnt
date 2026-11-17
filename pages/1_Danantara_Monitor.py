@@ -29,12 +29,14 @@ st.markdown(get_danantara_css(), unsafe_allow_html=True)
 MANIFEST_PATH = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "master_urls_manifest.csv"
 BOARD_PATH = PROJECT_ROOT / "data" / "processed" / "danantara_board_structure.csv"
 SPV_PATH = PROJECT_ROOT / "data" / "processed" / "danantara_spv_clean.csv"
+STAGE1_PATH = PROJECT_ROOT / "data" / "processed" / "danantara_stage1_bumn.csv"
 LOG_PATH = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "html_download_log.csv"
 
 df_manifest = pd.read_csv(MANIFEST_PATH)
 df_track_a = df_manifest[df_manifest["track"] == "TRACK_A_DANANTARA_MONITOR"].copy()
 df_board = pd.read_csv(BOARD_PATH) if BOARD_PATH.exists() else pd.DataFrame()
 df_spv = pd.read_csv(SPV_PATH) if SPV_PATH.exists() else pd.DataFrame()
+df_stage1 = pd.read_csv(STAGE1_PATH) if STAGE1_PATH.exists() else pd.DataFrame()
 df_log = pd.read_csv(LOG_PATH) if LOG_PATH.exists() else pd.DataFrame()
 
 # Pemetaan URL Langsung Penerbit
@@ -177,16 +179,18 @@ if not df_spv.empty:
 
 # ─── BAGIAN 4: 7 BUMN KONSOLIDASI (LANGSUNG TAMPIL) ───────────────────────────
 st.markdown('<div class="section-header">7 BUMN Raksasa Konsolidasi Tahap Awal (USD 600 Miliar AUM)</div>', unsafe_allow_html=True)
-bumn_stage1 = [
-    {"BUMN": "PT Bank Mandiri (Persero) Tbk", "Sektor": "Perbankan & Jasa Keuangan", "Aset Konsolidasi": "Rp 2.174 Triliun", "Peran Strategis": "Pembiayaan korporasi & sindikasi investasi"},
-    {"BUMN": "PT Bank Rakyat Indonesia (Persero) Tbk", "Sektor": "Perbankan Mikro & UMKM", "Aset Konsolidasi": "Rp 1.965 Triliun", "Peran Strategis": "Inklusi keuangan & pendanaan rantai pasok lokal"},
-    {"BUMN": "PT Perusahaan Listrik Negara (Persero)", "Sektor": "Ketenagalistrikan & Transisi Energi", "Aset Konsolidasi": "Rp 1.692 Triliun", "Peran Strategis": "Transisi EBT, transmisi hijau, pensiun PLTU"},
-    {"BUMN": "PT Pertamina (Persero)", "Sektor": "Energi, Migas & Petrokimia", "Aset Konsolidasi": "Rp 1.412 Triliun", "Peran Strategis": "Dekarbonisasi kilang, biofuel, hidrogen, panas bumi"},
-    {"BUMN": "PT Bank Negara Indonesia (Persero) Tbk", "Sektor": "Perbankan & Valas Global", "Aset Konsolidasi": "Rp 1.087 Triliun", "Peran Strategis": "Sindikasi investasi global & green bond internasional"},
-    {"BUMN": "PT Telkom Indonesia (Persero) Tbk", "Sektor": "Telekomunikasi & Infrastruktur Digital", "Aset Konsolidasi": "Rp 287 Triliun", "Peran Strategis": "Green data center & digitalisasi rantai pasok"},
-    {"BUMN": "MIND ID (Mining Industry Indonesia)", "Sektor": "Pertambangan & Mineral Kritis", "Aset Konsolidasi": "Rp 259 Triliun", "Peran Strategis": "Hilirisasi nikel/tembaga & rantai pasok baterai EV"}
-]
-df_stage1 = pd.DataFrame(bumn_stage1)
-st.dataframe(df_stage1, use_container_width=True, hide_index=True)
+if not df_stage1.empty:
+    st.dataframe(
+        df_stage1[["bumn", "sektor", "aset_label", "peran_strategis"]].rename(columns={
+            "bumn": "BUMN",
+            "sektor": "Sektor",
+            "aset_label": "Aset Konsolidasi",
+            "peran_strategis": "Peran Strategis"
+        }),
+        use_container_width=True,
+        hide_index=True
+    )
+else:
+    st.info("Dataset konsolidasi 7 BUMN tahap awal sedang dikompilasi.")
 
 st.caption("CELIOS · Center of Economic and Law Studies · Danantara Project 2026")

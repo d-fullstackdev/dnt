@@ -1,5 +1,5 @@
 """
-CELIOS — Universe BUMN & Anak Usaha Ekosistem Danantara
+CELIOS — Daftar Entitas BUMN under Danantara
 Taksonomi Yuridis & Audit Forensik 196 Entitas (Holding, BUMN Persero, Anak Usaha, dan SPV)
 """
 
@@ -16,7 +16,7 @@ from src.components.sidebar import render_sidebar
 from src.utils.styling import get_danantara_css
 
 st.set_page_config(
-    page_title="CELIOS — Universe BUMN Ekosistem Danantara",
+    page_title="CELIOS — Daftar Entitas BUMN",
     page_icon="assets/celios_logo.png",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -49,15 +49,15 @@ total_excluded_pt = len(df_excluded_ent)
 total_pilot = len(df_bumn[df_bumn["is_danantara_stage1_pilot"] == True]) if ("is_danantara_stage1_pilot" in df_bumn.columns and not df_bumn.empty) else 18
 total_green_priority = len(df_bumn[df_bumn["is_priority_for_green_screening"] == True]) if ("is_priority_for_green_screening" in df_bumn.columns and not df_bumn.empty) else 117
 
-st.markdown('<div class="page-title">Universe BUMN & Anak Usaha Ekosistem Danantara</div>', unsafe_allow_html=True)
-st.markdown(f'<div class="page-subtitle">Taksonomi Yuridis dan Pemetaan Kepemilikan {total_bumn} Entitas (14 Holding · 45 BUMN Persero · 128 Anak Usaha · 9 SPV)</div>', unsafe_allow_html=True)
+st.markdown('<div class="page-title">Daftar Entitas BUMN under Danantara</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="page-subtitle">Taksonomi Yuridis dan Pemetaan Kepemilikan {total_bumn} Entitas BUMN (14 Holding · 45 BUMN Persero · 128 Anak Usaha · 9 SPV)</div>', unsafe_allow_html=True)
 
 # ─── DROPDOWN METODOLOGI (ACCORDION EXPANDER) ─────────────────────────────────
-with st.expander("Catatan Metodologi: Audit Yuridis & Rekonstruksi Ekosistem Danantara", expanded=False):
+with st.expander("Catatan Metodologi: Audit Yuridis & Rekonstruksi Entitas BUMN", expanded=False):
     st.markdown(f"""
     **Integritas Metodologi & Batasan Yuridis (Sesuai Pedoman Riset CELIOS):**<br>
     Berdasarkan Undang-Undang No. 19/2003 tentang BUMN dan Putusan Mahkamah Konstitusi No. 01/PHP.PRES/XVII/2019, anak perusahaan BUMN berbadan hukum perseroan terbatas (PT) privat dan secara yuridis bukan BUMN mandiri karena sahamnya tidak dimiliki langsung oleh Negara melalui APBN. Selain itu, pada tahap peluncuran resmi awal (2024–2025), konsolidasi BPI Danantara berfokus pada <strong>7 BUMN Raksasa (Pilot Cohort)</strong> ditambah INA.<br><br>
-    Untuk menjaga reproduktifitas data ilmiah dan mencegah tumpang tindih data, master universe direkonstruksi ke dalam 4 lapisan legal terverifikasi:<br>
+    Untuk menjaga reproduktifitas data ilmiah dan mencegah tumpang tindih data, master entitas direkonstruksi ke dalam 4 lapisan legal terverifikasi:<br>
     1. <strong>Holding BUMN Induk ({total_holdings} Entitas):</strong> Induk konglomerasi BUMN sektoral (MIND ID, Pertamina, PLN, PTPN III, Semen Indonesia, dll.).<br>
     2. <strong>BUMN Persero Langsung ({total_persero} Entitas):</strong> BUMN berstatus persero/perum mandiri dengan kepemilikan Saham Seri A Dwiwarna milik Negara RI.<br>
     3. <strong>Anak & Afiliasi BUMN ({total_subs} Entitas):</strong> Entitas operasional yang dimiliki mayoritas oleh holding/persero BUMN (seperti PT KINRA, PT Petrokimia Gresik, dll.).<br>
@@ -70,7 +70,7 @@ m1, m2, m3, m4, m5 = st.columns(5)
 with m1:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Total Master Universe</div>
+        <div class="metric-label">Total Entitas BUMN</div>
         <div class="metric-value">{total_bumn}</div>
         <div class="metric-desc">Semua Entitas Ekosistem</div>
     </div>
@@ -112,8 +112,8 @@ with m5:
     </div>
     """, unsafe_allow_html=True)
 
-# ─── BAGIAN 1: EKSPLORASI MASTER UNIVERSE (LANGSUNG TAMPIL) ───────────────────
-st.markdown('<div class="section-header">Pencarian dan Filter Master Universe</div>', unsafe_allow_html=True)
+# ─── BAGIAN 1: EKSPLORASI ENTITAS BUMN (LANGSUNG TAMPIL) ─────────────────────
+st.markdown('<div class="section-header">Pencarian dan Filter Entitas BUMN</div>', unsafe_allow_html=True)
 
 col_f1, col_f2, col_f3 = st.columns([1.5, 1.2, 2])
 with col_f1:

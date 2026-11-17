@@ -67,7 +67,7 @@ async function fetchWithStealth(url, outputPath = null, headless = 'new') {
         const title = await page.title();
         if (title.toLowerCase().includes('just a moment') || title.toLowerCase().includes('cloudflare')) {
             console.error('⚠️ Cloudflare challenge detected, waiting for clearance...');
-            await page.waitForTimeout(6000);
+            await new Promise(r => setTimeout(r, 6000));
         }
 
         // Extract metadata and content
@@ -93,6 +93,7 @@ async function fetchWithStealth(url, outputPath = null, headless = 'new') {
             title: pageData.title,
             text_length: pageData.innerText.length,
             text: pageData.innerText,
+            html: pageData.html,
             timestamp: new Date().toISOString()
         };
 
