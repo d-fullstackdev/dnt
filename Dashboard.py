@@ -104,7 +104,7 @@ with col1:
 with col2:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Universe BUMN & Afiliasi</div>
+        <div class="metric-label">Daftar Entitas BUMN</div>
         <div class="metric-value">{total_bumn}</div>
         <div class="metric-desc">{bumn_holdings} Holding · {bumn_persero} Persero · {bumn_subsidiaries} Anak Usaha · {bumn_spv} SPV</div>
     </div>
@@ -267,7 +267,7 @@ with col_m2:
     st.markdown(f"""
     <div style="background:#141A24; border:1px solid #2E3B4E; border-radius:8px; padding:16px;">
         <div style="margin-bottom:10px;">
-            <span class="badge-track-a">SELESAI</span> <strong>Langkah 1:</strong> Ingesti Master Universe BUMN ({total_bumn} entitas) dan panen data awal ({total_manifest:,} artikel).
+            <span class="badge-track-a">SELESAI</span> <strong>Langkah 1:</strong> Ingesti Master Entitas BUMN ({total_bumn} entitas) dan panen data awal ({total_manifest:,} artikel).
         </div>
         <div style="margin-bottom:10px;">
             <span class="badge-track-a">SELESAI</span> <strong>Langkah 2:</strong> Penerapan batas rentang waktu sesuai TOR (Proyek BUMN >=2020, Danantara >=2025; {total_excluded} artikel di luar rentang dikeluarkan ke log audit).
