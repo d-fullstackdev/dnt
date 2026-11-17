@@ -24,17 +24,17 @@ st.set_page_config(
 render_sidebar()
 st.markdown(get_danantara_css(), unsafe_allow_html=True)
 
-st.markdown('<div class="page-title">Dokumentasi Metodologi & Riset Celios</div>', unsafe_allow_html=True)
-st.markdown('<div class="page-subtitle">Rujukan Resmi Metodologi Penelitian dan Batasan Waktu Tabita Diela</div>', unsafe_allow_html=True)
+st.markdown('<div class="org-badge">CELIOS — Center of Economic and Law Studies</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">Dokumentasi Metodologi & Riset CELIOS</div>', unsafe_allow_html=True)
+st.markdown('<div class="sub-title">Rujukan Resmi Metodologi Penelitian, Standar 3-Gate Taxonomy, dan Batasan Rentang Waktu</div>', unsafe_allow_html=True)
 
-st.markdown("""
-<div class="note-box">
-<strong>Landasan Rujukan Dokumen Riset:</strong><br>
-1. <code>ref/brief-20260831_Methodological Approach.md</code> (Metodologi Pendekatan Riset Celios)<br>
-2. <code>ref/brief - Permintaan Evaluasi Scope Of Work (SOW) & Penawaran Rekonstruksi Kontrak.pdf</code><br>
-3. <code>ref/brief - MASTER LIST BUMN UNDER DANANTARA.xlsx</code>
-</div>
-""", unsafe_allow_html=True)
+with st.expander("Landasan Rujukan Dokumen Riset & Regulasi Resmi", expanded=False):
+    st.markdown("""
+    **Landasan Rujukan Dokumen Riset Resmi CELIOS:**<br>
+    1. <code>ref/brief-20260831_Methodological Approach.md</code> (Metodologi Pendekatan Riset Celios)<br>
+    2. <code>ref/brief - Permintaan Evaluasi Scope Of Work (SOW) & Penawaran Rekonstruksi Kontrak.pdf</code><br>
+    3. <code>ref/brief - MASTER LIST BUMN UNDER DANANTARA.xlsx</code>
+    """, unsafe_allow_html=True)
 
 # ─── SECTION 1: BATASAN RENTANG WAKTU ─────────────────────────────────────────
 st.markdown('<div class="section-header">1. Batasan Rentang Waktu (Verbatim Metodologi Riset Celios)</div>', unsafe_allow_html=True)

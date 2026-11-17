@@ -47,8 +47,9 @@ total_green = len(df_green)
 total_clusters = df_green["cluster"].nunique()
 df_green["year"] = pd.to_datetime(df_green["published_at"], errors="coerce").dt.year.fillna(2023).astype(int)
 
-st.markdown('<div class="page-title">Proyek Hijau BUMN</div>', unsafe_allow_html=True)
-st.markdown(f'<div class="page-subtitle">Inventarisasi Proyek Transisi Hijau BUMN Lintas 15 Kluster Metodologis ({total_green:,} Artikel Bukti Terverifikasi)</div>', unsafe_allow_html=True)
+st.markdown('<div class="org-badge">CELIOS — Center of Economic and Law Studies</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">Proyek Hijau BUMN</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="sub-title">Inventarisasi Proyek Transisi Hijau BUMN Lintas 15 Kluster Metodologis ({total_green:,} Artikel Bukti Terverifikasi)</div>', unsafe_allow_html=True)
 
 # ─── DROPDOWN METODOLOGI (ACCORDION EXPANDER) ─────────────────────────────────
 with st.expander("Metodologi & Batasan Rentang Waktu (Sesuai Dokumen Riset CELIOS)", expanded=False):

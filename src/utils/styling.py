@@ -8,18 +8,34 @@ def get_danantara_css():
     
     * { font-family: 'Inter', sans-serif; }
     
-    .page-title {
-        font-size: 2.2rem;
+    .org-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #1B5E20, #2E7D32);
+        color: #E8F5E9;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.75rem;
         font-weight: 700;
-        color: #ECEFF1;
-        margin-bottom: 0.3rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 0.8rem;
+        border: 1px solid #4CAF50;
+    }
+    
+    .main-title, .page-title {
+        font-size: 2.6rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #43A047, #66BB6A, #A5D6A7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0.2rem;
         line-height: 1.2;
     }
     
-    .page-subtitle {
-        font-size: 0.95rem;
-        color: #9E9E9E;
-        font-weight: 400;
+    .sub-title, .page-subtitle {
+        font-size: 1.05rem;
+        color: #B0BEC5;
+        font-weight: 300;
         margin-top: 0;
         margin-bottom: 1.5rem;
     }

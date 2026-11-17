@@ -49,8 +49,9 @@ total_excluded_pt = len(df_excluded_ent)
 total_pilot = len(df_bumn[df_bumn["is_danantara_stage1_pilot"] == True]) if ("is_danantara_stage1_pilot" in df_bumn.columns and not df_bumn.empty) else 18
 total_green_priority = len(df_bumn[df_bumn["is_priority_for_green_screening"] == True]) if ("is_priority_for_green_screening" in df_bumn.columns and not df_bumn.empty) else 117
 
-st.markdown('<div class="page-title">Daftar Entitas BUMN under Danantara</div>', unsafe_allow_html=True)
-st.markdown(f'<div class="page-subtitle">Taksonomi Yuridis dan Pemetaan Kepemilikan {total_bumn} Entitas BUMN (14 Holding · 45 BUMN Persero · 128 Anak Usaha · 9 SPV)</div>', unsafe_allow_html=True)
+st.markdown('<div class="org-badge">CELIOS — Center of Economic and Law Studies</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">Daftar Entitas BUMN under Danantara</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="sub-title">Taksonomi Yuridis dan Pemetaan Kepemilikan {total_bumn} Entitas BUMN (14 Holding · 45 BUMN Persero · 128 Anak Usaha · 9 SPV)</div>', unsafe_allow_html=True)
 
 # ─── DROPDOWN METODOLOGI (ACCORDION EXPANDER) ─────────────────────────────────
 with st.expander("Catatan Metodologi: Audit Yuridis & Rekonstruksi Entitas BUMN", expanded=False):
