@@ -53,7 +53,7 @@ total_pub = df_track_a["publisher"].nunique()
 
 st.markdown('<div class="org-badge">CELIOS — Center of Economic and Law Studies</div>', unsafe_allow_html=True)
 st.markdown('<div class="main-title">Danantara Monitor</div>', unsafe_allow_html=True)
-st.markdown(f'<div class="sub-title">Pemantauan Regulasi Resmi dan Media Kredibel Terkait Danantara ({total_track_a:,} Artikel Terverifikasi)</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="sub-title">Pemantauan Regulasi Resmi dan Media Kredibel Terkait Danantara ({total_track_a:,} Artikel Terhimpun)</div>', unsafe_allow_html=True)
 
 # ─── DROPDOWN METODOLOGI (ACCORDION EXPANDER) ─────────────────────────────────
 with st.expander("Metodologi & Batasan Rentang Waktu Danantara (Tahun 2025 ke atas)", expanded=False):
@@ -71,7 +71,7 @@ m1, m2, m3, m4 = st.columns(4)
 with m1:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Total Artikel Terverifikasi</div>
+        <div class="metric-label">Total Artikel Terhimpun</div>
         <div class="metric-value">{total_track_a:,}</div>
         <div class="metric-desc">Rentang Waktu: Tahun 2025 ke atas</div>
     </div>
@@ -82,16 +82,16 @@ with m2:
     <div class="metric-card">
         <div class="metric-label">Target Aset Konsolidasi</div>
         <div class="metric-value">USD 600 Miliar</div>
-        <div class="metric-desc">7 BUMN Tahap 1 + INA</div>
+        <div class="metric-desc">Rilis Pemerintah (7 BUMN + INA)</div>
     </div>
     """, unsafe_allow_html=True)
 
 with m3:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">SPV Resmi Terverifikasi</div>
+        <div class="metric-label">SPV Terindikasi Domisili</div>
         <div class="metric-value">9 Entitas</div>
-        <div class="metric-desc">Wisma Danantara (Gatot Subroto)</div>
+        <div class="metric-desc">Wisma Danantara (Menunggu AHU)</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -105,7 +105,7 @@ with m4:
     """, unsafe_allow_html=True)
 
 # ─── BAGIAN 1: FEED BERITA & REGULASI (LANGSUNG TAMPIL) ───────────────────────
-st.markdown('<div class="section-header">Feed Berita dan Regulasi Terverifikasi</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">Feed Berita dan Regulasi Terkoleksi</div>', unsafe_allow_html=True)
 
 c1, c2 = st.columns([1.5, 2])
 with c1:
@@ -159,10 +159,10 @@ if not df_board.empty:
 else:
     st.info("Dataset struktur dewan BPI Danantara sedang dikompilasi.")
 
-# ─── BAGIAN 3: 9 SPV RESMI (LANGSUNG TAMPIL) ──────────────────────────────────
-st.markdown('<div class="section-header">9 Special Purpose Vehicles (SPV) Resmi Wisma Danantara</div>', unsafe_allow_html=True)
+# ─── BAGIAN 3: 9 SPV TERINDIKASI (LANGSUNG TAMPIL) ───────────────────────────
+st.markdown('<div class="section-header">9 Special Purpose Vehicles (SPV) Terindikasi Domisili Wisma Danantara</div>', unsafe_allow_html=True)
 st.markdown("""
-Berdasarkan data domisili hukum di Menara Mandiri / Wisma Danantara (Jl. Jend. Gatot Subroto Kav. 36-38, Jakarta Selatan), teridentifikasi 9 SPV yang menjadi organ operasional Danantara:
+Berdasarkan penelusuran alamat domisili hukum di Menara Mandiri / Wisma Danantara (Jl. Jend. Gatot Subroto Kav. 36-38, Jakarta Selatan), terhimpun 9 entitas yang terindikasi berafiliasi (status yuridis formal menunggu pengesahan SK AHU Kemenkumham):
 """)
 if not df_spv.empty:
     st.dataframe(
