@@ -77,60 +77,111 @@ st.markdown('<div class="org-badge">CELIOS — CENTER OF ECONOMIC AND LAW STUDIE
 st.markdown('<div class="main-title">Daya Anagata Nusantara (Danantara)</div>', unsafe_allow_html=True)
 st.markdown(f'<div class="sub-title">Sovereign Wealth Fund Monitor & Green Investment List — {total_manifest:,} Dokumen Bukti Terverifikasi</div>', unsafe_allow_html=True)
 
-with st.expander("Metodologi Analisis & Dasar Pemisahan Data (Sesuai TOR Riset CELIOS)", expanded=False):
+with st.expander("Metodologi Analisis, Alur Riset Graphic 1, & Batasan Rentang Waktu TOR CELIOS", expanded=False):
     st.markdown(f"""
-    **Dua Pilar Pengelompokan Data (Berdasarkan Teks Asli Metodologi Riset Celios)**<br>
-    Sesuai dokumen TOR (<code>brief-20260831_Methodological Approach.md</code> baris 37):<br>
-    <em>"creating an inventory of green projects announced by state-owned enterprises from 2020 onward and all projects confirmed by Danantara Indonesia since its launch in 2025."</em><br><br>
-    Data dipisahkan secara natural menjadi dua fokus riset:<br>
-    1. <strong>Danantara Monitor (Tahun 2025 ke atas):</strong> Proyek, regulasi, dan kebijakan yang dikonfirmasi langsung oleh Danantara sejak diluncurkan tahun 2025 ({danantara_count:,} artikel).<br>
-    2. <strong>Proyek Hijau BUMN (Tahun 2020 ke atas):</strong> Inventarisasi proyek hijau dan dekarbonisasi yang diumumkan BUMN (PLN, Pertamina, Semen Indonesia, dll.) sejak 2020 lintas 15 kluster ({green_bumn_count:,} artikel).<br><br>
-    Tautan pada tabel di bawah telah di-decode langsung ke URL resmi media/regulator ({decoded_urls_count:,} URL langsung terverifikasi) tanpa melalui redirect Google News.
+    **Landasan Metodologi Riset Resmi CELIOS** (<code>brief-20260831_Methodological Approach.md</code> baris 37):<br>
+    <em>"Map Indonesia's investable green and transition opportunities by creating an inventory of green projects announced by state-owned enterprises from 2020 onward and all projects confirmed by Danantara Indonesia since its launch in 2025."</em><br><br>
+    
+    Dashboard ini mengintegrasikan seluruh tahapan riset investigatif dalam tiga tahapan berurutan (Graphic 1 Pipeline):<br>
+    1. <strong>Tahap 1 — Hasil Scrape & Metadata Bukti (Aktif):</strong> Menghimpun korpus bukti mentah dari 9 jalur metadata (media massa, laporan tahunan, laporan keberlanjutan, publikasi investigasi NGO, regulasi/RUPTL, open data spasial, dll.) dengan pemisahan rentang waktu resmi ({danantara_count:,} Danantara &ge; 2025 dan {green_bumn_count:,} Proyek Hijau BUMN &ge; 2020).<br>
+    2. <strong>Tahap 2 — ETL & Ekstraksi 13 Atribut (Standby):</strong> Transformasi teks bersih berkas bukti menjadi basis data inventaris proyek yang terisi 13 kolom informasi dan dikelompokkan ke dalam 6 Sektor Ekonomi.<br>
+    3. <strong>Tahap 3 — Skrining 3-Gate & Green List (Standby):</strong> Penyaringan bertingkat melalui Negative Filter, keselarasan TKBI v3/ASEAN v4, dan uji Norfund Additionality untuk menyusun rekomendasi portofolio hijau Danantara.<br><br>
+    Seluruh tautan artikel di dashboard ini telah di-decode langsung ke URL resmi penerbit ({decoded_urls_count:,} tautan langsung) tanpa melewati halaman pengalihan Google News.
     """, unsafe_allow_html=True)
 
 # ─── HERO METRICS ─────────────────────────────────────────────────────────────
-st.markdown('<div class="section-header">Indikator Utama Hasil Kerja (Per Hari Ini)</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">Indikator Utama Portofolio Riset</div>', unsafe_allow_html=True)
 
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Total Dokumen Terhimpun</div>
+        <div class="metric-label">Total Korpus Bukti Terverifikasi</div>
         <div class="metric-value">{total_manifest:,}</div>
-        <div class="metric-desc">{danantara_count:,} Danantara (>=2025) + {green_bumn_count:,} Kandidat BUMN Pra-Gating (>=2020)</div>
+        <div class="metric-desc">{danantara_count:,} Danantara (&ge;2025) · {green_bumn_count:,} Proyek BUMN (&ge;2020)</div>
     </div>
     """, unsafe_allow_html=True)
 
 with col2:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Daftar Entitas BUMN</div>
+        <div class="metric-label">Silsilah Entitas BUMN</div>
         <div class="metric-value">{total_bumn}</div>
         <div class="metric-desc">{bumn_holdings} Holding · {bumn_persero} Persero · {bumn_subsidiaries} Anak Usaha · {bumn_spv} SPV</div>
     </div>
     """, unsafe_allow_html=True)
 
 with col3:
-    st.markdown(f"""
+    st.markdown("""
     <div class="metric-card">
-        <div class="metric-label">Kluster Proyek Hijau BUMN</div>
-        <div class="metric-value">15</div>
+        <div class="metric-label">Kluster Sektoral Riset</div>
+        <div class="metric-value">15 Kluster</div>
         <div class="metric-desc">Solar, Air, Angin, Bioenergi, Hidrogen, EV, Dekarbonisasi Industri, dll.</div>
     </div>
     """, unsafe_allow_html=True)
 
 with col4:
-    st.markdown(f"""
+    st.markdown("""
     <div class="metric-card">
-        <div class="metric-label">Sumber Media & Regulator</div>
-        <div class="metric-value">{total_publishers}</div>
-        <div class="metric-desc">3 Portal Regulasi Resmi + 15 Media Nasional dan Global</div>
+        <div class="metric-label">Metode Skrining Taksonomi</div>
+        <div class="metric-value">3-Gate</div>
+        <div class="metric-desc">Negative Filter · TKBI v3 / ASEAN v4 · Norfund Additionality</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+# ─── VISUALISASI WORKFLOW GRAPHIC 1 (ALUR KERJA RISET) ────────────────────────
+st.markdown('<div class="section-header">Alur Metodologi Riset CELIOS (Graphic 1 Workflow)</div>', unsafe_allow_html=True)
+
+w1, w2, w3, w4, w5 = st.columns(5)
+
+with w1:
+    st.markdown("""
+    <div class="metric-card" style="text-align: left; padding: 1rem; border-color: #2E7D32;">
+        <div style="font-size: 0.72rem; color: #66BB6A; font-weight: 700;">LANGKAH 1 (AKTIF)</div>
+        <div style="font-weight: 700; color: #ECEFF1; font-size: 0.88rem; margin: 4px 0;">Create Inventory</div>
+        <div style="font-size: 0.75rem; color: #B0BEC5;">Koleksi bukti mentah 9 jalur metadata (Media, AR, NGO, RUPTL)</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with w2:
+    st.markdown("""
+    <div class="metric-card" style="text-align: left; padding: 1rem;">
+        <div style="font-size: 0.72rem; color: #81C784; font-weight: 700;">LANGKAH 2 (NEXT)</div>
+        <div style="font-weight: 700; color: #ECEFF1; font-size: 0.88rem; margin: 4px 0;">Sort Six Sectors</div>
+        <div style="font-size: 0.75rem; color: #9E9E9E;">Energy, Agri, Downstream, Housing, Infra, Mfg</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with w3:
+    st.markdown("""
+    <div class="metric-card" style="text-align: left; padding: 1rem;">
+        <div style="font-size: 0.72rem; color: #81C784; font-weight: 700;">LANGKAH 3 (NEXT)</div>
+        <div style="font-weight: 700; color: #ECEFF1; font-size: 0.88rem; margin: 4px 0;">Screening 3-Gate</div>
+        <div style="font-size: 0.75rem; color: #9E9E9E;">Negative Filter, TKBI v3, Norfund Additionality</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with w4:
+    st.markdown("""
+    <div class="metric-card" style="text-align: left; padding: 1rem;">
+        <div style="font-size: 0.72rem; color: #81C784; font-weight: 700;">LANGKAH 4 (NEXT)</div>
+        <div style="font-weight: 700; color: #ECEFF1; font-size: 0.88rem; margin: 4px 0;">Compare Danantara</div>
+        <div style="font-size: 0.75rem; color: #9E9E9E;">Komparasi portofolio eksisting Danantara 2025</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with w5:
+    st.markdown("""
+    <div class="metric-card" style="text-align: left; padding: 1rem;">
+        <div style="font-size: 0.72rem; color: #81C784; font-weight: 700;">LANGKAH 5 (FINAL)</div>
+        <div style="font-weight: 700; color: #ECEFF1; font-size: 0.88rem; margin: 4px 0;">Green Investment List</div>
+        <div style="font-size: 0.75rem; color: #9E9E9E;">Daftar proyek hijau final siap alokasi modal negara</div>
     </div>
     """, unsafe_allow_html=True)
 
 # ─── BENTO GRID HIGHLIGHTS ───────────────────────────────────────────────────
-st.markdown('<div class="section-header">Rincian Dua Jalur Pengumpulan Bukti</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">Rincian Dua Fokus Pengumpulan Bukti</div>', unsafe_allow_html=True)
 
 b_col1, b_col2, b_col3 = st.columns(3)
 
@@ -139,12 +190,12 @@ with b_col1:
     <div class="bento-card">
         <div>
             <div class="bento-lbl">Danantara Monitor</div>
-            <div class="bento-val" style="color: #4CAF50;">{danantara_count:,} <span style="font-size: 1rem; color: #9E9E9E;">Artikel</span></div>
+            <div class="bento-val" style="color: #66BB6A;">{danantara_count:,} <span style="font-size: 1rem; color: #9E9E9E;">Artikel Bukti</span></div>
             <div class="bento-desc">
-                Memantau proyek, regulasi, dan pembentukan kelembagaan Danantara sejak peluncuran resminya pada tahun 2025. Mencakup Keppres No. 30/2025, integrasi 7 BUMN raksasa tahap awal, dan 9 entitas SPV di Wisma Danantara.
+                Memantau pembentukan, regulasi, dan kepemilikan aset Danantara sejak peluncuran resminya pada tahun 2025. Mencakup Keppres No. 30/2025, konsolidasi 7 BUMN raksasa tahap awal, dan 9 entitas SPV di Wisma Danantara.
             </div>
         </div>
-        <div class="bento-src">Batasan Waktu: Tahun 2025 ke atas (Sesuai TOR)</div>
+        <div class="bento-src">Batasan Waktu: Tahun 2025 ke atas (Sesuai TOR CELIOS)</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -152,13 +203,13 @@ with b_col2:
     st.markdown(f"""
     <div class="bento-card">
         <div>
-            <div class="bento-lbl">Kandidat Proyek BUMN</div>
-            <div class="bento-val" style="color: #66BB6A;">{green_bumn_count:,} <span style="font-size: 1rem; color: #9E9E9E;">Artikel</span></div>
+            <div class="bento-lbl">Proyek Hijau BUMN</div>
+            <div class="bento-val" style="color: #4CAF50;">{green_bumn_count:,} <span style="font-size: 1rem; color: #9E9E9E;">Artikel Bukti</span></div>
             <div class="bento-desc">
-                Metadata mentah kandidat pengumuman transisi energi dan dekarbonisasi BUMN sejak 2020 (berbasis penelusuran kata kunci, belum melalui filter gating taksonomi 3-tahap).
+                Kandidat proyek transisi energi, EBT, dan dekarbonisasi industri BUMN sejak 2020 lintas 15 kluster (menjadi bahan baku ekstraksi 13 atribut sebelum melalui penyaringan taksonomi).
             </div>
         </div>
-        <div class="bento-src">Status: Metadata Hasil Scraping (Tahap Pra-Skrining)</div>
+        <div class="bento-src">Batasan Waktu: Tahun 2020 ke atas (Sesuai TOR CELIOS)</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -166,10 +217,10 @@ with b_col3:
     st.markdown(f"""
     <div class="bento-card">
         <div>
-            <div class="bento-lbl">Bukti Fisik HTML di Disk</div>
-            <div class="bento-val" style="color: #42A5F5;">{physical_html_files:,} <span style="font-size: 1rem; color: #9E9E9E;">File HTML</span></div>
+            <div class="bento-lbl">Preservasi Bukti Fisik Disk</div>
+            <div class="bento-val" style="color: #81C784;">{physical_html_files:,} <span style="font-size: 1rem; color: #9E9E9E;">File HTML</span></div>
             <div class="bento-desc">
-                Setiap artikel diunduh utuh sebagai file HTML fisik ke folder lokal sebelum diekstraksi. Sebanyak {total_excluded} artikel yang terbit di luar rentang waktu resmi dikeluarkan ke log audit terpisah.
+                Setiap publikasi disimpan utuh sebagai file HTML mentah di disk lokal sebelum ekstraksi teks untuk menjaga integritas forensik bukti. Sebanyak {total_excluded} artikel di luar rentang waktu diaudit terpisah.
             </div>
         </div>
         <div class="bento-src">Lokasi: data/raw/evidence_dorking/html/</div>
@@ -177,7 +228,7 @@ with b_col3:
     """, unsafe_allow_html=True)
 
 # ─── VISUALISASI ANALITIK (PLOTLY) ───────────────────────────────────────────
-st.markdown('<div class="section-header">Analisis Sebaran Waktu dan Kluster</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">Analisis Sebaran Waktu dan Kluster Sektoral</div>', unsafe_allow_html=True)
 
 chart_col1, chart_col2 = st.columns(2)
 
@@ -239,7 +290,7 @@ with chart_col2:
     )
     st.plotly_chart(fig_cl, use_container_width=True)
 
-# ─── MEDIA DOMAINS & FORENSIC STATUS ─────────────────────────────────────────
+# ─── MEDIA DOMAINS & STATUS TAHAPAN ──────────────────────────────────────────
 col_m1, col_m2 = st.columns(2)
 
 with col_m1:
@@ -251,8 +302,8 @@ with col_m1:
         values="count",
         names="publisher",
         hole=0.45,
-        title="Sumber Media dan Portal Regulator Terbanyak",
-        color_discrete_sequence=px.colors.qualitative.Dark24
+        title="Sumber Media & Portal Regulator Terbanyak",
+        color_discrete_sequence=["#2E7D32", "#388E3C", "#43A047", "#4CAF50", "#66BB6A", "#81C784", "#A5D6A7", "#1B5E20", "#455A64", "#607D8B"]
     )
     fig_pub.update_layout(
         template="plotly_dark",
@@ -264,33 +315,36 @@ with col_m1:
     st.plotly_chart(fig_pub, use_container_width=True)
 
 with col_m2:
-    st.markdown('<div style="font-weight:700; font-size:1.05rem; margin-bottom:12px; color:#ECEFF1;">Status Tahapan Kerja</div>', unsafe_allow_html=True)
+    st.markdown('<div style="font-weight:700; font-size:1.05rem; margin-bottom:12px; color:#ECEFF1;">Status Tahapan Riset CELIOS (Graphic 1)</div>', unsafe_allow_html=True)
     st.markdown(f"""
     <div style="background:#141A24; border:1px solid #2E3B4E; border-radius:8px; padding:16px;">
-        <div style="margin-bottom:10px;">
-            <span class="badge-track-a">SELESAI</span> <strong>Langkah 1:</strong> Ingesti Master Entitas BUMN ({total_bumn} entitas) dan panen data awal ({total_manifest:,} artikel).
+        <div style="margin-bottom:12px;">
+            <span class="badge-track-a">TAHAP 1: SELESAI / AKTIF</span><br>
+            <strong>Panen Korpus Bukti & Metadata:</strong> Sebanyak <strong>{total_manifest:,} artikel</strong> terverifikasi dan <strong>{physical_html_files:,} berkas HTML</strong> tersimpan di disk lokal. Kerangka penyelaman 9 jalur metadata multi-sumber telah dibakukan.
         </div>
-        <div style="margin-bottom:10px;">
-            <span class="badge-track-a">SELESAI</span> <strong>Langkah 2:</strong> Penerapan batas rentang waktu sesuai TOR (Proyek BUMN >=2020, Danantara >=2025; {total_excluded} artikel di luar rentang dikeluarkan ke log audit).
+        <div style="margin-bottom:12px; color:#CFD8DC;">
+            <span class="badge-track-b">TAHAP 2: NEXT / STANDBY</span><br>
+            <strong>ETL & Ekstraksi 13 Atribut Proyek:</strong> Membedah teks bersih berkas bukti untuk mempopulasikan 13 kolom informasi inventaris proyek hijau dan mengelompokkannya ke dalam 6 sektor ekonomi.
         </div>
-        <div style="margin-bottom:10px;">
-            <span class="badge-track-b">SEDANG BERJALAN</span> <strong>Langkah 3:</strong> Unduhan bukti fisik mentah HTML ke folder lokal (Tersimpan <strong>{physical_html_files:,} file fisik</strong> di <code>data/raw/evidence_dorking/html/</code>).
-        </div>
-        <div style="margin-bottom:10px; color:#9E9E9E;">
-            <span style="border:1px solid #555; padding:2px 6px; border-radius:4px; font-size:0.7rem;">SIAP EKSEKUSI</span> <strong>Langkah 4:</strong> Ekstraksi teks bersih Markdown secara 100% offline (menggunakan Trafilatura dan BeautifulSoup).
-        </div>
-        <div style="color:#9E9E9E;">
-            <span style="border:1px solid #555; padding:2px 6px; border-radius:4px; font-size:0.7rem;">BERIKUTNYA</span> <strong>Tahap Lanjutan:</strong> Deduplikasi berita dan ekstraksi 13 atribut proyek untuk penyaringan taksonomi 3-Gate.
+        <div style="color:#CFD8DC;">
+            <span class="badge-track-b">TAHAP 3: NEXT / STANDBY</span><br>
+            <strong>Skrining Taksonomi 3-Gate:</strong> Menyaring proyek inventaris melalui Negative Filter, keselarasan TKBI v3/ASEAN v4, dan prinsip Norfund Additionality untuk menyusun rekomendasi Green Investment List Danantara.
         </div>
     </div>
     """, unsafe_allow_html=True)
 
 # ─── TABEL EKSPLORASI BUKTI TERKINI ──────────────────────────────────────────
-st.markdown('<div class="section-header">Tabel Bukti Terverifikasi</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">Eksplorasi Ringkas Bukti Publikasi Terverifikasi</div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="note-box" style="margin-top: 5px; margin-bottom: 15px;">
+Tabel di bawah menyajikan sampel ringkasan berkas bukti terkini. Untuk eksplorasi mendalam lintas <strong>9 Jalur Metadata</strong> (Media Massa, Laporan Tahunan BUMN, Sustainability Report, Publikasi Investigasi NGO, Regulasi, dll.), silakan buka menu <strong>Hasil Scrape & Metadata Bukti</strong> pada bilah sisi.
+</div>
+""", unsafe_allow_html=True)
 
 f_col1, f_col2, f_col3 = st.columns([1.5, 1.5, 2])
 with f_col1:
-    sel_track = st.selectbox("Pilih Kategori:", ["Semua", "Danantara Monitor (>= 2025)", "Proyek Hijau BUMN (>= 2020)"])
+    sel_track = st.selectbox("Pilih Track Riset:", ["Semua Track", "Danantara Monitor (>= 2025)", "Proyek Hijau BUMN (>= 2020)"])
 with f_col2:
     publishers_list = ["Semua Publisher"] + sorted(df_manifest["publisher"].dropna().unique().tolist())
     sel_pub = st.selectbox("Filter Media / Publisher:", publishers_list)
@@ -315,22 +369,22 @@ if search_q.strip():
         df_view["publisher"].str.lower().str.contains(q, na=False)
     ]
 
-st.markdown(f"Menampilkan **{len(df_view):,}** dokumen dari total {total_manifest:,} dokumen:")
+st.markdown(f"Menampilkan **{min(len(df_view), 25)}** berkas bukti terkini dari total {len(df_view):,} dokumen terfilter:")
 
 # Format Display Table dengan Direct Link
 cols_to_show = ["evidence_id", "published_at", "track", "publisher", "target_soe", "cluster", "title", "direct_url"]
 st.dataframe(
-    df_view[cols_to_show].head(100),
+    df_view[cols_to_show].head(25),
     use_container_width=True,
     column_config={
         "evidence_id": st.column_config.TextColumn("ID Bukti", width="small"),
         "published_at": st.column_config.TextColumn("Tanggal", width="small"),
-        "track": st.column_config.TextColumn("Kategori", width="small"),
+        "track": st.column_config.TextColumn("Track", width="small"),
         "publisher": st.column_config.TextColumn("Sumber / Media", width="medium"),
         "target_soe": st.column_config.TextColumn("BUMN", width="small"),
         "cluster": st.column_config.TextColumn("Kluster", width="small"),
-        "title": st.column_config.TextColumn("Judul Artikel", width="large"),
-        "direct_url": st.column_config.LinkColumn("Tautan Langsung Media", display_text="Buka Sumber Langsung")
+        "title": st.column_config.TextColumn("Judul Publikasi", width="large"),
+        "direct_url": st.column_config.LinkColumn("Tautan Media", display_text="Buka Sumber Langsung")
     },
     hide_index=True
 )
