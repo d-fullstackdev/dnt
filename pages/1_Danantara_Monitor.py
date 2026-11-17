@@ -1,13 +1,12 @@
 """
 CELIOS — Danantara Monitor (Track A: 2025 Onward)
-Pemantauan Regulasi Resmi & Media Arus Utama Terkait BPI Danantara
+Pemantauan Regulasi Resmi & Media Kredibel Terkait Danantara
 """
 
 import streamlit as st
 import os
 import sys
 import pandas as pd
-import plotly.express as px
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -40,12 +39,13 @@ total_track_a = len(df_track_a)
 total_pub = df_track_a["publisher"].nunique()
 
 st.markdown('<div class="page-title">Danantara Monitor (Track A)</div>', unsafe_allow_html=True)
-st.markdown(f'<div class="page-subtitle">Pemantauan Regulasi Resmi & Media Kredibel Terkait Badan Pengelola Investasi Danantara ({total_track_a:,} Artikel Terverifikasi)</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="page-subtitle">Pemantauan Regulasi Resmi dan Media Kredibel Terkait Danantara ({total_track_a:,} Artikel Terverifikasi)</div>', unsafe_allow_html=True)
 
 st.markdown(f"""
 <div class="note-box">
-<strong>Fokus Pemantauan Track A (Sesuai Batasan Waktu Brief CELIOS: Tahun 2025 ke atas)</strong><br>
-Memantau pembentukan kelembagaan, kepemimpinan, dan alokasi modal <strong>BPI Danantara</strong> pasca peluncuran resmi tahun 2025. Data divalidasi terhadap portal hukum pemerintah (<code>jdih.setneg.go.id</code>, <code>peraturan.bpk.go.id</code>), portal resmi <code>danantaraindonesia.co.id</code>, dan 15 media finansial/berita kredibel (Bloomberg, CNBC, Kompas, Kontan, Bisnis, Reuters, dsb.).
+<strong>Fokus Pemantauan Track A (Tahun 2025 ke atas)</strong><br>
+Sesuai rumusan verbatim dokumen metodologi riset Celios: <em>"and all projects confirmed by Danantara Indonesia since its launch in 2025."</em><br>
+Fokus pada seluruh proyek, kesepakatan investasi, dan arah kebijakan yang dikonfirmasi langsung oleh Danantara sejak peluncuran resminya pada tahun 2025. Data dikurasi dari portal resmi pemerintah (jdih.setneg.go.id, peraturan.bpk.go.id), dan media arus utama nasional dan global.
 </div>
 """, unsafe_allow_html=True)
 
@@ -56,16 +56,16 @@ with m1:
     <div class="metric-card">
         <div class="metric-label">Total Artikel Terverifikasi</div>
         <div class="metric-value">{total_track_a:,}</div>
-        <div class="metric-desc">Rentang Waktu: ≥ 2025 (Pasca Peluncuran)</div>
+        <div class="metric-desc">Rentang Waktu: Tahun 2025 ke atas</div>
     </div>
     """, unsafe_allow_html=True)
 
 with m2:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Target Aset Konsolidasi (AUM)</div>
-        <div class="metric-value">$600 Miliar</div>
-        <div class="metric-desc">7 BUMN Raksasa Tahap 1 + INA</div>
+        <div class="metric-label">Target Aset Konsolidasi</div>
+        <div class="metric-value">USD 600 Miliar</div>
+        <div class="metric-desc">7 BUMN Tahap 1 + INA</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -83,27 +83,27 @@ with m4:
     <div class="metric-card">
         <div class="metric-label">Media & Portal Regulator</div>
         <div class="metric-value">{total_pub}</div>
-        <div class="metric-desc">Kompas, CNBC, Bloomberg, Setneg, dll.</div>
+        <div class="metric-desc">Setneg, Kompas, CNBC, Bloomberg, dll.</div>
     </div>
     """, unsafe_allow_html=True)
 
 # ─── TABS KONTEN TRACK A ──────────────────────────────────────────────────────
 tab1, tab2, tab3, tab4 = st.tabs([
-    "📰 Feed Berita & Regulasi",
-    "👥 Struktur Dewan & Pimpinan",
-    "🏢 SPV Resmi (Wisma Danantara)",
-    "💎 7 BUMN Konsolidasi Tahap 1"
+    "Feed Berita & Regulasi",
+    "Struktur Dewan & Pimpinan",
+    "SPV Resmi Wisma Danantara",
+    "7 BUMN Konsolidasi Tahap 1"
 ])
 
 with tab1:
-    st.markdown('<div class="section-header">Feed Berita & Snapshot Regulasi Terverifikasi</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-header">Feed Berita dan Regulasi Terverifikasi</div>', unsafe_allow_html=True)
     
     c1, c2 = st.columns([1.5, 2])
     with c1:
         top_pubs = ["Semua Publisher"] + sorted(df_track_a["publisher"].dropna().unique().tolist())
         sel_p = st.selectbox("Filter Media / Publisher:", top_pubs, key="track_a_pub")
     with c2:
-        search_kw = st.text_input("Cari Kata Kunci (misal: prabowo, keppres, dividen, mandiri):", "", key="track_a_kw")
+        search_kw = st.text_input("Cari Judul / Kata Kunci:", "", key="track_a_kw")
         
     df_filtered = df_track_a.copy()
     if sel_p != "Semua Publisher":
@@ -112,7 +112,7 @@ with tab1:
         q = search_kw.lower()
         df_filtered = df_filtered[
             df_filtered["title"].str.lower().str.contains(q, na=False) |
-            df_filtered["topic"].str.lower().str.contains(q, na=False)
+            df_filtered["publisher"].str.lower().str.contains(q, na=False)
         ]
         
     st.markdown(f"Menampilkan **{len(df_filtered):,}** artikel bukti:")
@@ -153,7 +153,7 @@ with tab2:
 with tab3:
     st.markdown('<div class="section-header">9 Special Purpose Vehicles (SPV) Resmi Wisma Danantara</div>', unsafe_allow_html=True)
     st.markdown("""
-    Berdasarkan penelusuran legalitas dan alamat fisik di Menara Mandiri / Wisma Danantara (Jl. Jend. Gatot Subroto Kav. 36-38, Jakarta Selatan), teridentifikasi 9 SPV yang menjadi organ operasional investasi Danantara:
+    Berdasarkan data domisili hukum di Menara Mandiri / Wisma Danantara (Jl. Jend. Gatot Subroto Kav. 36-38, Jakarta Selatan), teridentifikasi 9 SPV yang menjadi organ operasional Danantara:
     """)
     if not df_spv.empty:
         st.dataframe(
@@ -170,7 +170,7 @@ with tab3:
         )
 
 with tab4:
-    st.markdown('<div class="section-header">7 BUMN Raksasa Konsolidasi Tahap Awal ($600 Miliar AUM)</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-header">7 BUMN Raksasa Konsolidasi Tahap Awal (USD 600 Miliar AUM)</div>', unsafe_allow_html=True)
     bumn_stage1 = [
         {"BUMN": "PT Bank Mandiri (Persero) Tbk", "Sektor": "Perbankan & Jasa Keuangan", "Aset Konsolidasi": "Rp 2.174 Triliun", "Peran Strategis": "Pembiayaan korporasi & sindikasi investasi"},
         {"BUMN": "PT Bank Rakyat Indonesia (Persero) Tbk", "Sektor": "Perbankan Mikro & UMKM", "Aset Konsolidasi": "Rp 1.965 Triliun", "Peran Strategis": "Inklusi keuangan & pendanaan rantai pasok lokal"},

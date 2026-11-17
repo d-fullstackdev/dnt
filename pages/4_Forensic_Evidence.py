@@ -7,7 +7,6 @@ import streamlit as st
 import os
 import sys
 import pandas as pd
-import plotly.express as px
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -43,15 +42,15 @@ failed_downloads = len(df_log[df_log["status"] == "FAILED"]) if not df_log.empty
 total_excluded = len(df_excluded)
 
 st.markdown('<div class="page-title">Forensic Evidence & Audit Status</div>', unsafe_allow_html=True)
-st.markdown(f'<div class="page-subtitle">Preservasi File Mentah HTML di Disk Lokal & Verifikasi Batasan Waktu — {total_manifest:,} Target Bukti</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="page-subtitle">Penyimpanan File Mentah HTML di Disk Lokal dan Verifikasi Batasan Waktu — {total_manifest:,} Target Bukti</div>', unsafe_allow_html=True)
 
 st.markdown(f"""
 <div class="note-box">
 <strong>Standar Preservasi Forensik (Anti-Hardcoding & Zero Network Parsing)</strong><br>
-Sesuai klausul integritas data CELIOS:<br>
-1. <strong>Bukti Fisik Utuh:</strong> Setiap artikel yang dikurasi wajib diunduh utuh sebagai file <code>.html</code> di <code>data/raw/evidence_dorking/html/</code> sebelum ekstraksi teks dimulai.<br>
-2. <strong>Audit Batasan Waktu:</strong> Sebanyak <strong>{total_excluded} artikel</strong> yang terbit di luar batas waktu resmi TOR (Track B sebelum 2020 atau Track A sebelum 2025) secara transparan <strong>dieliminasi</strong> ke log audit terpisah.<br>
-3. <strong>Traceability 100%:</strong> Setiap baris klaim proyek pada dashboard dapat ditelusuri kembali ke berkas mentah HTML dan log unduhan aslinya.
+Sesuai prinsip integritas data penelitian:<br>
+1. <strong>Bukti Fisik Utuh:</strong> Setiap artikel yang dikurasi diunduh utuh sebagai berkas HTML di <code>data/raw/evidence_dorking/html/</code> sebelum ekstraksi teks dimulai.<br>
+2. <strong>Audit Batasan Waktu:</strong> Sebanyak <strong>{total_excluded} artikel</strong> yang terbit di luar batasan waktu resmi (Track B sebelum 2020 atau Track A sebelum 2025) secara transparan dikeluarkan ke log audit terpisah.<br>
+3. <strong>Traceability 100%:</strong> Setiap klaim pada dashboard dapat ditelusuri kembali ke berkas mentah HTML dan log unduhan aslinya.
 </div>
 """, unsafe_allow_html=True)
 
@@ -62,7 +61,7 @@ with m1:
     <div class="metric-card">
         <div class="metric-label">Target Manifest Lolos</div>
         <div class="metric-value">{total_manifest:,}</div>
-        <div class="metric-desc">Tervalidasi 2-Track Time Series</div>
+        <div class="metric-desc">Tervalidasi Batasan Rentang Waktu</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -71,7 +70,7 @@ with m2:
     <div class="metric-card">
         <div class="metric-label">File HTML Fisik di Disk</div>
         <div class="metric-value">{physical_files_count:,}</div>
-        <div class="metric-desc">Tersimpan di data/raw/evidence_dorking/html/</div>
+        <div class="metric-desc">data/raw/evidence_dorking/html/</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -95,9 +94,9 @@ with m4:
 
 # ─── TABS ─────────────────────────────────────────────────────────────────────
 tab1, tab2, tab3 = st.tabs([
-    "📥 Log Audit Unduhan HTML",
-    "🚫 Audit Eliminasi Waktu (93 URL)",
-    "⚙️ Arsitektur Multi-tier Downloader"
+    "Log Audit Unduhan HTML",
+    "Audit Eliminasi Waktu (93 URL)",
+    "Arsitektur Downloader"
 ])
 
 with tab1:
@@ -141,7 +140,7 @@ with tab1:
 with tab2:
     st.markdown('<div class="section-header">Daftar Dokumen yang Dieliminasi Berdasarkan Batasan Waktu</div>', unsafe_allow_html=True)
     st.markdown("""
-    Demi mempertahankan **metodologi riset Celios yang kredibel**, artikel-artikel di bawah ini dikeluarkan dari manifest utama karena tanggal publikasi berada di luar rentang resmi:
+    Artikel di bawah ini dikeluarkan dari manifest utama karena tanggal publikasi berada di luar rentang resmi TOR:
     """)
     if not df_excluded.empty:
         st.dataframe(
@@ -150,7 +149,7 @@ with tab2:
             column_config={
                 "evidence_id": st.column_config.TextColumn("ID", width="small"),
                 "published_at": st.column_config.TextColumn("Tanggal Terbit", width="small"),
-                "track": st.column_config.TextColumn("Track", width="small"),
+                "track": st.column_config.TextColumn("Kategori", width="small"),
                 "publisher": st.column_config.TextColumn("Sumber Media", width="medium"),
                 "title": st.column_config.TextColumn("Judul Artikel", width="large"),
                 "exclusion_rationale": st.column_config.TextColumn("Alasan Eliminasi Audit", width="large")
@@ -161,14 +160,14 @@ with tab2:
 with tab3:
     st.markdown('<div class="section-header">Prinsip Kerja Multi-Tier Forensic Downloader</div>', unsafe_allow_html=True)
     st.markdown("""
-    Sistem pengunduhan bukti fisik dirancang dengan 3 lapisan proteksi anti-blokir:
+    Sistem pengunduhan bukti fisik dirancang dengan 3 lapisan proteksi:
     
-    1. **Tingkat 1 — Google News Token Decoding:**
-       URL sindikasi `news.google.com/rss/articles/...` tidak dapat diunduh langsung menggunakan HTTP client biasa (akan menghasilkan HTTP 429). Sistem menggunakan protokol decoder protobuf dengan *Chrome 124 User-Agent* dan mekanisme *exponential backoff retry* untuk memulihkan URL kanonikal media asal.
+    1. **Tingkat 1: Google News Token Decoding**
+       URL sindikasi `news.google.com/rss/articles/...` dipulihkan ke URL kanonikal media asal menggunakan decoder protobuf dengan Chrome User-Agent dan retry backoff.
     
-    2. **Tingkat 2 — TLS Fingerprint Impersonation (`curl_cffi`):**
-       Mengakses portal media dan regulator menggunakan fingerprint TLS/JA3 identik dengan browser Google Chrome v124, menghindari deteksi bot Cloudflare level ringan-sedang pada situs seperti CNBC Indonesia, Kompas, Kontan, dan Bisnis.
+    2. **Tingkat 2: TLS Impersonation (curl_cffi)**
+       Mengakses portal media dan regulator menggunakan sidik jari TLS Chrome 124 untuk stabilitas koneksi pada situs media nasional.
     
-    3. **Tingkat 3 — Puppeteer Stealth WAF Elevation:**
-       Bila server tujuan memasang tantangan Cloudflare Turnstile berat atau proteksi bot ketat (misal `presidenri.go.id`, `kompas.id`, `bloomberg`), permintaan secara otomatis dielevasi ke *Headless Chrome dengan Stealth Plugin* dan profil terverifikasi.
+    3. **Tingkat 3: Puppeteer Stealth WAF Elevation**
+       Jika portal tujuan menerapkan proteksi Cloudflare Turnstile ketat (seperti presidenri.go.id), proses dialihkan ke Headless Chrome dengan plugin Stealth.
     """)

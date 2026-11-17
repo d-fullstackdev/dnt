@@ -7,7 +7,6 @@ import streamlit as st
 import os
 import sys
 import pandas as pd
-import plotly.express as px
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -40,22 +39,22 @@ df_subs = pd.read_csv(SUBSIDIARIES_PATH) if SUBSIDIARIES_PATH.exists() else pd.D
 df_excluded_ent = pd.read_csv(EXCLUDED_ENTITIES_PATH) if EXCLUDED_ENTITIES_PATH.exists() else pd.DataFrame()
 
 total_bumn = len(df_bumn)
-total_holdings = len(df_holdings)
-total_persero = len(df_persero)
-total_subs = len(df_subs)
+total_holdings = len(df_bumn[df_bumn["entity_tier"].str.contains("HOLDING", na=False)]) if not df_bumn.empty else 14
+total_persero = len(df_bumn[df_bumn["entity_tier"].str.contains("PERSERO", na=False)]) if not df_bumn.empty else 54
+total_subs = len(df_bumn[df_bumn["entity_tier"].str.contains("SUBSIDIARY", na=False)]) if not df_bumn.empty else 128
 total_excluded_pt = len(df_excluded_ent)
 
 st.markdown('<div class="page-title">Master Universe BUMN under Danantara</div>', unsafe_allow_html=True)
-st.markdown(f'<div class="page-subtitle">Taksonomi Yuridis & Pemetaan Kepemilikan {total_bumn} Entitas BUMN under Konsolidasi BPI Danantara</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="page-subtitle">Taksonomi Yuridis dan Pemetaan Kepemilikan {total_bumn} Entitas BUMN under Konsolidasi BPI Danantara</div>', unsafe_allow_html=True)
 
 st.markdown(f"""
 <div class="note-box">
 <strong>Latar Belakang Audit & Kurasi Universe BUMN</strong><br>
-Untuk mencegah tumpang tindih data (sebagaimana evaluasi proyek sebelumnya), tim riset melakukan rekonstruksi hirarki kepemilikan BUMN menjadi 3 lapisan legal yang terpisah tegas:<br>
+Untuk mencegah tumpang tindih data, tim riset merekonstruksi hierarki kepemilikan BUMN menjadi 3 lapisan legal yang terpisah tegas:<br>
 1. <strong>Holding BUMN ({total_holdings} Induk):</strong> Entitas holding pengendali saham lintas kluster industri.<br>
-2. <strong>Persero Langsung ({total_persero} BUMN):</strong> Entitas persero dengan saham Seri A Dwiwarna langsung milik Negara.<br>
-3. <strong>Anak & Cucu Perusahaan ({total_subs} Entitas):</strong> Entitas operasional yang dimiliki mayoritas oleh holding/persero BUMN.<br>
-4. <strong>Eliminasi Swasta Kebetulan ({total_excluded_pt} PT):</strong> PT swasta pihak ketiga yang memiliki kemiripan nama "Danantara" telah divalidasi dan dikeluarkan dari master data.
+2. <strong>Persero Langsung ({total_persero} BUMN):</strong> Entitas persero dengan saham Seri A Dwiwarna milik Negara.<br>
+3. <strong>Anak Perusahaan ({total_subs} Entitas):</strong> Entitas operasional yang dimiliki mayoritas oleh holding/persero BUMN.<br>
+4. <strong>Eliminasi Swasta Kebetulan ({total_excluded_pt} PT):</strong> PT swasta pihak ketiga yang memiliki kesamaan kata nama "Danantara" telah divalidasi dan dikeluarkan dari master data.
 </div>
 """, unsafe_allow_html=True)
 
@@ -99,42 +98,45 @@ with m4:
 
 # ─── TABS ─────────────────────────────────────────────────────────────────────
 tab1, tab2, tab3 = st.tabs([
-    "🔍 Eksplorasi Master Universe (196 Entitas)",
-    "🏛️ 14 Grup Holding BUMN",
-    "🛡️ Audit Eliminasi Swasta Kebetulan (8 PT)"
+    "Eksplorasi Master Universe (196 Entitas)",
+    "14 Grup Holding BUMN",
+    "Audit Eliminasi Swasta Kebetulan (8 PT)"
 ])
 
 with tab1:
-    st.markdown('<div class="section-header">Pencarian & Filter Silsilah Entitas BUMN</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-header">Pencarian dan Filter Entitas BUMN</div>', unsafe_allow_html=True)
     
     col_f1, col_f2 = st.columns([1.5, 2])
     with col_f1:
-        type_options = ["Semua Tipe", "HOLDING", "PERSERO_DIRECT", "SUBSIDIARY"]
-        sel_type = st.selectbox("Filter Tipe Yuridis:", type_options)
+        tier_opts = ["Semua Tingkat"] + sorted(df_bumn["entity_tier"].dropna().unique().tolist())
+        sel_tier = st.selectbox("Filter Tingkat / Tier:", tier_opts)
     with col_f2:
-        search_bumn = st.text_input("Cari Nama BUMN / Holding Induk:", "")
+        search_bumn = st.text_input("Cari Nama BUMN / Parent Holding / Sektor:", "")
         
     df_view_bumn = df_bumn.copy()
-    if sel_type != "Semua Tipe":
-        df_view_bumn = df_view_bumn[df_view_bumn["entity_type"] == sel_type]
+    if sel_tier != "Semua Tingkat":
+        df_view_bumn = df_view_bumn[df_view_bumn["entity_tier"] == sel_tier]
     if search_bumn.strip():
         q_b = search_bumn.lower()
         df_view_bumn = df_view_bumn[
             df_view_bumn["entity_name"].str.lower().str.contains(q_b, na=False) |
-            df_view_bumn["holding_group"].str.lower().str.contains(q_b, na=False)
+            df_view_bumn["parent_holding"].str.lower().str.contains(q_b, na=False) |
+            df_view_bumn["sector"].str.lower().str.contains(q_b, na=False)
         ]
         
     st.markdown(f"Menampilkan **{len(df_view_bumn)}** entitas:")
     
     st.dataframe(
-        df_view_bumn,
+        df_view_bumn[["entity_id", "entity_name", "entity_tier", "parent_holding", "sector", "ceo", "is_priority_for_green_screening"]],
         use_container_width=True,
         column_config={
+            "entity_id": st.column_config.TextColumn("ID", width="small"),
             "entity_name": st.column_config.TextColumn("Nama Entitas BUMN", width="large"),
-            "entity_type": st.column_config.TextColumn("Tipe Yuridis", width="medium"),
-            "holding_group": st.column_config.TextColumn("Grup Holding Induk", width="medium"),
-            "status": st.column_config.TextColumn("Status Audit", width="medium"),
-            "notes": st.column_config.TextColumn("Catatan Validasi & Sektor", width="large")
+            "entity_tier": st.column_config.TextColumn("Tingkat Yuridis", width="medium"),
+            "parent_holding": st.column_config.TextColumn("Grup Holding Induk", width="medium"),
+            "sector": st.column_config.TextColumn("Sektor Bisnis", width="medium"),
+            "ceo": st.column_config.TextColumn("Pimpinan / CEO", width="medium"),
+            "is_priority_for_green_screening": st.column_config.CheckboxColumn("Prioritas Hijau", width="small")
         },
         hide_index=True
     )
@@ -160,7 +162,7 @@ with tab2:
 with tab3:
     st.markdown('<div class="section-header">Audit Eliminasi Perusahaan Swasta Kebetulan (False Positives)</div>', unsafe_allow_html=True)
     st.markdown("""
-    Dalam proses crawling dan pemetaan kata kunci "Danantara", terdeteksi sejumlah perusahaan swasta independen yang tidak berafiliasi dengan BPI Danantara maupun BUMN. Demi **integritas metodologi**, entitas berikut telah resmi **dieliminasi dari analisis**:
+    Dalam proses pencarian nama "Danantara", terdeteksi sejumlah perusahaan swasta pihak ketiga yang tidak memiliki kaitan kepemilikan dengan BPI Danantara maupun BUMN. Entitas berikut telah resmi dieliminasi dari analisis:
     """)
     if not df_excluded_ent.empty:
         st.dataframe(

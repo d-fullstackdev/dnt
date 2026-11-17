@@ -36,16 +36,16 @@ def render_sidebar():
         st.markdown("---")
 
         st.markdown('<div class="sidebar-label">Ringkasan Utama</div>', unsafe_allow_html=True)
-        st.page_link("Dashboard.py", label="Overview & Eksekutif", icon="🏛️")
+        st.page_link("Dashboard.py", label="Overview & Eksekutif")
 
         st.markdown('<div class="sidebar-label">Pilar Riset & Pelacak</div>', unsafe_allow_html=True)
-        st.page_link("pages/1_Danantara_Monitor.py", label="Track A: Danantara Monitor", icon="📡")
-        st.page_link("pages/2_Green_Investment_List.py", label="Track B: 15 Kluster Hijau", icon="🌱")
-        st.page_link("pages/3_BUMN_Universe.py", label="Silsilah 196 Entitas BUMN", icon="🏢")
+        st.page_link("pages/1_Danantara_Monitor.py", label="Track A: Proyek Danantara (>=2025)")
+        st.page_link("pages/2_Green_Investment_List.py", label="Track B: Proyek Hijau BUMN (>=2020)")
+        st.page_link("pages/3_BUMN_Universe.py", label="Daftar 196 Entitas BUMN")
 
         st.markdown('<div class="sidebar-label">Forensik & Tata Kelola</div>', unsafe_allow_html=True)
-        st.page_link("pages/4_Forensic_Evidence.py", label="Bukti Forensik & HTML Fisik", icon="💾")
-        st.page_link("pages/5_Metodologi_Brief.py", label="Dokumentasi Metodologi", icon="📑")
+        st.page_link("pages/4_Forensic_Evidence.py", label="Bukti Forensik & Unduhan HTML")
+        st.page_link("pages/5_Metodologi_Brief.py", label="Dokumentasi Metodologi")
 
         st.markdown("---")
         st.caption("CELIOS · Danantara Monitor · 2026")

@@ -25,92 +25,87 @@ render_sidebar()
 st.markdown(get_danantara_css(), unsafe_allow_html=True)
 
 st.markdown('<div class="page-title">Dokumentasi Metodologi & Riset Celios</div>', unsafe_allow_html=True)
-st.markdown('<div class="page-subtitle">Rujukan Resmi Metodologi Penelitian, Scope of Work (SOW), dan Batasan Waktu Tabita Diela</div>', unsafe_allow_html=True)
+st.markdown('<div class="page-subtitle">Rujukan Resmi Metodologi Penelitian dan Batasan Waktu Tabita Diela</div>', unsafe_allow_html=True)
 
 st.markdown("""
 <div class="note-box">
 <strong>Landasan Rujukan Dokumen Riset:</strong><br>
 1. <code>ref/brief-20260831_Methodological Approach.md</code> (Metodologi Pendekatan Riset Celios)<br>
 2. <code>ref/brief - Permintaan Evaluasi Scope Of Work (SOW) & Penawaran Rekonstruksi Kontrak.pdf</code><br>
-3. <code>ref/brief - MASTER LIST BUMN UNDER DANANTARA.xlsx</code><br>
-4. Arahan eksplisit Tim Riset Celios (Mba Tabita Diela, CC Mas Bhima Yudhistira).
+3. <code>ref/brief - MASTER LIST BUMN UNDER DANANTARA.xlsx</code>
 </div>
 """, unsafe_allow_html=True)
 
 # ─── SECTION 1: BATASAN RENTANG WAKTU ─────────────────────────────────────────
-st.markdown('<div class="section-header">1. Batasan Rentang Waktu (Time Series Bounding)</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">1. Batasan Rentang Waktu (Verbatim Metodologi Riset Celios)</div>', unsafe_allow_html=True)
 st.markdown("""
-Sesuai arahan tertulis pada dokumen metodologi Celios, pengumpulan dan analisis data dibagi menjadi dua pilar waktu yang berbeda:
+Sesuai teks asli pada dokumen `ref/brief-20260831_Methodological Approach.md` (baris 37):
 
-* **Tahun 2020 ke atas (2020 onward) — Untuk Proyek Hijau BUMN (Track B):**
-  > *"creating an inventory of green projects already announced by the Indonesian government and/or state-owned enterprises from 2020 onwards."*
-  >
-  > Fokus pada inventarisasi proyek hijau yang telah diumumkan oleh pemerintah Indonesia dan/atau BUMN sejak tahun 2020 lintas 15 kluster proyek.
+> *"1. Map Indonesia's investable green and transition opportunities by creating an inventory of green projects announced by state-owned enterprises from 2020 onward and all projects confirmed by Danantara Indonesia since its launch in 2025."*
 
-* **Tahun 2025 ke atas — Untuk Proyek & Kebijakan Danantara (Track A):**
-  > *"and all projects confirmed by Danantara Indonesia since its launch in 2025."*
-  >
-  > Fokus pada seluruh proyek, kesepakatan investasi, dan arah kebijakan yang dikonfirmasi langsung oleh BPI Danantara sejak peluncuran resminya pada tahun 2025.
+Artinya, pengumpulan data memiliki dua batasan rentang waktu yang tegas:
+* **Track B: Proyek Hijau BUMN (Tahun 2020 ke atas):** Mencakup proyek-proyek hijau yang telah diumumkan oleh BUMN sejak tahun 2020 lintas 15 kluster proyek.
+* **Track A: Proyek Danantara (Tahun 2025 ke atas):** Mencakup seluruh proyek dan kebijakan yang dikonfirmasi langsung oleh Danantara sejak diluncurkan pada tahun 2025.
 """)
 
 # ─── SECTION 2: 15 KLUSTER HIJAU BUMN ─────────────────────────────────────────
-st.markdown('<div class="section-header">2. Taksonomi 15 Kluster Proyek Hijau BUMN</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">2. 15 Kluster Proyek Hijau (Sesuai Tabel Metodologi Celios)</div>', unsafe_allow_html=True)
 
 c_col1, c_col2 = st.columns(2)
 with c_col1:
     st.markdown("""
-    1. **Solar Power (PLTS):** PLTS Terapung, PLTS Atap komersial/industri, PLTS Ground-mounted.
-    2. **Geothermal Energy (PLTP):** Pembangkit panas bumi, eksplorasi sumur uap PGE & PLN.
-    3. **Hydro Power (PLTA/PLTM):** PLTA skala besar, pumped storage, minihidro, mikrohidro.
-    4. **Wind Power (PLTB):** Pembangkit listrik tenaga bayu/angin darat dan lepas pantai.
-    5. **Bioenergy & Biomass:** Co-firing biomassa pada PLTU, biogas, pelet kayu, bioavtur, biodiesel.
-    6. **Green Hydrogen & Ammonia:** Produksi hidrogen berbasis energi terbarukan dan amonia hijau.
-    7. **EV Ecosystem & Battery:** Ekosistem rantai pasok sel baterai, EV charging (SPKLU), motor listrik.
-    8. **Smart Grid & Transmission:** Penguatan transmisi tegangan tinggi, interkoneksi pulau, digital grid.
+    1. **Solar:** PLTS, PLTS terapung, PLTS atap, solar panel, solar rooftop, tenaga surya.
+    2. **Water:** PLTA, PLTMH, hidro, bendungan, pumped storage, mini-hydro.
+    3. **Wind:** PLTB, tenaga bayu, turbin angin, wind farm.
+    4. **Bioenergy:** biomassa, biogas, biofuel, biodiesel, bioetanol, SAF.
+    5. **Waste and circular:** waste-to-energy, PSEL, RDF, pengolahan sampah menjadi energi, ekonomi sirkular.
+    6. **Hydrogen:** hidrogen hijau, amonia hijau, hidrogen rendah karbon.
+    7. **Electric vehicle:** kendaraan listrik, ekosistem EV, SPKLU, SPBKLU, bus listrik.
+    8. **Battery:** baterai kendaraan listrik, rantai pasok baterai, daur ulang baterai.
     """)
 with c_col2:
     st.markdown("""
-    9. **Energy Efficiency & Auditing:** Konservasi energi industri semen, pupuk, dan kilang.
-    10. **Industrial Decarbonization:** Semen rendah karbon, green steel, elektrifikasi smelter mineral.
-    11. **Waste to Energy (WtE):** Refuse Derived Fuel (RDF), insinerator ramah lingkungan, biogas TPA.
-    12. **Nature-based Solutions (NBS):** Penanaman mangrove, restorasi gambut, silvikultur Perhutani.
-    13. **Sustainable Agriculture:** Perkebunan sawit bersertifikasi ISPO/RSPO, pupuk organik, dekarbonisasi tanah.
-    14. **Green Financing & ESG:** Penerbitan obligasi hijau (Green Bond), sukuk keberlanjutan, sindikasi ESG.
-    15. **CCUS (Carbon Capture):** Penangkapan dan penyimpanan karbon pada sektor hulu migas dan industri berat.
+    9. **Power network:** transmisi hijau, interkoneksi, smart grid, digitalisasi jaringan, grid fleksibel.
+    10. **Industry decarbonization:** efisiensi energi, elektrifikasi, semen rendah karbon, baja ramah lingkungan.
+    11. **Coal transition:** pensiun dini PLTU, penghentian PLTU, phase-down batu bara, aset terlantar.
+    12. **Carbon:** perdagangan karbon, kredit karbon, pengurangan emisi, dekarbonisasi, net zero.
+    13. **Mangrove, peatland:** rehabilitasi mangrove, restorasi gambut, reforestasi, konservasi.
+    14. **Wastewater:** pengolahan air limbah, air bersih berkelanjutan, pengurangan kebocoran air.
+    15. **Renewable energy (general):** energi terbarukan, energi bersih, energi hijau, pembangkit hijau.
     """)
 
 # ─── SECTION 3: SKRINING 3-GATE ───────────────────────────────────────────────
 st.markdown('<div class="section-header">3. Kerangka Penyaringan Proyek Hijau (3-Gate Taxonomy Screening)</div>', unsafe_allow_html=True)
-st.markdown(r"""
-Setiap proyek yang terinventarisasi akan melalui 3 gerbang validasi ketat:
+st.markdown("""
+Metodologi Celios menetapkan 3 gerbang penyaringan:
 
-```
-[Master Green Evidence] ──> [Gate 1: Negative Filter] ──> [Gate 2: Technical Screening] ──> [Gate 3: Norfund Additionality] ──> [Green Investment List]
-```
+1. **Gate 1: Exclusionary & Negative Filter**
+   * Pengecualian langsung untuk proyek batu bara baru, captive coal power plant, deforestasi, dan pelanggaran sosial.
 
-1. **Gate 1: Exclusionary & Negative Filter:**
-   * Menolak proyek yang berkaitan dengan ekspansi batu bara, PLTU captive baru, deforestasi kawasan hutan lindung primer, atau proyek yang berada dalam sengketa hukum agraria berat.
+2. **Gate 2: Technical Screening Criteria**
+   * Pengujian proyek terhadap Taksonomi Keuangan Berkelanjutan Indonesia (TKBI Versi 3) dan ASEAN Taxonomy for Sustainable Finance (Versi 4).
 
-2. **Gate 2: Technical Screening Criteria (TKBI v3 & ASEAN Taxonomy v4):**
-   * Menguji proyek terhadap batas ambang emisi (threshold $\text{gCO}_2/\text{kWh}$), kriteria *Do No Significant Harm* (DNSH), dan kepatuhan perlindungan sosial minimum.
-
-3. **Gate 3: Norfund Additionality & Financial Viability:**
-   * Mengukur adisionalitas investasi (environmental & financial additionality), kemampuan menarik sindikasi modal swasta/internasional, dan rasio mitigasi risiko iklim jangka panjang.
+3. **Gate 3: Norfund Additionality Principle**
+   * Menguji prinsip adisionalitas sesuai standar Norfund: memastikan modal negara menghasilkan dampak yang tidak dapat dipenuhi oleh pasar biasa secara mandiri.
 """)
 
-# ─── SECTION 4: 5-STAGE DATA PIPELINE ─────────────────────────────────────────
-st.markdown('<div class="section-header">4. Alur 5 Tahap Pengolahan Data (Deterministic Pipeline)</div>', unsafe_allow_html=True)
+# ─── SECTION 4: 13 ATRIBUT PROYEK VERBATIM ────────────────────────────────────
+st.markdown('<div class="section-header">4. 13 Atribut Data Proyek yang Diekstraksi (Verbatim Brief)</div>', unsafe_allow_html=True)
 st.markdown("""
-1. **Langkah 1 & 1b — Ingesti Universe & Panen Bukti:**
-   Pemetaan 196 BUMN master dan panen 1.847 tautan berita/regulasi dari 18 domain resmi dan kredibel.
-2. **Langkah 2 — Filter Batasan Waktu (Time Series Bounding):**
-   Penyaringan ketat menghasilkan 1.754 artikel lolos kurasi (903 Track B $\ge 2020$; 851 Track A $\ge 2025$), dan 93 artikel out-of-scope dieliminasi ke log audit.
-3. **Langkah 3 — Unduh Forensik HTML Utuh (Sedang Berjalan):**
-   Unduhan fisik file mentah `.html` ke disk lokal dengan TLS Impersonation & Puppeteer Stealth, menjamin kepatuhan penuh terhadap aturan *anti-hardcoding*.
-4. **Langkah 4 — Ekstraksi Teks Bersih Markdown Offline (Siap Eksekusi):**
-   Ekstraksi teks artikel bebas iklan/navigasi secara 100% offline menggunakan engine `trafilatura` dan `beautifulsoup`.
-5. **Phase 3-5 — Deduplikasi MinHash LSH, Parsing 13 Atribut, & Skrining 3-Gate:**
-   Eliminasi duplikasi sindikasi berita dan pengekstrakan atribut proyek (nama proyek, nilai investasi, kapasitas, lokasi, status konstruksi).
+Berdasarkan dokumen metodologi riset Celios (baris 68-80), berikut 13 data yang diekstraksi dari setiap proyek:
+1. Project name
+2. The name of the SOE
+3. The name of the SOE subsidiary or special purpose vehicle
+4. Sector
+5. Project status (e.g. planning, studies, MoU, LoI, tender, construction, commissioning, operations)
+6. Location
+7. Capacity, including its denomination
+8. Investment amount, including its currency
+9. Funding source
+10. Partners
+11. Emission reduction target
+12. Environment and social risks
+13. Announcement date/latest update date
 """)
 
 st.caption("CELIOS · Center of Economic and Law Studies · Danantara Project 2026")

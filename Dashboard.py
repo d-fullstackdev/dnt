@@ -8,7 +8,6 @@ import os
 import sys
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -35,7 +34,7 @@ LOG_PATH = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "html_download_l
 HTML_DIR = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "html"
 
 if not MANIFEST_PATH.exists():
-    st.error("Dataset manifest `master_urls_manifest.csv` tidak ditemukan.")
+    st.error("Dataset manifest master_urls_manifest.csv tidak ditemukan.")
     st.stop()
 
 df_manifest = pd.read_csv(MANIFEST_PATH)
@@ -49,9 +48,9 @@ track_a_count = len(df_manifest[df_manifest["track"] == "TRACK_A_DANANTARA_MONIT
 track_b_count = len(df_manifest[df_manifest["track"] == "TRACK_B_GREEN_INVENTORY"])
 
 total_bumn = len(df_bumn) if not df_bumn.empty else 196
-bumn_holdings = len(df_bumn[df_bumn["entity_type"] == "HOLDING"]) if not df_bumn.empty else 14
-bumn_persero = len(df_bumn[df_bumn["entity_type"] == "PERSERO_DIRECT"]) if not df_bumn.empty else 54
-bumn_subsidiaries = len(df_bumn[df_bumn["entity_type"] == "SUBSIDIARY"]) if not df_bumn.empty else 128
+bumn_holdings = len(df_bumn[df_bumn["entity_tier"].str.contains("HOLDING", na=False)]) if not df_bumn.empty else 14
+bumn_persero = len(df_bumn[df_bumn["entity_tier"].str.contains("PERSERO", na=False)]) if not df_bumn.empty else 54
+bumn_subsidiaries = len(df_bumn[df_bumn["entity_tier"].str.contains("SUBSIDIARY", na=False)]) if not df_bumn.empty else 128
 
 total_publishers = df_manifest["publisher"].nunique()
 total_excluded = len(df_excluded)
@@ -69,11 +68,13 @@ st.markdown(f'<div class="page-subtitle">Sovereign Wealth Fund Monitor & Green I
 
 st.markdown(f"""
 <div class="note-box">
-<strong>Catatan Integritas Metodologi Riset CELIOS (Tabita Diela & Bhima Yudhistira)</strong><br>
-Sistem ini memantau pembentukan <strong>Badan Pengelola Investasi (BPI) Danantara</strong> dan menginventarisasi proyek transisi hijau BUMN berdasarkan batasan waktu eksplisit di Term of Reference (TOR):<br>
-• <strong>Track A (Danantara Monitor):</strong> Seluruh proyek & tata kelola yang dikonfirmasi Danantara sejak peluncurannya (<strong>Tahun 2025 ke atas</strong>). Tercatat <strong>{track_a_count:,} artikel</strong>.<br>
-• <strong>Track B (Green SOE Inventory):</strong> Proyek hijau BUMN yang telah diumumkan sejak <strong>Tahun 2020 ke atas</strong> lintas 15 kluster metodologis. Tercatat <strong>{track_b_count:,} artikel</strong>.<br>
-• <strong>Anti-Hardcoding & Forensik:</strong> Seluruh metrik diturunkan langsung dari bukti artikel yang diunduh utuh sebagai file fisik HTML di disk (<strong>{physical_html_files:,} file terarsip</strong>), dengan <strong>{total_excluded} dokumen</strong> di luar rentang waktu resmi dikeluarkan demi keabsahan statistik.
+<strong>Penjelasan Ringkas: Mengapa Data Dibagi Dua (Track A & Track B)?</strong><br>
+Pemisahan ini diambil langsung secara verbatim dari dokumen metodologi penelitian CELIOS (<code>brief-20260831_Methodological Approach.md</code> baris 37):<br>
+<em>"creating an inventory of green projects announced by state-owned enterprises from 2020 onward and all projects confirmed by Danantara Indonesia since its launch in 2025."</em><br><br>
+Perbedaan keduanya sangat sederhana:<br>
+1. <strong>Track A (Proyek & Kebijakan Danantara):</strong> Khusus proyek dan kebijakan yang dikonfirmasi langsung oleh Danantara sejak diluncurkan pada <strong>tahun 2025 ke atas</strong> ({track_a_count:,} artikel).<br>
+2. <strong>Track B (Proyek Hijau BUMN):</strong> Seluruh proyek hijau yang telah diumumkan oleh BUMN (PLN, Pertamina, Semen Indonesia, dll.) sejak <strong>tahun 2020 ke atas</strong> lintas 15 kluster ({track_b_count:,} artikel).<br><br>
+Seluruh metrik dihitung langsung dari data bukti artikel tanpa hardcoding. Artikel di luar batasan tahun resmi ({total_excluded} artikel) dikeluarkan ke log audit terpisah.
 </div>
 """, unsafe_allow_html=True)
 
@@ -87,7 +88,7 @@ with col1:
     <div class="metric-card">
         <div class="metric-label">Total Bukti Terverifikasi</div>
         <div class="metric-value">{total_manifest:,}</div>
-        <div class="metric-desc">Lolos kurasi 2-Track Time Series ({track_a_count:,} Track A + {track_b_count:,} Track B)</div>
+        <div class="metric-desc">{track_a_count:,} Proyek Danantara (>=2025) + {track_b_count:,} Proyek BUMN (>=2020)</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -96,16 +97,16 @@ with col2:
     <div class="metric-card">
         <div class="metric-label">Universe Entitas BUMN</div>
         <div class="metric-value">{total_bumn}</div>
-        <div class="metric-desc">{bumn_holdings} Holding · {bumn_persero} Persero Langsung · {bumn_subsidiaries} Anak BUMN</div>
+        <div class="metric-desc">{bumn_holdings} Holding · {bumn_persero} Persero Langsung · {bumn_subsidiaries} Anak Perusahaan</div>
     </div>
     """, unsafe_allow_html=True)
 
 with col3:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Kluster Proyek Hijau</div>
+        <div class="metric-label">Kluster Proyek Hijau BUMN</div>
         <div class="metric-value">15</div>
-        <div class="metric-desc">EBT, Hidrogen, EV, Dekarbonisasi Industri, Solusi Berbasis Alam, dsb.</div>
+        <div class="metric-desc">Solar, Air, Angin, Bioenergi, Hidrogen, EV, Dekarbonisasi Industri, dll.</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -114,12 +115,12 @@ with col4:
     <div class="metric-card">
         <div class="metric-label">Sumber Media & Regulator</div>
         <div class="metric-value">{total_publishers}</div>
-        <div class="metric-desc">3 Portal Regulasi Resmi + 15 Media Nasional/Global Kredibel</div>
+        <div class="metric-desc">3 Portal Regulasi Resmi + 15 Media Nasional dan Global</div>
     </div>
     """, unsafe_allow_html=True)
 
 # ─── BENTO GRID HIGHLIGHTS ───────────────────────────────────────────────────
-st.markdown('<div class="section-header">Sorotan Pilar Riset & Tata Kelola</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">Rincian Dua Jalur Pengumpulan Bukti</div>', unsafe_allow_html=True)
 
 b_col1, b_col2, b_col3 = st.columns(3)
 
@@ -127,13 +128,13 @@ with b_col1:
     st.markdown(f"""
     <div class="bento-card">
         <div>
-            <div class="bento-lbl">Track A · Danantara Monitor</div>
+            <div class="bento-lbl">Track A: Proyek Danantara</div>
             <div class="bento-val" style="color: #26A69A;">{track_a_count:,} <span style="font-size: 1rem; color: #9E9E9E;">Artikel</span></div>
             <div class="bento-desc">
-                Memantau pembentukan kelembagaan BPI Danantara, Keppres No. 30/2025, integrasi aset 7 BUMN raksasa tahap awal ($600B AUM), struktur Dewan Pengawas (Rosan, Erick, Pandu, Muliaman), dan 9 SPV resmi di Wisma Danantara.
+                Memantau proyek, regulasi, dan pembentukan kelembagaan Danantara sejak peluncuran resminya pada tahun 2025. Mencakup Keppres No. 30/2025, integrasi 7 BUMN raksasa tahap awal, dan 9 entitas SPV di Wisma Danantara.
             </div>
         </div>
-        <div class="bento-src">Rentang Waktu: ≥ 2025 · Portal Resmi & 15 Media Utama</div>
+        <div class="bento-src">Batasan Waktu: Tahun 2025 ke atas (Sesuai TOR)</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -141,13 +142,13 @@ with b_col2:
     st.markdown(f"""
     <div class="bento-card">
         <div>
-            <div class="bento-lbl">Track B · Green SOE Inventory</div>
+            <div class="bento-lbl">Track B: Proyek Hijau BUMN</div>
             <div class="bento-val" style="color: #66BB6A;">{track_b_count:,} <span style="font-size: 1rem; color: #9E9E9E;">Artikel</span></div>
             <div class="bento-desc">
-                Inventarisasi proyek dekarbonisasi dan EBT BUMN sejak 2020 pada 9 grup BUMN champion (PLN, Pertamina, MIND ID, Semen Indonesia/SIG, Pupuk Indonesia, PTPN, Perhutani, Hutama Karya, dan Danantara).
+                Inventarisasi proyek dekarbonisasi dan energi bersih yang telah diumumkan BUMN sejak 2020 pada 9 grup BUMN champion (PLN, Pertamina, MIND ID, Semen Indonesia, Pupuk Indonesia, PTPN, Perhutani, Hutama Karya, dan Danantara).
             </div>
         </div>
-        <div class="bento-src">Rentang Waktu: ≥ 2020 · 15 Kluster Metodologis Celios</div>
+        <div class="bento-src">Batasan Waktu: Tahun 2020 ke atas (Sesuai TOR)</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -155,18 +156,18 @@ with b_col3:
     st.markdown(f"""
     <div class="bento-card">
         <div>
-            <div class="bento-lbl">Integritas Forensik HTML Fisik</div>
-            <div class="bento-val" style="color: #42A5F5;">{physical_html_files:,} <span style="font-size: 1rem; color: #9E9E9E;">HTML di Disk</span></div>
+            <div class="bento-lbl">Bukti Fisik HTML di Disk</div>
+            <div class="bento-val" style="color: #42A5F5;">{physical_html_files:,} <span style="font-size: 1rem; color: #9E9E9E;">File HTML</span></div>
             <div class="bento-desc">
-                Seluruh bukti diunduh utuh ke disk lokal untuk audit forensik 100% offline. Audit eliminasi waktu mencatat {total_excluded} URL di luar batas waktu resmi telah dikeluarkan dengan alasan terdokumentasi.
+                Setiap artikel diunduh utuh sebagai file HTML fisik ke folder lokal sebelum diekstraksi. Sebanyak {total_excluded} artikel yang terbit di luar rentang waktu resmi dikeluarkan demi keabsahan data.
             </div>
         </div>
-        <div class="bento-src">Penyimpanan: data/raw/evidence_dorking/html/ · Multi-tier Downloader</div>
+        <div class="bento-src">Lokasi: data/raw/evidence_dorking/html/</div>
     </div>
     """, unsafe_allow_html=True)
 
 # ─── VISUALISASI ANALITIK (PLOTLY) ───────────────────────────────────────────
-st.markdown('<div class="section-header">Analisis Spasial & Tren Waktu</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">Analisis Sebaran Waktu dan Kluster</div>', unsafe_allow_html=True)
 
 chart_col1, chart_col2 = st.columns(2)
 
@@ -174,8 +175,8 @@ with chart_col1:
     # 1. Timeline Distribusi per Tahun (Track A vs Track B)
     df_ts = df_manifest.groupby(["year", "track"]).size().reset_index(name="count")
     df_ts["track_label"] = df_ts["track"].map({
-        "TRACK_A_DANANTARA_MONITOR": "Track A (Danantara Monitor ≥2025)",
-        "TRACK_B_GREEN_INVENTORY": "Track B (Green SOE ≥2020)"
+        "TRACK_A_DANANTARA_MONITOR": "Track A: Danantara (>=2025)",
+        "TRACK_B_GREEN_INVENTORY": "Track B: Proyek BUMN (>=2020)"
     })
     
     fig_ts = px.bar(
@@ -184,11 +185,11 @@ with chart_col1:
         y="count",
         color="track_label",
         barmode="stack",
-        title="Distribusi Waktu Bukti Artikel per Tahun (2020 – 2026)",
-        labels={"year": "Tahun Publikasi", "count": "Jumlah Artikel", "track_label": "Track"},
+        title="Distribusi Waktu Artikel per Tahun Publikasi (2020 - 2026)",
+        labels={"year": "Tahun Publikasi", "count": "Jumlah Artikel", "track_label": "Kategori"},
         color_discrete_map={
-            "Track A (Danantara Monitor ≥2025)": "#26A69A",
-            "Track B (Green SOE ≥2020)": "#66BB6A"
+            "Track A: Danantara (>=2025)": "#26A69A",
+            "Track B: Proyek BUMN (>=2020)": "#66BB6A"
         }
     )
     fig_ts.update_layout(
@@ -203,7 +204,7 @@ with chart_col1:
     st.plotly_chart(fig_ts, use_container_width=True)
 
 with chart_col2:
-    # 2. Distribusi Bukti per 15 Kluster Hijau (Track B)
+    # 2. Distribusi Bukti per Kluster Hijau (Track B)
     df_green = df_manifest[df_manifest["track"] == "TRACK_B_GREEN_INVENTORY"]
     df_clusters = df_green["cluster"].value_counts().reset_index()
     df_clusters.columns = ["cluster", "count"]
@@ -213,7 +214,7 @@ with chart_col2:
         x="count",
         y="cluster",
         orientation="h",
-        title="Top 10 Kluster Proyek Hijau BUMN Terpantau",
+        title="Top 10 Kluster Proyek Hijau BUMN",
         labels={"count": "Jumlah Artikel Bukti", "cluster": "Kluster Proyek"},
         color="count",
         color_continuous_scale="Greens"
@@ -243,7 +244,7 @@ with col_m1:
         values="count",
         names="publisher",
         hole=0.45,
-        title="Porsi Sumber Media & Portal Regulator",
+        title="Sumber Media dan Portal Regulator Terbanyak",
         color_discrete_sequence=px.colors.qualitative.Dark24
     )
     fig_pub.update_layout(
@@ -256,45 +257,45 @@ with col_m1:
     st.plotly_chart(fig_pub, use_container_width=True)
 
 with col_m2:
-    # Status Pipeline & Langkah Kerja
-    st.markdown('<div style="font-weight:700; font-size:1.05rem; margin-bottom:12px; color:#ECEFF1;">Status Pipeline Pengolahan Data</div>', unsafe_allow_html=True)
+    # Status Pipeline & Tahapan Kerja
+    st.markdown('<div style="font-weight:700; font-size:1.05rem; margin-bottom:12px; color:#ECEFF1;">Status Tahapan Kerja</div>', unsafe_allow_html=True)
     st.markdown(f"""
     <div style="background:#141A24; border:1px solid #2E3B4E; border-radius:8px; padding:16px;">
         <div style="margin-bottom:10px;">
-            <span class="badge-track-a">SELESAI</span> <strong>Langkah 1 & 1b:</strong> Ingesti Master Universe BUMN (196 entitas) & Panen Bukti 2-Track ({total_manifest:,} artikel).
+            <span class="badge-track-a">SELESAI</span> <strong>Langkah 1:</strong> Ingesti Master Universe BUMN ({total_bumn} entitas) dan panen data awal ({total_manifest:,} artikel).
         </div>
         <div style="margin-bottom:10px;">
-            <span class="badge-track-a">SELESAI</span> <strong>Langkah 2:</strong> Bounding Rentang Waktu (Filter ketat TOR Tabita Diela: Track B ≥2020, Track A ≥2025; {total_excluded} artikel out-of-scope dieliminasi).
+            <span class="badge-track-a">SELESAI</span> <strong>Langkah 2:</strong> Penerapan batas rentang waktu sesuai TOR (Track B >=2020, Track A >=2025; {total_excluded} artikel di luar rentang dikeluarkan ke log audit).
         </div>
         <div style="margin-bottom:10px;">
-            <span class="badge-track-b">SEDANG BERJALAN</span> <strong>Langkah 3:</strong> Unduh Forensik HTML Utuh (Tersimpan <strong>{physical_html_files:,} file fisik</strong> di <code>data/raw/evidence_dorking/html/</code>).
+            <span class="badge-track-b">SEDANG BERJALAN</span> <strong>Langkah 3:</strong> Unduhan bukti fisik mentah HTML ke folder lokal (Tersimpan <strong>{physical_html_files:,} file fisik</strong> di <code>data/raw/evidence_dorking/html/</code>).
         </div>
         <div style="margin-bottom:10px; color:#9E9E9E;">
-            <span style="border:1px solid #555; padding:2px 6px; border-radius:4px; font-size:0.7rem;">SIAP EKSEKUSI</span> <strong>Langkah 4:</strong> Ekstraksi Teks Bersih Markdown Offline (Trafilatura & BeautifulSoup, 100% offline).
+            <span style="border:1px solid #555; padding:2px 6px; border-radius:4px; font-size:0.7rem;">SIAP EKSEKUSI</span> <strong>Langkah 4:</strong> Ekstraksi teks bersih Markdown secara 100% offline (menggunakan Trafilatura dan BeautifulSoup).
         </div>
         <div style="color:#9E9E9E;">
-            <span style="border:1px solid #555; padding:2px 6px; border-radius:4px; font-size:0.7rem;">NEXT</span> <strong>Phase 3-5:</strong> MinHash Dedup, 13-Attribute Parsing, & 3-Gate Taxonomy Screening.
+            <span style="border:1px solid #555; padding:2px 6px; border-radius:4px; font-size:0.7rem;">BERIKUTNYA</span> <strong>Tahap Lanjutan:</strong> Deduplikasi berita dan ekstraksi 13 atribut proyek untuk penyaringan taksonomi 3-Gate.
         </div>
     </div>
     """, unsafe_allow_html=True)
 
 # ─── TABEL EKSPLORASI BUKTI TERKINI ──────────────────────────────────────────
-st.markdown('<div class="section-header">Eksplorasi Sampel Bukti Terverifikasi</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">Tabel Bukti Terverifikasi</div>', unsafe_allow_html=True)
 
 f_col1, f_col2, f_col3 = st.columns([1.5, 1.5, 2])
 with f_col1:
-    sel_track = st.selectbox("Pilih Track:", ["Semua Track", "Track A: Danantara Monitor", "Track B: Green SOE Inventory"])
+    sel_track = st.selectbox("Pilih Kategori:", ["Semua", "Track A: Proyek Danantara (>=2025)", "Track B: Proyek Hijau BUMN (>=2020)"])
 with f_col2:
     publishers_list = ["Semua Publisher"] + sorted(df_manifest["publisher"].dropna().unique().tolist())
-    sel_pub = st.selectbox("Filter Publisher:", publishers_list)
+    sel_pub = st.selectbox("Filter Media / Publisher:", publishers_list)
 with f_col3:
-    search_q = st.text_input("Cari Judul / Topik / Entitas:", "")
+    search_q = st.text_input("Cari Judul / BUMN / Publisher:", "")
 
 # Filter Dataframe
 df_view = df_manifest.copy()
-if sel_track == "Track A: Danantara Monitor":
+if sel_track == "Track A: Proyek Danantara (>=2025)":
     df_view = df_view[df_view["track"] == "TRACK_A_DANANTARA_MONITOR"]
-elif sel_track == "Track B: Green SOE Inventory":
+elif sel_track == "Track B: Proyek Hijau BUMN (>=2020)":
     df_view = df_view[df_view["track"] == "TRACK_B_GREEN_INVENTORY"]
 
 if sel_pub != "Semua Publisher":
@@ -304,25 +305,26 @@ if search_q.strip():
     q = search_q.lower()
     df_view = df_view[
         df_view["title"].str.lower().str.contains(q, na=False) |
-        df_view["topic"].str.lower().str.contains(q, na=False) |
+        df_view["target_soe"].str.lower().str.contains(q, na=False) |
         df_view["publisher"].str.lower().str.contains(q, na=False)
     ]
 
 st.markdown(f"Menampilkan **{len(df_view):,}** dokumen dari total {total_manifest:,} dokumen:")
 
 # Format Display Table
-cols_to_show = ["evidence_id", "published_at", "track", "publisher", "title", "cluster", "url"]
+cols_to_show = ["evidence_id", "published_at", "track", "publisher", "target_soe", "cluster", "title", "url"]
 st.dataframe(
     df_view[cols_to_show].head(100),
     use_container_width=True,
     column_config={
         "evidence_id": st.column_config.TextColumn("ID Bukti", width="small"),
         "published_at": st.column_config.TextColumn("Tanggal", width="small"),
-        "track": st.column_config.TextColumn("Track", width="small"),
+        "track": st.column_config.TextColumn("Kategori", width="small"),
         "publisher": st.column_config.TextColumn("Sumber / Media", width="medium"),
-        "title": st.column_config.TextColumn("Judul Berita / Regulasi", width="large"),
+        "target_soe": st.column_config.TextColumn("BUMN", width="small"),
         "cluster": st.column_config.TextColumn("Kluster", width="small"),
-        "url": st.column_config.LinkColumn("Link Asli", display_text="Buka Sumber")
+        "title": st.column_config.TextColumn("Judul Artikel", width="large"),
+        "url": st.column_config.LinkColumn("Link Sumber", display_text="Buka Sumber")
     },
     hide_index=True
 )

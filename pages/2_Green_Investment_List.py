@@ -1,6 +1,6 @@
 """
 CELIOS — Green Investment List (Track B: 2020 Onward)
-Inventarisasi Portofolio & Proyek Transisi Hijau BUMN Lintas 15 Kluster
+Inventarisasi Portofolio Proyek Transisi Hijau BUMN Lintas 15 Kluster
 """
 
 import streamlit as st
@@ -41,9 +41,9 @@ st.markdown(f'<div class="page-subtitle">Inventarisasi Proyek Transisi Hijau BUM
 st.markdown(f"""
 <div class="note-box">
 <strong>Batasan Rentang Waktu Track B (Sesuai Dokumen Metodologi Riset CELIOS)</strong><br>
-Berdasarkan arahan eksplisit Tim Riset CELIOS (Tabita Diela & Bhima Yudhistira):<br>
-<em>"creating an inventory of green projects already announced by the Indonesian government and/or state-owned enterprises from 2020 onwards."</em><br>
-Seluruh artikel bukti proyek hijau BUMN yang dikurasi dibatasi pada pengumuman sejak <strong>Tahun 2020 ke atas</strong> pada 9 BUMN champion (PLN, Pertamina, Semen Indonesia/SIG, Pupuk Indonesia, MIND ID, PTPN, Perhutani, Hutama Karya, dan Danantara).
+Berdasarkan rumusan verbatim dokumen metodologi riset CELIOS (<code>brief-20260831_Methodological Approach.md</code> baris 35):<br>
+<em>"creating an inventory of green projects already announced by the Indonesian government and/or state-owned enterprises from 2020 onwards."</em><br><br>
+Seluruh artikel bukti proyek hijau BUMN yang dikurasi dibatasi pada pengumuman sejak <strong>Tahun 2020 ke atas</strong> pada 9 BUMN champion (PLN, Pertamina, Semen Indonesia, Pupuk Indonesia, MIND ID, PTPN, Perhutani, Hutama Karya, dan Danantara).
 </div>
 """, unsafe_allow_html=True)
 
@@ -54,7 +54,7 @@ with m1:
     <div class="metric-card">
         <div class="metric-label">Total Bukti Proyek Hijau</div>
         <div class="metric-value">{total_green:,}</div>
-        <div class="metric-desc">Rentang Waktu: 2020 – 2026 (≥ 2020)</div>
+        <div class="metric-desc">Rentang Waktu: Tahun 2020 ke atas</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -87,9 +87,9 @@ with m4:
 
 # ─── TABS ─────────────────────────────────────────────────────────────────────
 tab1, tab2, tab3 = st.tabs([
-    "📊 Distribusi 15 Kluster Hijau",
-    "🔍 Eksplorasi Inventaris Bukti",
-    "🛡️ Kerangka Skrining 3-Gate"
+    "Distribusi 15 Kluster Hijau",
+    "Eksplorasi Inventaris Bukti",
+    "Kerangka Skrining 3-Gate"
 ])
 
 with tab1:
@@ -124,21 +124,21 @@ with tab1:
     with col_c2:
         st.markdown('<div style="font-weight:700; color:#ECEFF1; margin-bottom:8px;">15 Kluster Metodologi Celios:</div>', unsafe_allow_html=True)
         clusters_desc = [
-            ("1. Solar / PLTS", "PLTS terapung Cirata, rooftop solar pabrik Semen Indonesia/Pupuk."),
-            ("2. Geothermal / PLTP", "Proyek panas bumi Pertamina Geothermal Energy (PGE) & PLN IP."),
-            ("3. Hydro / PLTA", "PLTA pumped storage Cisokan, PLTM Batang Toru, Asahan."),
-            ("4. Wind / PLTB", "PLTB Sidrap, Jeneponto, eksplorasi lepas pantai."),
-            ("5. Bioenergy & Biomass", "Co-firing biomassa PLTU PLN, pelet kayu, bioetanol Pertamina."),
-            ("6. Green Hydrogen & Ammonia", "Proyek hidrogen hijau PLN Muara Karang, Pupuk Indonesia green ammonia."),
-            ("7. EV & Battery Ecosystem", "Indonesia Battery Corporation (IBC), ekosistem SPKLU PLN."),
-            ("8. Smart Grid & Transmission", "Transmisi bawah laut Jawa-Sumatera, smart grid PLN."),
-            ("9. Energy Efficiency", "Efisiensi energi industri pupuk, semen, dan kilang migas."),
-            ("10. Industrial Decarbonization", "Green cement SIG, dekarbonisasi smelter MIND ID."),
-            ("11. Waste to Energy (WtE)", "Pengolahan sampah RDF di Cilacap, WtE Bantargebang."),
-            ("12. Nature-based Solutions (NBS)", "Konservasi hutan Perhutani, restorasi mangrove, kredit karbon."),
-            ("13. Sustainable Agriculture", "Praktik sawit berkelanjutan PTPN, regenerasi tanah pangan."),
-            ("14. Green Financing", "Penerbitan green bond Mandiri, BRI, BNI untuk transisi."),
-            ("15. Carbon Capture (CCUS)", "Injeksi CO2 Sukowati Pertamina, CCS lapangan migas.")
+            ("1. Solar", "PLTS terapung, PLTS atap, panel surya, tenaga surya skala utilitas."),
+            ("2. Water", "PLTA, PLTMH, hidro, bendungan, pumped storage."),
+            ("3. Wind", "PLTB, tenaga bayu, turbin angin darat dan lepas pantai."),
+            ("4. Bioenergy", "Biomassa, biogas, biofuel, biodiesel, bioetanol, SAF."),
+            ("5. Waste and circular", "Waste-to-energy, PSEL, RDF, pengolahan sampah, ekonomi sirkular."),
+            ("6. Hydrogen", "Hidrogen hijau, amonia hijau, hidrogen rendah karbon."),
+            ("7. Electric vehicle", "Kendaraan listrik, ekosistem EV, SPKLU, SPBKLU, bus listrik."),
+            ("8. Battery", "Baterai kendaraan listrik, rantai pasok baterai, daur ulang baterai."),
+            ("9. Power network", "Transmisi hijau, interkoneksi, smart grid, digitalisasi jaringan."),
+            ("10. Industry decarbonization", "Efisiensi energi, elektrifikasi, semen rendah karbon, baja ramah lingkungan."),
+            ("11. Coal transition", "Pensiun dini PLTU, penghentian PLTU, phase-down batu bara."),
+            ("12. Carbon", "Perdagangan karbon, kredit karbon, pengurangan emisi, dekarbonisasi."),
+            ("13. Mangrove, peatland", "Rehabilitasi mangrove, restorasi gambut, reforestasi, konservasi."),
+            ("14. Wastewater", "Pengolahan air limbah, air bersih berkelanjutan, efisiensi air."),
+            ("15. Renewable energy (general)", "Energi terbarukan, energi bersih, pembangkit hijau umum.")
         ]
         for name, desc in clusters_desc:
             st.markdown(f"• **{name}**: <span style='font-size:0.8rem; color:#9E9E9E;'>{desc}</span>", unsafe_allow_html=True)
@@ -152,9 +152,9 @@ with tab2:
         sel_cluster = st.selectbox("Pilih Kluster Hijau:", cluster_list)
     with f2:
         year_list = ["Semua Tahun"] + sorted(df_green["year"].dropna().unique().astype(str).tolist())
-        sel_year = st.selectbox("Tahun Publikasi (≥ 2020):", year_list)
+        sel_year = st.selectbox("Tahun Publikasi (>= 2020):", year_list)
     with f3:
-        search_g = st.text_input("Cari Proyek / Lokasi / BUMN (misal: cirata, cisokan, ibc, amonia):", "")
+        search_g = st.text_input("Cari Judul / BUMN Target / Publisher:", "")
         
     df_g_view = df_green.copy()
     if sel_cluster != "Semua Kluster":
@@ -165,20 +165,20 @@ with tab2:
         q = search_g.lower()
         df_g_view = df_g_view[
             df_g_view["title"].str.lower().str.contains(q, na=False) |
-            df_g_view["topic"].str.lower().str.contains(q, na=False) |
-            df_g_view["bumn_target"].str.lower().str.contains(q, na=False)
+            df_g_view["target_soe"].str.lower().str.contains(q, na=False) |
+            df_g_view["publisher"].str.lower().str.contains(q, na=False)
         ]
         
     st.markdown(f"Menampilkan **{len(df_g_view):,}** dokumen bukti:")
     
     st.dataframe(
-        df_g_view[["evidence_id", "published_at", "cluster", "bumn_target", "title", "publisher", "url"]].head(100),
+        df_g_view[["evidence_id", "published_at", "cluster", "target_soe", "title", "publisher", "url"]].head(100),
         use_container_width=True,
         column_config={
             "evidence_id": st.column_config.TextColumn("ID Bukti", width="small"),
             "published_at": st.column_config.TextColumn("Tanggal", width="small"),
             "cluster": st.column_config.TextColumn("Kluster Proyek", width="medium"),
-            "bumn_target": st.column_config.TextColumn("BUMN Target", width="small"),
+            "target_soe": st.column_config.TextColumn("BUMN Target", width="small"),
             "title": st.column_config.TextColumn("Judul Bukti Pengumuman Proyek", width="large"),
             "publisher": st.column_config.TextColumn("Media / Sumber", width="small"),
             "url": st.column_config.LinkColumn("Tautan Asli", display_text="Buka Sumber")
@@ -189,7 +189,7 @@ with tab2:
 with tab3:
     st.markdown('<div class="section-header">Proses Skrining 3-Gate Sesuai Metodologi Celios</div>', unsafe_allow_html=True)
     st.markdown("""
-    Setelah tahap ekstraksi teks bersih (Phase 2), inventaris proyek hijau akan disaring secara deterministik melalui **3 Gerbang (3-Gate Screening)**:
+    Setelah tahap ekstraksi teks bersih (Phase 2), inventaris proyek hijau akan disaring secara deterministik melalui 3 gerbang validasi (3-Gate Screening):
     """)
     
     g1, g2, g3 = st.columns(3)
@@ -197,7 +197,7 @@ with tab3:
         st.markdown("""
         <div class="bento-card">
             <div>
-                <div class="bento-lbl" style="color:#EF5350;">Gate 1 · Negative Filter</div>
+                <div class="bento-lbl" style="color:#EF5350;">Gate 1: Negative Filter</div>
                 <div class="bento-val" style="font-size:1.4rem; color:#EF5350;">Exclusion List</div>
                 <div class="bento-desc">
                     Mengeliminasi proyek yang bertentangan dengan prinsip keberlanjutan: proyek batu bara baru, captive coal power plant (PLTU captive industri), deforestasi primer, dan pelanggaran AMDAL berat.
@@ -211,7 +211,7 @@ with tab3:
         st.markdown("""
         <div class="bento-card">
             <div>
-                <div class="bento-lbl" style="color:#FFA726;">Gate 2 · Taksonomi Teknis</div>
+                <div class="bento-lbl" style="color:#FFA726;">Gate 2: Taksonomi Teknis</div>
                 <div class="bento-val" style="font-size:1.4rem; color:#FFA726;">TKBI v3 / ASEAN</div>
                 <div class="bento-desc">
                     Pengujian teknis batas ambang emisi (thresholds): klasifikasi Hijau (Green), Transisi (Amber), atau Merah (Red) berdasarkan Taksonomi Keuangan Berkelanjutan Indonesia (TKBI v3) dan ASEAN Taxonomy v4.
@@ -225,7 +225,7 @@ with tab3:
         st.markdown("""
         <div class="bento-card">
             <div>
-                <div class="bento-lbl" style="color:#66BB6A;">Gate 3 · Adisionalitas</div>
+                <div class="bento-lbl" style="color:#66BB6A;">Gate 3: Adisionalitas</div>
                 <div class="bento-val" style="font-size:1.4rem; color:#66BB6A;">Norfund Standard</div>
                 <div class="bento-desc">
                     Menguji apakah proyek memberikan adisionalitas riil (finansial dan lingkungan) yang tidak akan terjadi tanpa intervensi pembiayaan transisi energi berkelanjutan, serta kelayakan komersial jangka panjang.
