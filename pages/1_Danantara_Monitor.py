@@ -179,15 +179,33 @@ if not df_spv.empty:
 
 # ─── BAGIAN 4: 7 BUMN KONSOLIDASI (LANGSUNG TAMPIL) ───────────────────────────
 st.markdown('<div class="section-header">7 BUMN Raksasa Konsolidasi Tahap Awal (USD 600 Miliar AUM)</div>', unsafe_allow_html=True)
+
+with st.expander("📌 Dasar Ground Truth, Verbatim Resmi, & Lineage Bukti Forensik (Sesuai Aturan Repositori)", expanded=True):
+    st.markdown("""
+    **Kutipan Verbatim Resmi (Pernyataan Pemerintah):**  
+    > *"Pada tahap awal, konsolidasi aset Danantara diproyeksikan mengelola sekitar **USD 600 miliar** yang berasal dari pengalihan 7 BUMN besar dan INA (Indonesia Investment Authority). Ke depan, aset kelolaan ditargetkan mencapai USD 900 miliar sampai USD 1 triliun."*  
+    > — **Dr. Muliaman D. Hadad** (Kepala Badan Pengelola Investasi Danantara, Peluncuran & Media Briefing November 2024).
+
+    **Dasar Perhitungan & Sumber Publikasi Sah:**  
+    - **Basis Data:** Laporan Keuangan Konsolidasian masing-masing entitas BUMN Tahun Buku 2023 (*Audited*).  
+    - **Rekonsiliasi Aset:** 7 BUMN (Rp 8.876 Triliun) + INA (Rp 163 Triliun / USD 10,8 Miliar) = **Rp 9.039 Triliun** ($\approx$ **USD 576 – 600 Miliar** pada asumsi kurs APBN/Pasar Rp 15.000–15.700/USD).  
+    - **Liputan Media Kredibel:** *Bloomberg, Reuters, CNBC Indonesia, Katadata, Kompas, Bisnis Indonesia, dan Kementerian Sekretariat Negara RI*.  
+    - **Berkas Bukti Forensik Mentah:** `data/raw/sources/danantara_stage1_consolidation_evidence.md`  
+    - **Dataset Fisik Terstruktur:** `data/processed/danantara_stage1_bumn.csv`
+    """)
+
 if not df_stage1.empty:
     st.dataframe(
-        df_stage1[["bumn", "sektor", "aset_label", "peran_strategis"]].rename(columns={
-            "bumn": "BUMN",
-            "sektor": "Sektor",
-            "aset_label": "Aset Konsolidasi",
-            "peran_strategis": "Peran Strategis"
-        }),
+        df_stage1[["bumn", "sektor", "aset_label", "peran_strategis", "sumber_resmi", "file_bukti_raw"]],
         use_container_width=True,
+        column_config={
+            "bumn": st.column_config.TextColumn("BUMN", width="medium"),
+            "sektor": st.column_config.TextColumn("Sektor", width="medium"),
+            "aset_label": st.column_config.TextColumn("Aset Konsolidasi", width="small"),
+            "peran_strategis": st.column_config.TextColumn("Peran Strategis", width="large"),
+            "sumber_resmi": st.column_config.TextColumn("Dasar Verifikasi / Sumber Resmi", width="large"),
+            "file_bukti_raw": st.column_config.TextColumn("Lineage Berkas Bukti", width="medium"),
+        },
         hide_index=True
     )
 else:
