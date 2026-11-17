@@ -9,3 +9,5 @@ Thumbs.db
 node_modules/
 cache/
 data/raw/evidence_dorking/html/
+~$*
+*.tmp
