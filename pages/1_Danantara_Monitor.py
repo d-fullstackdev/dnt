@@ -189,22 +189,32 @@ with st.expander("📌 Dasar Ground Truth, Verbatim Resmi, & Lineage Bukti Foren
     **Dasar Perhitungan & Sumber Publikasi Sah:**  
     - **Basis Data:** Laporan Keuangan Konsolidasian masing-masing entitas BUMN Tahun Buku 2023 (*Audited*).  
     - **Rekonsiliasi Aset:** 7 BUMN (Rp 8.876 Triliun) + INA (Rp 163 Triliun / USD 10,8 Miliar) = **Rp 9.039 Triliun** ($\approx$ **USD 576 – 600 Miliar** pada asumsi kurs APBN/Pasar Rp 15.000–15.700/USD).  
-    - **Liputan Media Kredibel:** *Bloomberg, Reuters, CNBC Indonesia, Katadata, Kompas, Bisnis Indonesia, dan Kementerian Sekretariat Negara RI*.  
-    - **Berkas Bukti Forensik Mentah:** `data/raw/sources/danantara_stage1_consolidation_evidence.md`  
+    - **Tautan Langsung Media Kredibel (Live Links):**  
+      1. 🌐 [Katadata Databoks — Daftar BUMN yang Sumbang Aset untuk Dikelola Danantara](https://databoks.katadata.co.id/keuangan/statistik/672ae5b1821f7/daftar-bumn-yang-sumbang-aset-untuk-dikelola-danantara)  
+      2. 🌐 [CNBC Indonesia — Diumumkan Prabowo, Ini Daftar 7 BUMN Jumbo di Bawah Danantara](https://www.cnbcindonesia.com/market/20241107084846-17-586318/diumumkan-prabowo-ini-daftar-7-bumn-jumbo-di-bawah-danantara)  
+      3. 🌐 [Detik Finance — Resmi Diluncurkan, Danantara Kelola 7 BUMN Ini di Tahap Awal](https://finance.detik.com/berita-ekonomi-bisnis/d-7792821/resmi-diluncurkan-danantara-kelola-7-bumn-ini-di-tahap-awal)  
+      4. 🌐 [The Jakarta Post — SOEs Superholding Danantara Analysis ($600 Billion Initial Target)](https://www.thejakartapost.com/opinion/2024/11/19/analysis-soes-superholding-danantara-launch-delayed-uncertainty-looms)  
+      5. 🌐 [Katadata Infografik — Danantara Wujud Baru Induk BUMN](https://katadata.co.id/infografik/67341af7c704c/infografik-danantara-wujud-baru-induk-bumn)  
+    - **Snapshot Berkas Fisik Lokal di Repositori:**  
+      - `data/raw/sources/web_snapshots/databoks_katadata_danantara_aset.html`  
+      - `data/raw/sources/web_snapshots/cnbc_daftar_7_bumn_danantara.html`  
+      - `data/raw/sources/web_snapshots/detik_7_bumn_tahap_awal_danantara.html`  
+    - **Dokumen Catatan Lineage Lengkap:** `data/raw/sources/danantara_stage1_consolidation_evidence.md`  
     - **Dataset Fisik Terstruktur:** `data/processed/danantara_stage1_bumn.csv`
     """)
 
 if not df_stage1.empty:
+    cols_to_show = ["bumn", "sektor", "aset_label", "peran_strategis", "sumber_resmi", "direct_url"]
     st.dataframe(
-        df_stage1[["bumn", "sektor", "aset_label", "peran_strategis", "sumber_resmi", "file_bukti_raw"]],
+        df_stage1[cols_to_show],
         use_container_width=True,
         column_config={
             "bumn": st.column_config.TextColumn("BUMN", width="medium"),
             "sektor": st.column_config.TextColumn("Sektor", width="medium"),
             "aset_label": st.column_config.TextColumn("Aset Konsolidasi", width="small"),
             "peran_strategis": st.column_config.TextColumn("Peran Strategis", width="large"),
-            "sumber_resmi": st.column_config.TextColumn("Dasar Verifikasi / Sumber Resmi", width="large"),
-            "file_bukti_raw": st.column_config.TextColumn("Lineage Berkas Bukti", width="medium"),
+            "sumber_resmi": st.column_config.TextColumn("Dasar Verifikasi", width="medium"),
+            "direct_url": st.column_config.LinkColumn("Tautan Sumber Asli", display_text="Buka Sumber Berita", width="medium"),
         },
         hide_index=True
     )

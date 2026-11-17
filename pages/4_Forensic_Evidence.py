@@ -103,26 +103,50 @@ if not df_log.empty:
         search_log = st.text_input("Cari ID Bukti / URL:", "")
         
     df_log_view = df_log.copy()
+    if not df_manifest.empty:
+        df_log_view = pd.merge(df_log_view, df_manifest[["evidence_id", "title", "publisher"]], on="evidence_id", how="left")
+        
     if sel_stat != "Semua Status":
         df_log_view = df_log_view[df_log_view["status"] == sel_stat]
     if search_log.strip():
         ql = search_log.lower()
-        df_log_view = df_log_view[
-            df_log_view["evidence_id"].str.lower().str.contains(ql, na=False) |
-            df_log_view["canonical_url"].str.lower().str.contains(ql, na=False)
-        ]
+        search_filter = (
+            df_log_view["evidence_id"].astype(str).str.lower().str.contains(ql, na=False) |
+            df_log_view["canonical_url"].astype(str).str.lower().str.contains(ql, na=False)
+        )
+        if "publisher" in df_log_view.columns:
+            search_filter = search_filter | df_log_view["publisher"].astype(str).str.lower().str.contains(ql, na=False)
+        if "title" in df_log_view.columns:
+            search_filter = search_filter | df_log_view["title"].astype(str).str.lower().str.contains(ql, na=False)
+        df_log_view = df_log_view[search_filter]
         
-    st.markdown(f"Menampilkan **{len(df_log_view):,}** catatan log:")
+    col_info, col_dl = st.columns([3, 1])
+    with col_info:
+        st.markdown(f"Menampilkan **{len(df_log_view):,}** catatan log:")
+    with col_dl:
+        failed_csv_path = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "failed_download_manifest.csv"
+        if failed_csv_path.exists():
+            with open(failed_csv_path, "rb") as f_failed:
+                st.download_button(
+                    label="Unduh CSV Arsip Gagal",
+                    data=f_failed.read(),
+                    file_name="failed_download_manifest.csv",
+                    mime="text/csv",
+                    use_container_width=True
+                )
+                
     st.dataframe(
-        df_log_view.tail(150),
+        df_log_view.tail(200),
         use_container_width=True,
         column_config={
             "evidence_id": st.column_config.TextColumn("ID Bukti", width="small"),
+            "publisher": st.column_config.TextColumn("Media / Penerbit", width="medium"),
+            "title": st.column_config.TextColumn("Judul Artikel", width="large"),
             "status": st.column_config.TextColumn("Status", width="small"),
             "status_code": st.column_config.NumberColumn("HTTP Code", width="small"),
             "file_size_bytes": st.column_config.NumberColumn("Ukuran (Bytes)", width="small"),
             "method": st.column_config.TextColumn("Metode Unduh", width="medium"),
-            "canonical_url": st.column_config.LinkColumn("URL Kanonikal", display_text="Buka URL"),
+            "canonical_url": st.column_config.LinkColumn("URL Kanonikal", display_text="Buka Sumber"),
             "downloaded_at": st.column_config.TextColumn("Waktu Unduh (UTC)", width="medium")
         },
         hide_index=True

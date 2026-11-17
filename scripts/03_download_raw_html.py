@@ -82,21 +82,13 @@ def process_single_article(row_dict: dict, session: cffi_requests.Session) -> di
             "downloaded_at": datetime.now(timezone.utc).isoformat()
         }
         
-    # 2. Decode URL
-    canonical_url = decode_url_with_retry(gnews_url, max_retries=3)
+    # 2. Decode URL (use pre-resolved canonical if available)
+    canonical_url = row_dict.get("canonical_url")
+    if not canonical_url or "news.google.com" in canonical_url:
+        canonical_url = decode_url_with_retry(gnews_url, max_retries=2)
     method_used = "curl_cffi"
     html_content = ""
     status_code = 0
-    
-    # If decoding via protobuf failed, attempt Puppeteer to resolve redirect
-    if not canonical_url:
-        with puppeteer_lock:
-            res = fetch_with_puppeteer(gnews_url, headless=True)
-            if res.get("success") and res.get("text_length", 0) > 200:
-                html_content = res.get("html", "")
-                canonical_url = res.get("url", gnews_url)
-                status_code = res.get("status", 200)
-                method_used = "puppeteer_redirect_resolver"
 
     # 3. If canonical URL acquired, fetch content
     if canonical_url and not html_content:
@@ -104,7 +96,7 @@ def process_single_article(row_dict: dict, session: cffi_requests.Session) -> di
             method_used = "puppeteer_stealth"
             with puppeteer_lock:
                 res = fetch_with_puppeteer(canonical_url, headless=True)
-                if res.get("success") and res.get("text_length", 0) > 200:
+                if res.get("success") and (len(res.get("html", "")) > 500 or res.get("text_length", 0) > 200):
                     html_content = res.get("html", "")
                     status_code = res.get("status", 200)
                 else:
@@ -123,7 +115,7 @@ def process_single_article(row_dict: dict, session: cffi_requests.Session) -> di
                     method_used = "puppeteer_stealth_elevation"
                     with puppeteer_lock:
                         res = fetch_with_puppeteer(canonical_url, headless=True)
-                        if res.get("success") and res.get("text_length", 0) > 200:
+                        if res.get("success") and (len(res.get("html", "")) > 500 or res.get("text_length", 0) > 200):
                             html_content = res.get("html", "")
                             status_code = 200
                         else:
@@ -186,7 +178,12 @@ def run_download_pipeline(batch_size: int = 1754, max_workers: int = 5, sleep_se
         if ev_id in existing_logs and existing_logs[ev_id].get("status") == "SUCCESS" and os.path.exists(html_f) and os.path.getsize(html_f) > 500:
             skipped_count += 1
         else:
-            items_to_process.append(dict(row))
+            item = dict(row)
+            if ev_id in existing_logs and existing_logs[ev_id].get("canonical_url"):
+                old_c = str(existing_logs[ev_id].get("canonical_url"))
+                if old_c and "news.google.com" not in old_c and old_c != "nan":
+                    item["canonical_url"] = old_c
+            items_to_process.append(item)
             
     print(f"Already downloaded and verified: {skipped_count} articles")
     print(f"Queued for download: {len(items_to_process)} articles")
