@@ -29,7 +29,8 @@ STRICT_WAF_DOMAINS = [
     "kompas.id",
     "thejakartapost.com",
     "spglobal.com",
-    "moodys.com"
+    "moodys.com",
+    "presidenri.go.id"
 ]
 
 def is_strict_waf_domain(url: str) -> bool:
