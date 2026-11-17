@@ -57,7 +57,7 @@ with st.expander("Metodologi & Batasan Rentang Waktu (Sesuai Dokumen Riset CELIO
     **Rujukan Dokumen Metodologi Riset CELIOS** (`brief-20260831_Methodological Approach.md` baris 35):
     > *"creating an inventory of green projects already announced by the Indonesian government and/or state-owned enterprises from 2020 onwards."*
     
-    * **Batasan Waktu:** Seluruh artikel bukti proyek hijau BUMN yang dikurasi dibatasi pada pengumuman sejak **Tahun 2020 ke atas** pada 9 BUMN champion (PLN, Pertamina, Semen Indonesia, Pupuk Indonesia, MIND ID, PTPN, Perhutani, Hutama Karya, dan Danantara).
+    * **Batasan Waktu:** Seluruh artikel bukti proyek hijau BUMN yang dikurasi dibatasi pada pengumuman sejak **Tahun 2020 ke atas** pada 9 grup BUMN objek riset (PLN, Pertamina, Semen Indonesia, Pupuk Indonesia, MIND ID, PTPN, Perhutani, Hutama Karya, dan Danantara).
     * **Akses Tautan:** Tautan artikel dapat dibuka langsung ke media asal tanpa redirect Google News.
     * **Penyaringan Lanjutan:** Seluruh proyek akan diuji melalui 3 gerbang (*Gate 1: Negative Filter*, *Gate 2: Technical Screening TKBI v3 / ASEAN Taxonomy v4*, dan *Gate 3: Norfund Additionality*).
     """)
@@ -85,7 +85,7 @@ with m2:
 with m3:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Grup BUMN Champion</div>
+        <div class="metric-label">Grup BUMN Terpantau</div>
         <div class="metric-value">9 Grup</div>
         <div class="metric-desc">PLN, Pertamina, SIG, MIND ID, dll.</div>
     </div>

@@ -155,7 +155,7 @@ with b_col2:
             <div class="bento-lbl">Proyek Hijau BUMN</div>
             <div class="bento-val" style="color: #66BB6A;">{green_bumn_count:,} <span style="font-size: 1rem; color: #9E9E9E;">Artikel</span></div>
             <div class="bento-desc">
-                Inventarisasi proyek dekarbonisasi dan energi bersih yang telah diumumkan BUMN sejak 2020 pada 9 grup BUMN champion (PLN, Pertamina, MIND ID, Semen Indonesia, Pupuk Indonesia, PTPN, Perhutani, Hutama Karya, dan Danantara).
+                Inventarisasi proyek dekarbonisasi dan energi bersih yang telah diumumkan BUMN sejak 2020 pada 9 grup BUMN terpantau (PLN, Pertamina, MIND ID, Semen Indonesia, Pupuk Indonesia, PTPN, Perhutani, Hutama Karya, dan Danantara).
             </div>
         </div>
         <div class="bento-src">Batasan Waktu: Tahun 2020 ke atas (Sesuai TOR)</div>
