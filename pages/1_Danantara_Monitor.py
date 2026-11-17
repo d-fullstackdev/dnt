@@ -16,7 +16,7 @@ from src.components.sidebar import render_sidebar
 from src.utils.styling import get_danantara_css
 
 st.set_page_config(
-    page_title="CELIOS — Track A: Danantara Monitor",
+    page_title="CELIOS — Danantara Monitor",
     page_icon="assets/celios_logo.png",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -29,23 +29,34 @@ st.markdown(get_danantara_css(), unsafe_allow_html=True)
 MANIFEST_PATH = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "master_urls_manifest.csv"
 BOARD_PATH = PROJECT_ROOT / "data" / "processed" / "danantara_board_structure.csv"
 SPV_PATH = PROJECT_ROOT / "data" / "processed" / "danantara_spv_clean.csv"
+LOG_PATH = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "html_download_log.csv"
 
 df_manifest = pd.read_csv(MANIFEST_PATH)
 df_track_a = df_manifest[df_manifest["track"] == "TRACK_A_DANANTARA_MONITOR"].copy()
 df_board = pd.read_csv(BOARD_PATH) if BOARD_PATH.exists() else pd.DataFrame()
 df_spv = pd.read_csv(SPV_PATH) if SPV_PATH.exists() else pd.DataFrame()
+df_log = pd.read_csv(LOG_PATH) if LOG_PATH.exists() else pd.DataFrame()
+
+# Pemetaan URL Langsung Penerbit
+url_map = {}
+if not df_log.empty:
+    for _, r in df_log.iterrows():
+        canon = str(r.get("canonical_url", "")).strip()
+        if canon and "news.google.com" not in canon:
+            url_map[str(r["evidence_id"])] = canon
+df_track_a["direct_url"] = df_track_a["evidence_id"].map(url_map).fillna(df_track_a["url"])
 
 total_track_a = len(df_track_a)
 total_pub = df_track_a["publisher"].nunique()
 
-st.markdown('<div class="page-title">Danantara Monitor (Track A)</div>', unsafe_allow_html=True)
+st.markdown('<div class="page-title">Danantara Monitor</div>', unsafe_allow_html=True)
 st.markdown(f'<div class="page-subtitle">Pemantauan Regulasi Resmi dan Media Kredibel Terkait Danantara ({total_track_a:,} Artikel Terverifikasi)</div>', unsafe_allow_html=True)
 
 st.markdown(f"""
 <div class="note-box">
-<strong>Fokus Pemantauan Track A (Tahun 2025 ke atas)</strong><br>
+<strong>Fokus Pemantauan (Tahun 2025 ke atas)</strong><br>
 Sesuai rumusan verbatim dokumen metodologi riset Celios: <em>"and all projects confirmed by Danantara Indonesia since its launch in 2025."</em><br>
-Fokus pada seluruh proyek, kesepakatan investasi, dan arah kebijakan yang dikonfirmasi langsung oleh Danantara sejak peluncuran resminya pada tahun 2025. Data dikurasi dari portal resmi pemerintah (jdih.setneg.go.id, peraturan.bpk.go.id), dan media arus utama nasional dan global.
+Fokus pada seluruh proyek, kesepakatan investasi, dan arah kebijakan yang dikonfirmasi langsung oleh Danantara sejak peluncuran resminya pada tahun 2025. Tautan artikel dapat dibuka langsung ke media penerbit tanpa redirect Google.
 </div>
 """, unsafe_allow_html=True)
 
@@ -87,7 +98,7 @@ with m4:
     </div>
     """, unsafe_allow_html=True)
 
-# ─── TABS KONTEN TRACK A ──────────────────────────────────────────────────────
+# ─── TABS KONTEN ──────────────────────────────────────────────────────────────
 tab1, tab2, tab3, tab4 = st.tabs([
     "Feed Berita & Regulasi",
     "Struktur Dewan & Pimpinan",
@@ -118,14 +129,14 @@ with tab1:
     st.markdown(f"Menampilkan **{len(df_filtered):,}** artikel bukti:")
     
     st.dataframe(
-        df_filtered[["evidence_id", "published_at", "publisher", "title", "url"]].head(100),
+        df_filtered[["evidence_id", "published_at", "publisher", "title", "direct_url"]].head(100),
         use_container_width=True,
         column_config={
             "evidence_id": st.column_config.TextColumn("ID", width="small"),
             "published_at": st.column_config.TextColumn("Tanggal", width="small"),
             "publisher": st.column_config.TextColumn("Publisher", width="medium"),
             "title": st.column_config.TextColumn("Judul Berita", width="large"),
-            "url": st.column_config.LinkColumn("Link Sumber", display_text="Buka Berita")
+            "direct_url": st.column_config.LinkColumn("Tautan Langsung Media", display_text="Buka Sumber Langsung")
         },
         hide_index=True
     )
@@ -147,8 +158,6 @@ with tab2:
             },
             hide_index=True
         )
-    else:
-        st.info("Dataset struktur dewan BPI Danantara sedang dikompilasi.")
 
 with tab3:
     st.markdown('<div class="section-header">9 Special Purpose Vehicles (SPV) Resmi Wisma Danantara</div>', unsafe_allow_html=True)

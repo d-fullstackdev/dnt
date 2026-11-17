@@ -12,6 +12,9 @@ def render_sidebar():
         st.markdown("""
         <style>
         [data-testid="stSidebarNav"] { display: none !important; }
+        [data-testid="stPageLink-Icon"], span[data-testid="stIconMaterial"], .st-emotion-cache-1fttcpj {
+            display: none !important;
+        }
         .sidebar-label {
             font-size: 0.7rem;
             font-weight: 600;
@@ -39,12 +42,12 @@ def render_sidebar():
         st.page_link("Dashboard.py", label="Overview & Eksekutif")
 
         st.markdown('<div class="sidebar-label">Pilar Riset & Pelacak</div>', unsafe_allow_html=True)
-        st.page_link("pages/1_Danantara_Monitor.py", label="Track A: Proyek Danantara (>=2025)")
-        st.page_link("pages/2_Green_Investment_List.py", label="Track B: Proyek Hijau BUMN (>=2020)")
-        st.page_link("pages/3_BUMN_Universe.py", label="Daftar 196 Entitas BUMN")
+        st.page_link("pages/1_Danantara_Monitor.py", label="Danantara Monitor (>= 2025)")
+        st.page_link("pages/2_Green_Investment_List.py", label="Proyek Hijau BUMN (>= 2020)")
+        st.page_link("pages/3_BUMN_Universe.py", label="Silsilah 196 Entitas BUMN")
 
-        st.markdown('<div class="sidebar-label">Forensik & Tata Kelola</div>', unsafe_allow_html=True)
-        st.page_link("pages/4_Forensic_Evidence.py", label="Bukti Forensik & Unduhan HTML")
+        st.markdown('<div class="sidebar-label">Dokumentasi</div>', unsafe_allow_html=True)
+        st.page_link("pages/4_Forensic_Evidence.py", label="Bukti Fisik & Unduhan HTML")
         st.page_link("pages/5_Metodologi_Brief.py", label="Dokumentasi Metodologi")
 
         st.markdown("---")

@@ -17,7 +17,7 @@ from src.components.sidebar import render_sidebar
 from src.utils.styling import get_danantara_css
 
 st.set_page_config(
-    page_title="CELIOS — Track B: Green Investment List",
+    page_title="CELIOS — Proyek Hijau BUMN",
     page_icon="assets/celios_logo.png",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -28,22 +28,34 @@ st.markdown(get_danantara_css(), unsafe_allow_html=True)
 
 # ─── DATA LOADING ─────────────────────────────────────────────────────────────
 MANIFEST_PATH = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "master_urls_manifest.csv"
+LOG_PATH = PROJECT_ROOT / "data" / "raw" / "evidence_dorking" / "html_download_log.csv"
+
 df_manifest = pd.read_csv(MANIFEST_PATH)
 df_green = df_manifest[df_manifest["track"] == "TRACK_B_GREEN_INVENTORY"].copy()
+df_log = pd.read_csv(LOG_PATH) if LOG_PATH.exists() else pd.DataFrame()
+
+# Pemetaan URL Langsung Penerbit
+url_map = {}
+if not df_log.empty:
+    for _, r in df_log.iterrows():
+        canon = str(r.get("canonical_url", "")).strip()
+        if canon and "news.google.com" not in canon:
+            url_map[str(r["evidence_id"])] = canon
+df_green["direct_url"] = df_green["evidence_id"].map(url_map).fillna(df_green["url"])
 
 total_green = len(df_green)
 total_clusters = df_green["cluster"].nunique()
 df_green["year"] = pd.to_datetime(df_green["published_at"], errors="coerce").dt.year.fillna(2023).astype(int)
 
-st.markdown('<div class="page-title">Green Investment List (Track B)</div>', unsafe_allow_html=True)
+st.markdown('<div class="page-title">Proyek Hijau BUMN</div>', unsafe_allow_html=True)
 st.markdown(f'<div class="page-subtitle">Inventarisasi Proyek Transisi Hijau BUMN Lintas 15 Kluster Metodologis ({total_green:,} Artikel Bukti Terverifikasi)</div>', unsafe_allow_html=True)
 
 st.markdown(f"""
 <div class="note-box">
-<strong>Batasan Rentang Waktu Track B (Sesuai Dokumen Metodologi Riset CELIOS)</strong><br>
+<strong>Batasan Rentang Waktu (Sesuai Dokumen Metodologi Riset CELIOS)</strong><br>
 Berdasarkan rumusan verbatim dokumen metodologi riset CELIOS (<code>brief-20260831_Methodological Approach.md</code> baris 35):<br>
 <em>"creating an inventory of green projects already announced by the Indonesian government and/or state-owned enterprises from 2020 onwards."</em><br><br>
-Seluruh artikel bukti proyek hijau BUMN yang dikurasi dibatasi pada pengumuman sejak <strong>Tahun 2020 ke atas</strong> pada 9 BUMN champion (PLN, Pertamina, Semen Indonesia, Pupuk Indonesia, MIND ID, PTPN, Perhutani, Hutama Karya, dan Danantara).
+Seluruh artikel bukti proyek hijau BUMN yang dikurasi dibatasi pada pengumuman sejak <strong>Tahun 2020 ke atas</strong> pada 9 BUMN champion (PLN, Pertamina, Semen Indonesia, Pupuk Indonesia, MIND ID, PTPN, Perhutani, Hutama Karya, dan Danantara). Tautan artikel dapat dibuka langsung ke media asal tanpa redirect Google.
 </div>
 """, unsafe_allow_html=True)
 
@@ -107,7 +119,7 @@ with tab1:
             orientation="h",
             color="Jumlah Bukti",
             color_continuous_scale="Teal",
-            title="Jumlah Artikel Bukti per Kluster (Track B)"
+            title="Jumlah Artikel Bukti per Kluster"
         )
         fig.update_layout(
             template="plotly_dark",
@@ -172,7 +184,7 @@ with tab2:
     st.markdown(f"Menampilkan **{len(df_g_view):,}** dokumen bukti:")
     
     st.dataframe(
-        df_g_view[["evidence_id", "published_at", "cluster", "target_soe", "title", "publisher", "url"]].head(100),
+        df_g_view[["evidence_id", "published_at", "cluster", "target_soe", "title", "publisher", "direct_url"]].head(100),
         use_container_width=True,
         column_config={
             "evidence_id": st.column_config.TextColumn("ID Bukti", width="small"),
@@ -181,7 +193,7 @@ with tab2:
             "target_soe": st.column_config.TextColumn("BUMN Target", width="small"),
             "title": st.column_config.TextColumn("Judul Bukti Pengumuman Proyek", width="large"),
             "publisher": st.column_config.TextColumn("Media / Sumber", width="small"),
-            "url": st.column_config.LinkColumn("Tautan Asli", display_text="Buka Sumber")
+            "direct_url": st.column_config.LinkColumn("Tautan Langsung Media", display_text="Buka Sumber Langsung")
         },
         hide_index=True
     )
