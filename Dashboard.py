@@ -75,17 +75,16 @@ df_manifest["year"] = pd.to_datetime(df_manifest["published_at"], errors="coerce
 st.markdown('<div class="page-title">Daya Anagata Nusantara (Danantara)</div>', unsafe_allow_html=True)
 st.markdown(f'<div class="page-subtitle">Sovereign Wealth Fund Monitor & Green Investment List — {total_manifest:,} Dokumen Bukti Terverifikasi</div>', unsafe_allow_html=True)
 
-st.markdown(f"""
-<div class="note-box">
-<strong>Dua Pilar Pengelompokan Data (Berdasarkan Teks Asli Metodologi Riset Celios)</strong><br>
-Sesuai dokumen TOR (<code>brief-20260831_Methodological Approach.md</code> baris 37):<br>
-<em>"creating an inventory of green projects announced by state-owned enterprises from 2020 onward and all projects confirmed by Danantara Indonesia since its launch in 2025."</em><br><br>
-Data dipisahkan secara natural menjadi dua fokus riset:<br>
-1. <strong>Danantara Monitor (Tahun 2025 ke atas):</strong> Proyek, regulasi, dan kebijakan yang dikonfirmasi langsung oleh Danantara sejak diluncurkan tahun 2025 ({danantara_count:,} artikel).<br>
-2. <strong>Proyek Hijau BUMN (Tahun 2020 ke atas):</strong> Inventarisasi proyek hijau dan dekarbonisasi yang diumumkan BUMN (PLN, Pertamina, Semen Indonesia, dll.) sejak 2020 lintas 15 kluster ({green_bumn_count:,} artikel).<br><br>
-Tautan pada tabel di bawah telah di-decode langsung ke URL resmi media/regulator ({decoded_urls_count:,} URL langsung terverifikasi) tanpa melalui redirect Google News.
-</div>
-""", unsafe_allow_html=True)
+with st.expander("Catatan Metodologi & Dasar Pemisahan Data (Sesuai Dokumen Riset CELIOS)", expanded=False):
+    st.markdown(f"""
+    **Dua Pilar Pengelompokan Data (Berdasarkan Teks Asli Metodologi Riset Celios)**<br>
+    Sesuai dokumen TOR (<code>brief-20260831_Methodological Approach.md</code> baris 37):<br>
+    <em>"creating an inventory of green projects announced by state-owned enterprises from 2020 onward and all projects confirmed by Danantara Indonesia since its launch in 2025."</em><br><br>
+    Data dipisahkan secara natural menjadi dua fokus riset:<br>
+    1. <strong>Danantara Monitor (Tahun 2025 ke atas):</strong> Proyek, regulasi, dan kebijakan yang dikonfirmasi langsung oleh Danantara sejak diluncurkan tahun 2025 ({danantara_count:,} artikel).<br>
+    2. <strong>Proyek Hijau BUMN (Tahun 2020 ke atas):</strong> Inventarisasi proyek hijau dan dekarbonisasi yang diumumkan BUMN (PLN, Pertamina, Semen Indonesia, dll.) sejak 2020 lintas 15 kluster ({green_bumn_count:,} artikel).<br><br>
+    Tautan pada tabel di bawah telah di-decode langsung ke URL resmi media/regulator ({decoded_urls_count:,} URL langsung terverifikasi) tanpa melalui redirect Google News.
+    """, unsafe_allow_html=True)
 
 # ─── HERO METRICS ─────────────────────────────────────────────────────────────
 st.markdown('<div class="section-header">Indikator Utama Hasil Kerja (Per Hari Ini)</div>', unsafe_allow_html=True)

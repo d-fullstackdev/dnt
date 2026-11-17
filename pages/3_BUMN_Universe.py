@@ -47,16 +47,16 @@ total_excluded_pt = len(df_excluded_ent)
 st.markdown('<div class="page-title">Master Universe BUMN under Danantara</div>', unsafe_allow_html=True)
 st.markdown(f'<div class="page-subtitle">Taksonomi Yuridis dan Pemetaan Kepemilikan {total_bumn} Entitas BUMN under Konsolidasi BPI Danantara</div>', unsafe_allow_html=True)
 
-st.markdown(f"""
-<div class="note-box">
-<strong>Latar Belakang Audit & Kurasi Universe BUMN</strong><br>
-Untuk mencegah tumpang tindih data, tim riset merekonstruksi hierarki kepemilikan BUMN menjadi 3 lapisan legal yang terpisah tegas:<br>
-1. <strong>Holding BUMN ({total_holdings} Induk):</strong> Entitas holding pengendali saham lintas kluster industri.<br>
-2. <strong>Persero Langsung ({total_persero} BUMN):</strong> Entitas persero dengan saham Seri A Dwiwarna milik Negara.<br>
-3. <strong>Anak Perusahaan ({total_subs} Entitas):</strong> Entitas operasional yang dimiliki mayoritas oleh holding/persero BUMN.<br>
-4. <strong>Eliminasi Swasta Kebetulan ({total_excluded_pt} PT):</strong> PT swasta pihak ketiga yang memiliki kesamaan kata nama "Danantara" telah divalidasi dan dikeluarkan dari master data.
-</div>
-""", unsafe_allow_html=True)
+# ─── DROPDOWN METODOLOGI (ACCORDION EXPANDER) ─────────────────────────────────
+with st.expander("Metodologi Rekonstruksi & Hierarki 196 Entitas BUMN", expanded=False):
+    st.markdown(f"""
+    **Latar Belakang Audit & Kurasi Universe BUMN**<br>
+    Untuk mencegah tumpang tindih data, tim riset merekonstruksi hierarki kepemilikan BUMN menjadi 3 lapisan legal yang terpisah tegas:<br>
+    1. **Holding BUMN ({total_holdings} Induk):** Entitas holding pengendali saham lintas kluster industri.<br>
+    2. **Persero Langsung ({total_persero} BUMN):** Entitas persero dengan saham Seri A Dwiwarna milik Negara.<br>
+    3. **Anak Perusahaan ({total_subs} Entitas):** Entitas operasional yang dimiliki mayoritas oleh holding/persero BUMN.<br>
+    4. **Eliminasi Swasta Kebetulan ({total_excluded_pt} PT):** PT swasta pihak ketiga yang memiliki kesamaan kata nama "Danantara" telah divalidasi dan dikeluarkan dari master data.
+    """, unsafe_allow_html=True)
 
 # ─── METRIC CARDS ─────────────────────────────────────────────────────────────
 m1, m2, m3, m4 = st.columns(4)
@@ -96,83 +96,78 @@ with m4:
     </div>
     """, unsafe_allow_html=True)
 
-# ─── TABS ─────────────────────────────────────────────────────────────────────
-tab1, tab2, tab3 = st.tabs([
-    "Eksplorasi Master Universe (196 Entitas)",
-    "14 Grup Holding BUMN",
-    "Audit Eliminasi Swasta Kebetulan (8 PT)"
-])
+# ─── BAGIAN 1: EKSPLORASI MASTER UNIVERSE (LANGSUNG TAMPIL) ───────────────────
+st.markdown('<div class="section-header">Pencarian dan Filter Entitas BUMN</div>', unsafe_allow_html=True)
 
-with tab1:
-    st.markdown('<div class="section-header">Pencarian dan Filter Entitas BUMN</div>', unsafe_allow_html=True)
+col_f1, col_f2 = st.columns([1.5, 2])
+with col_f1:
+    tier_opts = ["Semua Tingkat"] + sorted(df_bumn["entity_tier"].dropna().unique().tolist())
+    sel_tier = st.selectbox("Filter Tingkat / Tier:", tier_opts)
+with col_f2:
+    search_bumn = st.text_input("Cari Nama BUMN / Parent Holding / Sektor:", "")
     
-    col_f1, col_f2 = st.columns([1.5, 2])
-    with col_f1:
-        tier_opts = ["Semua Tingkat"] + sorted(df_bumn["entity_tier"].dropna().unique().tolist())
-        sel_tier = st.selectbox("Filter Tingkat / Tier:", tier_opts)
-    with col_f2:
-        search_bumn = st.text_input("Cari Nama BUMN / Parent Holding / Sektor:", "")
-        
-    df_view_bumn = df_bumn.copy()
-    if sel_tier != "Semua Tingkat":
-        df_view_bumn = df_view_bumn[df_view_bumn["entity_tier"] == sel_tier]
-    if search_bumn.strip():
-        q_b = search_bumn.lower()
-        df_view_bumn = df_view_bumn[
-            df_view_bumn["entity_name"].str.lower().str.contains(q_b, na=False) |
-            df_view_bumn["parent_holding"].str.lower().str.contains(q_b, na=False) |
-            df_view_bumn["sector"].str.lower().str.contains(q_b, na=False)
-        ]
-        
-    st.markdown(f"Menampilkan **{len(df_view_bumn)}** entitas:")
+df_view_bumn = df_bumn.copy()
+if sel_tier != "Semua Tingkat":
+    df_view_bumn = df_view_bumn[df_view_bumn["entity_tier"] == sel_tier]
+if search_bumn.strip():
+    q_b = search_bumn.lower()
+    df_view_bumn = df_view_bumn[
+        df_view_bumn["entity_name"].str.lower().str.contains(q_b, na=False) |
+        df_view_bumn["parent_holding"].str.lower().str.contains(q_b, na=False) |
+        df_view_bumn["sector"].str.lower().str.contains(q_b, na=False)
+    ]
     
+st.markdown(f"Menampilkan **{len(df_view_bumn)}** entitas:")
+
+st.dataframe(
+    df_view_bumn[["entity_id", "entity_name", "entity_tier", "parent_holding", "sector", "ceo", "is_priority_for_green_screening"]],
+    use_container_width=True,
+    column_config={
+        "entity_id": st.column_config.TextColumn("ID", width="small"),
+        "entity_name": st.column_config.TextColumn("Nama Entitas BUMN", width="large"),
+        "entity_tier": st.column_config.TextColumn("Tingkat Yuridis", width="medium"),
+        "parent_holding": st.column_config.TextColumn("Grup Holding Induk", width="medium"),
+        "sector": st.column_config.TextColumn("Sektor Bisnis", width="medium"),
+        "ceo": st.column_config.TextColumn("Pimpinan / CEO", width="medium"),
+        "is_priority_for_green_screening": st.column_config.CheckboxColumn("Prioritas Hijau", width="small")
+    },
+    hide_index=True
+)
+
+# ─── BAGIAN 2: 14 GRUP HOLDING BUMN (LANGSUNG TAMPIL) ─────────────────────────
+st.markdown('<div class="section-header">14 Grup Holding Pengendali BUMN</div>', unsafe_allow_html=True)
+st.markdown("""
+Holding BUMN merupakan entitas konsolidasi utama yang membawahi ratusan perseroan terbatas operasional:
+""")
+if not df_holdings.empty:
     st.dataframe(
-        df_view_bumn[["entity_id", "entity_name", "entity_tier", "parent_holding", "sector", "ceo", "is_priority_for_green_screening"]],
+        df_holdings,
         use_container_width=True,
         column_config={
-            "entity_id": st.column_config.TextColumn("ID", width="small"),
-            "entity_name": st.column_config.TextColumn("Nama Entitas BUMN", width="large"),
-            "entity_tier": st.column_config.TextColumn("Tingkat Yuridis", width="medium"),
-            "parent_holding": st.column_config.TextColumn("Grup Holding Induk", width="medium"),
-            "sector": st.column_config.TextColumn("Sektor Bisnis", width="medium"),
-            "ceo": st.column_config.TextColumn("Pimpinan / CEO", width="medium"),
-            "is_priority_for_green_screening": st.column_config.CheckboxColumn("Prioritas Hijau", width="small")
+            "entity_name": st.column_config.TextColumn("Nama Grup Holding", width="large"),
+            "holding_group": st.column_config.TextColumn("Grup", width="medium"),
+            "status": st.column_config.TextColumn("Status", width="medium"),
+            "notes": st.column_config.TextColumn("Ruang Lingkup Operasi", width="large")
         },
         hide_index=True
     )
 
-with tab2:
-    st.markdown('<div class="section-header">14 Grup Holding Pengendali BUMN</div>', unsafe_allow_html=True)
-    st.markdown("""
-    Holding BUMN merupakan entitas konsolidasi utama yang membawahi ratusan perseroan terbatas operasional:
-    """)
-    if not df_holdings.empty:
-        st.dataframe(
-            df_holdings,
-            use_container_width=True,
-            column_config={
-                "entity_name": st.column_config.TextColumn("Nama Grup Holding", width="large"),
-                "holding_group": st.column_config.TextColumn("Grup", width="medium"),
-                "status": st.column_config.TextColumn("Status", width="medium"),
-                "notes": st.column_config.TextColumn("Ruang Lingkup Operasi", width="large")
-            },
-            hide_index=True
-        )
+# ─── BAGIAN 3: AUDIT ELIMINASI SWASTA KEBETULAN (LANGSUNG TAMPIL) ──────────────
+st.markdown('<div class="section-header">Audit Eliminasi Perusahaan Swasta Kebetulan (False Positives)</div>', unsafe_allow_html=True)
+st.markdown("""
+Dalam proses pencarian nama "Danantara", terdeteksi sejumlah perusahaan swasta pihak ketiga yang tidak memiliki kaitan kepemilikan dengan BPI Danantara maupun BUMN. Entitas berikut telah resmi dieliminasi dari analisis:
+""")
+if not df_excluded_ent.empty:
+    st.dataframe(
+        df_excluded_ent,
+        use_container_width=True,
+        column_config={
+            "company_name": st.column_config.TextColumn("Nama PT Swasta", width="large"),
+            "address": st.column_config.TextColumn("Alamat Domisili", width="large"),
+            "category": st.column_config.TextColumn("Klasifikasi", width="medium"),
+            "exclusion_reason": st.column_config.TextColumn("Alasan Eliminasi", width="large")
+        },
+        hide_index=True
+    )
 
-with tab3:
-    st.markdown('<div class="section-header">Audit Eliminasi Perusahaan Swasta Kebetulan (False Positives)</div>', unsafe_allow_html=True)
-    st.markdown("""
-    Dalam proses pencarian nama "Danantara", terdeteksi sejumlah perusahaan swasta pihak ketiga yang tidak memiliki kaitan kepemilikan dengan BPI Danantara maupun BUMN. Entitas berikut telah resmi dieliminasi dari analisis:
-    """)
-    if not df_excluded_ent.empty:
-        st.dataframe(
-            df_excluded_ent,
-            use_container_width=True,
-            column_config={
-                "company_name": st.column_config.TextColumn("Nama PT Swasta", width="large"),
-                "address": st.column_config.TextColumn("Alamat Domisili", width="large"),
-                "category": st.column_config.TextColumn("Klasifikasi", width="medium"),
-                "exclusion_reason": st.column_config.TextColumn("Alasan Eliminasi", width="large")
-            },
-            hide_index=True
-        )
+st.caption("CELIOS · Center of Economic and Law Studies · Danantara Project 2026")
