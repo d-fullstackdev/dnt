@@ -42,18 +42,18 @@ def get_danantara_css():
     
     .metric-card {
         background: #1A1F2B;
-        border: 1px solid #2E3B4E;
+        border: 1px solid #333;
         border-radius: 8px;
-        padding: 1.3rem;
+        padding: 1.5rem;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
     
     .metric-value {
-        font-size: 2.1rem;
+        font-size: 2.2rem;
         font-weight: 700;
-        color: #26A69A;
-        margin: 0.4rem 0;
+        color: #66BB6A;
+        margin: 0.5rem 0;
     }
     
     .metric-label {
@@ -68,7 +68,7 @@ def get_danantara_css():
     .metric-desc {
         font-size: 0.75rem;
         color: #9E9E9E;
-        margin-top: 0.6rem;
+        margin-top: 0.8rem;
         line-height: 1.4;
     }
     
@@ -85,11 +85,11 @@ def get_danantara_css():
         transition: transform 0.2s ease, border-color 0.2s ease;
     }
     .bento-card:hover {
-        border-color: #26A69A;
+        border-color: #4CAF50;
         transform: translateY(-2px);
     }
     .bento-val {
-        font-size: 2.0rem;
+        font-size: 2.1rem;
         font-weight: 800;
         line-height: 1.1;
         margin: 8px 0;
@@ -119,7 +119,7 @@ def get_danantara_css():
 
     .note-box {
         background: #102027;
-        border-left: 4px solid #26A69A;
+        border-left: 4px solid #4CAF50;
         padding: 14px 18px;
         border-radius: 6px;
         color: #ECEFF1;
@@ -129,19 +129,19 @@ def get_danantara_css():
     }
 
     .section-header {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         font-weight: 700;
         color: #ECEFF1;
-        margin: 1.8rem 0 0.8rem 0;
-        border-bottom: 1px solid #2E3B4E;
-        padding-bottom: 6px;
+        border-bottom: 2px solid #2E7D32;
+        padding-bottom: 0.5rem;
+        margin: 2rem 0 1rem 0;
     }
 
     .badge-track-a {
         display: inline-block;
-        background: rgba(38, 166, 154, 0.15);
-        color: #26A69A;
-        border: 1px solid rgba(38, 166, 154, 0.4);
+        background: rgba(76, 175, 80, 0.15);
+        color: #81C784;
+        border: 1px solid rgba(76, 175, 80, 0.4);
         border-radius: 4px;
         padding: 2px 8px;
         font-size: 0.72rem;

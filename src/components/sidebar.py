@@ -19,9 +19,12 @@ def render_sidebar():
             font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 0.08em;
-            color: #26A69A;
+            color: #66BB6A;
             text-transform: uppercase;
             padding: 12px 0 4px 0;
+        }
+        [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"]:hover {
+            color: #66BB6A !important;
         }
         </style>
         """, unsafe_allow_html=True)
@@ -31,7 +34,7 @@ def render_sidebar():
 
         st.markdown("""
         <div style="text-align:center; padding: 6px 0 4px 0;">
-            <div style="font-size:0.95rem; font-weight:700; color:#26A69A; letter-spacing:0.03em;">DANANTARA MONITOR</div>
+            <div style="font-size:0.95rem; font-weight:700; color:#66BB6A; letter-spacing:0.03em;">DANANTARA MONITOR</div>
             <div style="font-size:0.72rem; color:#9E9E9E; margin-top:2px;">Sovereign Wealth Fund & Green SOE Tracker</div>
         </div>
         """, unsafe_allow_html=True)

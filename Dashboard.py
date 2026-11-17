@@ -139,7 +139,7 @@ with b_col1:
     <div class="bento-card">
         <div>
             <div class="bento-lbl">Danantara Monitor</div>
-            <div class="bento-val" style="color: #26A69A;">{danantara_count:,} <span style="font-size: 1rem; color: #9E9E9E;">Artikel</span></div>
+            <div class="bento-val" style="color: #4CAF50;">{danantara_count:,} <span style="font-size: 1rem; color: #9E9E9E;">Artikel</span></div>
             <div class="bento-desc">
                 Memantau proyek, regulasi, dan pembentukan kelembagaan Danantara sejak peluncuran resminya pada tahun 2025. Mencakup Keppres No. 30/2025, integrasi 7 BUMN raksasa tahap awal, dan 9 entitas SPV di Wisma Danantara.
             </div>
@@ -197,7 +197,7 @@ with chart_col1:
         title="Distribusi Waktu Artikel per Tahun Publikasi (2020 - 2026)",
         labels={"year": "Tahun Publikasi", "count": "Jumlah Artikel", "track_label": "Kategori"},
         color_discrete_map={
-            "Danantara Monitor (>=2025)": "#26A69A",
+            "Danantara Monitor (>=2025)": "#4CAF50",
             "Proyek Hijau BUMN (>=2020)": "#66BB6A"
         }
     )
