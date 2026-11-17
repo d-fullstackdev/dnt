@@ -44,14 +44,15 @@ def render_sidebar():
         st.markdown('<div class="sidebar-label">Ringkasan Utama</div>', unsafe_allow_html=True)
         st.page_link("Dashboard.py", label="Overview & Eksekutif")
 
-        st.markdown('<div class="sidebar-label">Pilar Riset & Pelacak</div>', unsafe_allow_html=True)
-        st.page_link("pages/1_Danantara_Monitor.py", label="Danantara Monitor (>= 2025)")
-        st.page_link("pages/2_Green_Investment_List.py", label="Proyek Hijau BUMN (>= 2020)")
-        st.page_link("pages/3_BUMN_Universe.py", label="Daftar 196 Entitas BUMN")
+        st.markdown('<div class="sidebar-label">Pipeline Riset (Graphic 1)</div>', unsafe_allow_html=True)
+        st.page_link("pages/1_Scraped_Metadata.py", label="1. Hasil Scrape & Metadata Bukti")
+        st.page_link("pages/2_Project_Inventory_ETL.py", label="2. ETL & Ekstraksi 13 Atribut")
+        st.page_link("pages/3_Green_Investment_Screening.py", label="3. Skrining & Green List")
 
-        st.markdown('<div class="sidebar-label">Dokumentasi</div>', unsafe_allow_html=True)
-        st.page_link("pages/4_Forensic_Evidence.py", label="Bukti Fisik & Unduhan HTML")
-        st.page_link("pages/5_Metodologi_Brief.py", label="Dokumentasi Metodologi")
+        st.markdown('<div class="sidebar-label">Entitas & Dokumentasi</div>', unsafe_allow_html=True)
+        st.page_link("pages/4_BUMN_Universe.py", label="4. Silsilah 196 Entitas BUMN")
+        st.page_link("pages/5_Forensic_Evidence.py", label="5. Bukti Fisik & Unduhan HTML")
+        st.page_link("pages/6_Metodologi_Brief.py", label="6. Dokumentasi Metodologi")
 
         st.markdown("---")
         st.caption("CELIOS · Danantara Monitor · 2026")
