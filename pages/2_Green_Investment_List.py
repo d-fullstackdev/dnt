@@ -49,7 +49,7 @@ df_green["year"] = pd.to_datetime(df_green["published_at"], errors="coerce").dt.
 
 st.markdown('<div class="org-badge">CELIOS — Center of Economic and Law Studies</div>', unsafe_allow_html=True)
 st.markdown('<div class="main-title">Proyek Hijau BUMN</div>', unsafe_allow_html=True)
-st.markdown(f'<div class="sub-title">Inventarisasi Proyek Transisi Hijau BUMN Lintas 15 Kluster Metodologis ({total_green:,} Artikel Bukti Terverifikasi)</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="sub-title">Inventarisasi Kandidat Proyek Transisi BUMN Lintas 15 Kluster Metodologis ({total_green:,} Artikel Hasil Scraping — Tahap Pra-Skrining)</div>', unsafe_allow_html=True)
 
 # ─── DROPDOWN METODOLOGI (ACCORDION EXPANDER) ─────────────────────────────────
 with st.expander("Metodologi & Batasan Rentang Waktu (Sesuai Dokumen Riset CELIOS)", expanded=False):
@@ -57,9 +57,10 @@ with st.expander("Metodologi & Batasan Rentang Waktu (Sesuai Dokumen Riset CELIO
     **Rujukan Dokumen Metodologi Riset CELIOS** (`brief-20260831_Methodological Approach.md` baris 35):
     > *"creating an inventory of green projects already announced by the Indonesian government and/or state-owned enterprises from 2020 onwards."*
     
+    * **Status Data Saat Ini:** Seluruh artikel yang tampil adalah **kandidat mentah hasil scraping berbasis kata kunci (pra-skrining)**, belum melalui proses evaluasi kelayakan atau gating taksonomi.
     * **Batasan Waktu:** Seluruh artikel bukti proyek hijau BUMN yang dikurasi dibatasi pada pengumuman sejak **Tahun 2020 ke atas** pada 9 grup BUMN objek riset (PLN, Pertamina, Semen Indonesia, Pupuk Indonesia, MIND ID, PTPN, Perhutani, Hutama Karya, dan Danantara).
     * **Akses Tautan:** Tautan artikel dapat dibuka langsung ke media asal tanpa redirect Google News.
-    * **Penyaringan Lanjutan:** Seluruh proyek akan diuji melalui 3 gerbang (*Gate 1: Negative Filter*, *Gate 2: Technical Screening TKBI v3 / ASEAN Taxonomy v4*, dan *Gate 3: Norfund Additionality*).
+    * **Pipeline Gating Berikutnya:** Seluruh kandidat ini akan disaring melalui 3 gerbang (*Gate 1: Negative Filter*, *Gate 2: Technical Screening TKBI v3 / ASEAN Taxonomy v4*, dan *Gate 3: Norfund Additionality*).
     """)
 
 # ─── METRIC CARDS ─────────────────────────────────────────────────────────────
@@ -67,18 +68,18 @@ m1, m2, m3, m4 = st.columns(4)
 with m1:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Total Bukti Proyek Hijau</div>
+        <div class="metric-label">Kandidat Hasil Scraping</div>
         <div class="metric-value">{total_green:,}</div>
-        <div class="metric-desc">Rentang Waktu: Tahun 2020 ke atas</div>
+        <div class="metric-desc">Metadata Mentah (Pra-Skrining)</div>
     </div>
     """, unsafe_allow_html=True)
 
 with m2:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Kluster Proyek Terpantau</div>
+        <div class="metric-label">Kluster Kata Kunci SOW</div>
         <div class="metric-value">{total_clusters}</div>
-        <div class="metric-desc">15 Kluster Resmi SOW Riset Celios</div>
+        <div class="metric-desc">15 Kluster Penelusuran Awal</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -94,14 +95,14 @@ with m3:
 with m4:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Metode Skrining Taksonomi</div>
-        <div class="metric-value">3-Gate</div>
-        <div class="metric-desc">Negative List + TKBI v3 + Norfund</div>
+        <div class="metric-label">Status Pipeline Gating</div>
+        <div class="metric-value">Belum Difilter</div>
+        <div class="metric-desc">Menunggu Uji 3-Gate (Negative, TKBI, Norfund)</div>
     </div>
     """, unsafe_allow_html=True)
 
 # ─── BAGIAN 1: EKSPLORASI INVENTARIS BUKTI (LANGSUNG TAMPIL TANPA TAB) ────────
-st.markdown('<div class="section-header">Eksplorasi Dokumen Bukti Proyek Hijau</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">Eksplorasi Kandidat Artikel Hasil Scraping (Pra-Skrining Gating)</div>', unsafe_allow_html=True)
 
 f1, f2, f3 = st.columns([1.5, 1.5, 2])
 with f1:

@@ -96,9 +96,9 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Total Bukti Terverifikasi</div>
+        <div class="metric-label">Total Dokumen Terhimpun</div>
         <div class="metric-value">{total_manifest:,}</div>
-        <div class="metric-desc">{danantara_count:,} Danantara (>=2025) + {green_bumn_count:,} Proyek BUMN (>=2020)</div>
+        <div class="metric-desc">{danantara_count:,} Danantara (>=2025) + {green_bumn_count:,} Kandidat BUMN Pra-Gating (>=2020)</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -152,13 +152,13 @@ with b_col2:
     st.markdown(f"""
     <div class="bento-card">
         <div>
-            <div class="bento-lbl">Proyek Hijau BUMN</div>
+            <div class="bento-lbl">Kandidat Proyek BUMN</div>
             <div class="bento-val" style="color: #66BB6A;">{green_bumn_count:,} <span style="font-size: 1rem; color: #9E9E9E;">Artikel</span></div>
             <div class="bento-desc">
-                Inventarisasi proyek dekarbonisasi dan energi bersih yang telah diumumkan BUMN sejak 2020 pada 9 grup BUMN terpantau (PLN, Pertamina, MIND ID, Semen Indonesia, Pupuk Indonesia, PTPN, Perhutani, Hutama Karya, dan Danantara).
+                Metadata mentah kandidat pengumuman transisi energi dan dekarbonisasi BUMN sejak 2020 (berbasis penelusuran kata kunci, belum melalui filter gating taksonomi 3-tahap).
             </div>
         </div>
-        <div class="bento-src">Batasan Waktu: Tahun 2020 ke atas (Sesuai TOR)</div>
+        <div class="bento-src">Status: Metadata Hasil Scraping (Tahap Pra-Skrining)</div>
     </div>
     """, unsafe_allow_html=True)
 
